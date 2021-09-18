@@ -279,25 +279,25 @@ python manage.py migrate
 
 ## Checklist
 
-1. [ ] Create Your own Gitlab Repo. If you did the previous Tutorial (Initial Setup and Doing the Tutorial), then you're good to go.
+1. [x] Create Your own Gitlab Repo. If you did the previous Tutorial (Initial Setup and Doing the Tutorial), then you're good to go.
 
-2. [ ] Create virtual environment and make sure you can run your Django project (see Tutorial: Running Your Django Project)
+2. [x] Create virtual environment and make sure you can run your Django project (see Tutorial: Running Your Django Project)
 
-3. [ ] Create an admin user (see: https://docs.djangoproject.com/en/1.8/intro/tutorial02/)
+3. [x] Create an admin user (see: https://docs.djangoproject.com/en/1.8/intro/tutorial02/)
 
 4. Display your profile page:
 
-   1. [ ] Implement TODOs on test.py
-   2. [ ] Open views.py on lab_1 folder, implement code in lines 4, 6, and 7.
-   3. [ ] Refresh http://localhost:8000/
-   4. [ ] See your profile on the webpage
+   1. [x] Implement TODOs on test.py
+   2. [x] Open views.py on lab_1 folder, implement code in lines 4, 6, and 7.
+   3. [x] Refresh http://localhost:8000/
+   4. [x] See your profile on the webpage
 
 5. Create friend list page:
-   1. [ ] Implement TODOs on models.py
-   2. [ ] Register your model on admin.py so you can access your database from Django Admin later
-   3. [ ] Implement TODOs on urls.py
-   4. [ ] Fix unit test related to friend list URL on test.py
-   5. [ ] Implement TODOs on views.py
-   6. [ ] Implement TODOs on templates/friend_list_lab1.html
-   7. [ ] Add your friends' information via Django Admin (see: https://docs.djangoproject.com/en/1.8/intro/tutorial02/)
-   8. [ ] Access friend list URL and see your friends' information on the page
+   1. [x] Implement TODOs on models.py
+   2. [x] Register your model on admin.py so you can access your database from Django Admin later
+   3. [x] Implement TODOs on urls.py
+   4. [x] Fix unit test related to friend list URL on test.py
+   5. [x] Implement TODOs on views.py
+   6. [x] Implement TODOs on templates/friend_list_lab1.html
+   7. [x] Add your friends' information via Django Admin (see: https://docs.djangoproject.com/en/1.8/intro/tutorial02/)
+   8. [x] Access friend list URL and see your friends' information on the page

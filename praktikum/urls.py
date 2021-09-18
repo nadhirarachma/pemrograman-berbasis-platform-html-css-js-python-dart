@@ -22,5 +22,5 @@ from lab_1.views import index as index_lab1
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lab-1/', include('lab_1.urls')),
-    re_path(r'^$', index_lab1, name='index')
+    re_path(r'^$', index_lab1, name = 'index')
 ]

@@ -1,10 +1,11 @@
+from lab_1.models import Friend
 from django.shortcuts import render
 from datetime import datetime, date
 
-mhs_name = ''  # TODO Implement this
+mhs_name = 'Nadhira Rachma Salsabila Anandra'  # TODO Implement this
 curr_year = int(datetime.now().strftime("%Y"))
-birth_date = date()  # TODO Implement this, format (Year, Month, Date)
-npm = None  # TODO Implement this
+birth_date = date(2002, 8, 8)  # TODO Implement this, format (Year, Month, Date)
+npm = 2006484974  # TODO Implement this
 
 
 def index(request):
@@ -19,6 +20,6 @@ def calculate_age(birth_year):
 
 
 def friend_list(request):
-    friends = None  # TODO Implement this
+    friends = Friend.objects.all()  # TODO Implement this
     response = {'friends': friends}
     return render(request, 'friend_list_lab1.html', response)

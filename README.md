@@ -1,3 +1,6 @@
+[![Pipeline](https://gitlab.com/nadhira.rachma/pbp-lab/badges/master/pipeline.svg)](https://gitlab.com/nadhira.rachma/pbp-lab/pipelines)
+[![Coverage](https://gitlab.com/nadhira.rachma/pbp-lab/badges/master/coverage.svg)](https://gitlab.com/nadhira.rachma/pbp-lab/pipelines)
+
 # Tutorials and Assignment Repository
 
 CSGE602022 - Platform-Based Programming (Pemrograman Berbasis Platform) @ Faculty of Computer Science Universitas Indonesia, Odd Semester 2021/2022

@@ -6,3 +6,5 @@ from django.db import models
 class Friend(models.Model):
     name = models.CharField(max_length=30)
     # TODO Implement missing attributes in Friend model
+    npm = models.CharField(max_length=10)
+    dob = models.DateField()

@@ -13,16 +13,13 @@
       </tr>
       <!-- TODO loop from Friend model -->
       <!-- EXAMPLE SECTION -->
+      {% for var in friends %}
       <tr>
-        <td>Asmara Nugi</td>
-        <td>1706032156</td>
-        <td>May 1, 1999</td>
+        <td>{{var.name}}</td>
+        <td>{{var.npm}}</td>
+        <td>{{var.dob}}</td>
       </tr>
-      <tr>
-        <td>Fadli Rais</td>
-        <td>1706032370</td>
-        <td>Sept 11, 1998</td>
-      </tr>
+      {% endfor %}
       <!-- END SECTION -->
     </table>
   </body>

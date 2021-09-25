@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Note</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>To</th>
+        <th>From</th>
+        <th>Title</th>
+        <th>Message</th>
+      </tr>
+      {% for var in notes %}
+      <tr>
+        <td>{{var.to}}</td>
+        <td>{{var.fromm}}</td>
+        <td>{{var.title}}</td>
+        <td>{{var.message}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

@@ -12,12 +12,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Friend',
+            name='Note',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=30)),
-                ('npm', models.CharField(max_length=10)),
-                ('dob', models.DateField()),
+                ('to', models.CharField(max_length=30)),
+                ('fromm', models.CharField(max_length=30)),
+                ('title', models.CharField(max_length=30)),
+                ('message', models.CharField(max_length=100)),
             ],
         ),
     ]

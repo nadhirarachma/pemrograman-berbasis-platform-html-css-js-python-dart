@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend List</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>NPM</th>
+        <th>DOB</th>
+      </tr>
+      {% for var in friends %}
+      <tr>
+        <td>{{var.name}}</td>
+        <td>{{var.npm}}</td>
+        <td>{{var.dob}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

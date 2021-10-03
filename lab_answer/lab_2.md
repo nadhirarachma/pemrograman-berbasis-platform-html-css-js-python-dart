@@ -9,5 +9,7 @@ JSON atau JavaScript Object Notation dan XML atau Extensible Markup Language ber
 HTML serta XML merupakan markup language yang banyak digunakan untuk membuat halaman web. HTML bersifat statis karena berfungsi untuk menampilkan data sedangkan XML bersifat dinamis karena berfungsi untuk menyimpan dan mentransfer data. Selain itu, tag pada HTML tidak harus ditutup, didefinisikan di awal, serta memiliki jumlah yang terbatas, sedangkan pada XML tag harus ditutup, bersifat fleksibel dan dapat didefinisikan ketika dibutuhkan, serta tidak memiliki batas jumlah. HTML bersifat case insensitive dam mengabaikan error minim sedangkan XML bersifat case sensitive serta tidak mentolerir adanya error.
 
 Referensi:
+
 https://www.monitorteknologi.com/perbedaan-json-dan-xml/
+
 https://dev.to/letsjuscode/html-vs-xml-1afa

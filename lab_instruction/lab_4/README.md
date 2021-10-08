@@ -376,42 +376,42 @@ Anda perlu untuk membuat navigasi agar page-page tersebut mudah untuk diakses. A
 
 ## Checklist
 
-1. [ ] Create new app by running `django-admin startapp lab_4` in root directory (`pbp-lab`).
+1. [x] Create new app by running `django-admin startapp lab_4` in root directory (`pbp-lab`).
 
-2. [ ] Register `lab-4/` path in `praktikum/urls.py` file, so that you can access the app by accessing [http://localhost:8000/lab-4](http://localhost:8000/lab-4)
+2. [x] Register `lab-4/` path in `praktikum/urls.py` file, so that you can access the app by accessing [http://localhost:8000/lab-4](http://localhost:8000/lab-4)
 
-3. [ ] Add `lab_4` into `INSTALLED_APPS` in `praktikum/settings.py` file.
+3. [x] Add `lab_4` into `INSTALLED_APPS` in `praktikum/settings.py` file.
 
 4. Show page to list created `Note` with table format:
 
-   1. [ ] Create `index` method in `lab_4/views.py` that render HTML for our response. Implement it just like we implement `index` method in [lab_2/views.py](../../lab_2/views.py).
-   2. [ ] Create a template named `lab4_index.html` in `lab_4/templates` folder that contains a table as a template for our `Note` model. You can use [lab2.html](../../lab_2/templates/lab2.html) as an example and modify it into `lab4_index.html` file.
-   3. [ ] Customize HTML and CSS in `lab4_index.html` template with your own imagination.
-   4. [ ] Create file `lab_4/urls.py` with route `''` for `index` path so that you can access the result by accessing [http://localhost:8000/lab-4](http://localhost:8000/lab-4).
+   1. [x] Create `index` method in `lab_4/views.py` that render HTML for our response. Implement it just like we implement `index` method in [lab_2/views.py](../../lab_2/views.py).
+   2. [x] Create a template named `lab4_index.html` in `lab_4/templates` folder that contains a table as a template for our `Note` model. You can use [lab2.html](../../lab_2/templates/lab2.html) as an example and modify it into `lab4_index.html` file.
+   3. [x] Customize HTML and CSS in `lab4_index.html` template with your own imagination.
+   4. [x] Create file `lab_4/urls.py` with route `''` for `index` path so that you can access the result by accessing [http://localhost:8000/lab-4](http://localhost:8000/lab-4).
 
 5. Create form for creating new `Note`:
 
-   1. [ ] Create `forms.py` inside `lab_4` folder.
-   2. [ ] Create class `NoteForm` inside `lab_4/forms.py` file.
-   3. [ ] Implement class `NoteForm`. Assign `model` in class `Meta` with `Note` model from `lab_2/models.py`.
-   4. [ ] Create a template named `lab4_form.html` in `lab_4/templates` folder that contains a form for inserting our new `Note` object.
-   5. [ ] Implement `lab4_form.html` with HTML code so that it will render our form. Use `POST` as `method` and `""` as `action` in `<form>` tag.
-   6. [ ] Customize HTML and CSS in `lab4_form.html` template with your own imagination.
-   7. [ ] Create `add_note` method in `lab_4/views.py` that render HTML for our form.
-   8. [ ] Implement `add_note` method so that you can create `Note` with data from the form. For the example you can read the tutorial [here](https://www.geeksforgeeks.org/django-modelform-create-form-from-models/).
-   9. [ ] Check request method in `add_note`. If the request method is `POST` then we need to redirect to [`/lab-4`](http://localhost:8000/lab-4) after validating form data and save the data if valid.
-   10. [ ] Add `add-note` route into `lab_4/urls.py`, so you can access the result by accessing [http://localhost:8000/lab-4/add-note](http://localhost:8000/lab-4/add-note).
+   1. [x] Create `forms.py` inside `lab_4` folder.
+   2. [x] Create class `NoteForm` inside `lab_4/forms.py` file.
+   3. [x] Implement class `NoteForm`. Assign `model` in class `Meta` with `Note` model from `lab_2/models.py`.
+   4. [x] Create a template named `lab4_form.html` in `lab_4/templates` folder that contains a form for inserting our new `Note` object.
+   5. [x] Implement `lab4_form.html` with HTML code so that it will render our form. Use `POST` as `method` and `""` as `action` in `<form>` tag.
+   6. [x] Customize HTML and CSS in `lab4_form.html` template with your own imagination.
+   7. [x] Create `add_note` method in `lab_4/views.py` that render HTML for our form.
+   8. [x] Implement `add_note` method so that you can create `Note` with data from the form. For the example you can read the tutorial [here](https://www.geeksforgeeks.org/django-modelform-create-form-from-models/).
+   9. [x] Check request method in `add_note`. If the request method is `POST` then we need to redirect to [`/lab-4`](http://localhost:8000/lab-4) after validating form data and save the data if valid.
+   10. [x] Add `add-note` route into `lab_4/urls.py`, so you can access the result by accessing [http://localhost:8000/lab-4/add-note](http://localhost:8000/lab-4/add-note).
 
 6. Show page to list created `Note` with card format:
 
-   1. [ ] Create `note_list` method in `lab_4/views.py` that render HTML for our response. Implement it just like we implement `index` method in [lab_4/views.py](../../lab_4/views.py).
-   2. [ ] Create a template named `lab4_note_list.html` in `lab_4/templates` folder as the template to show our `Note` model in card format.
-   3. [ ] Customize HTML and CSS in `lab4_note_list.html` template with your own imagination.
-   4. [ ] Add `note-list` route into `lab_4/urls.py`, so you can access the result by accessing [http://localhost:8000/lab-4/note-list](http://localhost:8000/lab-4/note-list).
+   1. [x] Create `note_list` method in `lab_4/views.py` that render HTML for our response. Implement it just like we implement `index` method in [lab_4/views.py](../../lab_4/views.py).
+   2. [x] Create a template named `lab4_note_list.html` in `lab_4/templates` folder as the template to show our `Note` model in card format.
+   3. [x] Customize HTML and CSS in `lab4_note_list.html` template with your own imagination.
+   4. [x] Add `note-list` route into `lab_4/urls.py`, so you can access the result by accessing [http://localhost:8000/lab-4/note-list](http://localhost:8000/lab-4/note-list).
 
-7. [ ] Implement navigation bar on every page, so we can access the page easily with only a click.
+7. [x] Implement navigation bar on every page, so we can access the page easily with only a click.
 
-8. [ ] Access all the endpoint that you have built in this lab using Web Browser.
+8. [x] Access all the endpoint that you have built in this lab using Web Browser.
 
 ## Referensi
 

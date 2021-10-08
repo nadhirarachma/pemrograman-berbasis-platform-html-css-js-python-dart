@@ -23,5 +23,6 @@ urlpatterns = [
     path('lab-1/', include('lab_1.urls')),
     path('lab-2/', include('lab_2.urls')),
     path('lab-3/', include('lab_3.urls')),
+    path('lab-4/', include ('lab_4.urls')),
     re_path(r'^$', index_lab1, name = 'index')
 ]

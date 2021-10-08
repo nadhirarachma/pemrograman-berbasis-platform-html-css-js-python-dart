@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <title>Note</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <div class="main">
+      <nav class = "navbar">
+        <div class = "title-name">
+          <h1>Table of Notes</h1>
+        </div>
+  
+        <ul>
+          <li><a href= "/lab-4/add-note">Form</a></li>
+          <li><a href= "/lab-4">Table</a></li>
+          <li><a href= "/lab-4/note-list">Card</a></li>
+        </ul>
+      </nav>
+
+      <h2>WELCOME TO TABLE OF NOTES</h2>
+  
+      <div class="table-style">
+        <table>
+          <tr>
+            <th>To</th>
+            <th>From</th>
+            <th>Title</th>
+            <th>Message</th>
+          </tr>
+          {% for var in notes %}
+          <tr>
+            <td>{{var.to}}</td>
+            <td>{{var.fromm}}</td>
+            <td>{{var.title}}</td>
+            <td>{{var.message}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      
+    </div>
+  </body>
+</html>
+

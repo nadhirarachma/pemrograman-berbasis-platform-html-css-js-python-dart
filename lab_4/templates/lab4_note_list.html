@@ -27,16 +27,20 @@
       {% for var in notes %}
       <div class="card-style">
         <div class="container">
-          <div class = "note-title">
-            <p>"{{var.title}}"</p> 
+        
+          <div class = "note-msg">
+            <p>"{{var.title}}"</p>  
           </div>
 
-          <p>To: {{var.to}}</p> 
-          <p> From: {{var.fromm}} </p> 
+          <div class = "note-sender">
+            <p>To: {{var.to}}</p> 
+            <p>From: {{var.fromm}} </p>
+          </div>
 
           <div class = "note-msg">
-            <p> {{var.message}} </p> 
+            <p>{{var.message}}</p> 
           </div>
+
         </div>
       </div>
       {% endfor %}

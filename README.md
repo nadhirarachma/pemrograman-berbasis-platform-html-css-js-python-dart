@@ -10,7 +10,7 @@ Repository untuk projek tengah semester PBP.
 6. Nadhira Rachma Salsabila Anandra - 2006484974
 7. Priyanka Devi -  2006485844
 ## 🔗 Website Link
-Link herokuapp [    ]
+Link herokuapp [  https://e-nadi.herokuapp.com/  ]
 
 ## 🏋️ Brief
 Pada pandemi Covid-19 yang terus menyerang penduduk dunia tanpa henti, kesehatan tubuh serta pola hidup sehat merupakan hal esensial yang harus dijaga.  Pola hidup sehat adalah gaya hidup yang memperhatikan segala aspek kondisi kesehatan. Mulai dari makanan, minuman, nutrisi yang dikonsumsi dan perilaku kita sehari- hari. Baik itu dalam sebuah rutinitas olahraga yang tentu akan menjaga kondisi kesehatan dan juga akan menghindarkan kita dari penyakit. Dengan adanya pandemi Covid-19 saat ini banyak masyarakat terpaksa untuk membatasi aktivitas di luar rumah. Pembatasan aktivitas di luar rumah ini mengakibatkan banyak masyarakat tidak melakukan olahraga atau memiliki pola hidup yang buruk. Untuk itu, kami hadir bertujuan untuk membantu dan memantau pola hidup sehat masyarakat dengan cara membuat sebuah aplikasi bagi masyarakat Indonesia berbasis website. 

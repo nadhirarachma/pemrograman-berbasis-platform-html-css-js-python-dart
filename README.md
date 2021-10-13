@@ -28,26 +28,33 @@ Aplikasi ini membantu pengguna untuk memantau pola hidup sehat. Hal ini dilatarb
 
 ## 👨‍👩‍👧‍👦 Persona
 **1. Udin Deyzel**
-Udin merupakan seorang bodybuilder yang berasal dari Indonesia. Udin mempunyai masalah dalam mengatur jadwal tidur dan tracking kegiatan olahraga apa saja yang sudah dia lakukan. Udin percaya dengan mengatur jadwal tidur dan tracking olahraganya, ia akan lebih efektif dalam melakukan olahraga. 
+, Udin merupakan seorang bodybuilder yang berasal dari Indonesia. Udin mempunyai masalah dalam mengatur jadwal tidur dan tracking kegiatan olahraga apa saja yang sudah dia lakukan. Udin percaya dengan mengatur jadwal tidur dan tracking olahraganya, ia akan lebih efektif dalam melakukan olahraga. 
+<br>
 Goals : 
 - Memperbaiki jadwal tidur Udin.
 - Melakukan tracking kegiatan olahraga Udin.
 - Fokus terhadap objektivitas utama yaitu efektivitas olahraga Udin.
+<br>
 Motivations :
 - Membuat monitoring durasi waktu tidur Udin.
 - Membuat resep makanan berdasarkan user personalization Udin.
+<br>
 Frustrations :
 - Jadwal tidur Udin berantakan.
 - Udin tidak dapat melakukan tracking waktu olahraga.
 - Udin tidak mengetahui website untuk mendapatkan resep makanan.
 
 **2. Boby Tanaka**
-Boby merupakan seorang remaja yang sedang menempuh pendidikan secara online. Sistem belajar-mengajar secara online mengharuskan Boby untuk terus berada di depan laptop ataupun smartphone untuk mengikuti kegiatan belajar-mengajar ataupun mengerjakan tugas. Boby yang terlalu fokus seringkali melupakan keharusan untuk mengonsumsi air putih dan vitamin sehingga ia sering merasa lemas dan tidak bisa fokus saat belajar. Boby percaya dengan memonitor jumlah air dan vitamin yang dikonsumsi dalam sehari, daya tahan tubuh Boby akan meningkat sehingga ia terhindar dari virus COVID-19.
+, Boby merupakan seorang remaja yang sedang menempuh pendidikan secara online. Sistem belajar-mengajar secara online mengharuskan Boby untuk terus berada di depan laptop ataupun smartphone untuk mengikuti kegiatan belajar-mengajar ataupun mengerjakan tugas. Boby yang terlalu fokus seringkali melupakan keharusan untuk mengonsumsi air putih dan vitamin sehingga ia sering merasa lemas dan tidak bisa fokus saat belajar. Boby percaya dengan memonitor jumlah air dan vitamin yang dikonsumsi dalam sehari, daya tahan tubuh Boby akan meningkat sehingga ia terhindar dari virus COVID-19.
+<br>
 Goals:
 - Membantu Boby agar dapat minum minimal 8 gelas per hari.
 - Membantu Boby agar dapat menjaga daya tahan tubuh dengan mengkonsumsi vitamin setiap hari.
+<br>
 Motivations:
 - Memonitor jumlah air yang dikonsumsi Boby dalam sehari.
 - Memonitor vitamin yang telah dikonsumsi dalam sehari.
+<br>
 Frustrations:
 - Boby sering merasa lemas, tidak fokus, dan mengalami dehidrasi.
+<br>

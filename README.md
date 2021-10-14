@@ -48,16 +48,21 @@ Frustrations :
 
 **2. Boby Tanaka**
 
-Boby merupakan seorang remaja yang sedang menempuh pendidikan secara online. Sistem belajar-mengajar secara online mengharuskan Boby untuk terus berada di depan laptop ataupun smartphone untuk mengikuti kegiatan belajar-mengajar ataupun mengerjakan tugas. Boby yang terlalu fokus seringkali melupakan keharusan untuk mengonsumsi air putih dan vitamin sehingga ia sering merasa lemas dan tidak bisa fokus saat belajar. Boby percaya dengan memonitor jumlah air dan vitamin yang dikonsumsi dalam sehari, daya tahan tubuh Boby akan meningkat sehingga ia terhindar dari virus COVID-19.
+Boby merupakan seorang masyarakat biasa yang ingin memiliki pola hidup sehat sehingga terhindar dari virus COVID-19. Boby ingin makan-makanan yang sehat dan melakukan olahraga secara rutin, namun Boby tidak tahu dimana dia bisa mendapatkan resep makanan sehat sehingga dia tidak memiliki motivasi untuk berolahraga secara rutin. Boby yakin jika ia berolahraga secara rutin, maka ia akan terhindar dari virus COVID-19. 
 
-Goals:
-- Membantu Boby agar dapat minum minimal 8 gelas per hari.
-- Membantu Boby agar dapat menjaga daya tahan tubuh dengan mengkonsumsi vitamin setiap hari.
+Goals :
+- Membantu Boby menentukan kegiatan olahraga yang cocok untuknya.
+- Merekomendasikan resep makanan yang sehat untuk Boby.
+- Membantu Boby memiliki pola hidup sehat sehingga terhindar dari virus COVID-19.
 
-Motivations:
-- Memonitor jumlah air yang dikonsumsi Boby dalam sehari.
-- Memonitor vitamin yang telah dikonsumsi dalam sehari.
+Motivations :
+- Membuat personalization resep makanan untuk Boby berdasarkan preference yang dimilikinya.
+- Membuat list kegiatan olahraga yang cocok untuk Boby.
+- Menjaga motivasi Boby untuk terus berolahraga.
 
-Frustrations:
-- Boby sering merasa lemas, tidak fokus, dan mengalami dehidrasi.
+Frustrations :
+- Boby ingin sehat namun ia tidak mengetahui website apa yang dapat membantunya.
+- Boby merasa kebingungan dalam mencari resep makanan yang sehat dan enak.
+- Boby tidak mengetahui olahraga macam apa yang harus mulai ia lakukan.
+
 

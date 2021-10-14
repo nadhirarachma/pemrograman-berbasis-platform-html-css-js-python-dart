@@ -156,4 +156,9 @@ ENV/
 /workout/.idea/
 /workout/db.sqlite3/
 /workout/hello_name/migrations/*.py
+
+#Ignore files from summary
+/summary/.idea/
+/summary/db.sqlite3/
+/summary/hello_name/migrations/*.py
 db.sqlite3

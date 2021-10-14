@@ -19,12 +19,13 @@ Aplikasi ini membantu pengguna untuk memantau pola hidup sehat. Hal ini dilatarb
 
 
 ## 📝 Daftar Modul 
+- Login User
 - Home Page
 - Workout Tracker 
 - Sleep Tracker 
 - Food Recipe 
 - Activity Summary
-- Workout Support
+- Healthy Advice
 
 ## 👨‍👩‍👧‍👦 Persona
 **1. Udin Deyzel**

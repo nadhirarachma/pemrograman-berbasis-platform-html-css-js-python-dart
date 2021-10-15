@@ -161,4 +161,9 @@ ENV/
 /summary/.idea/
 /summary/db.sqlite3/
 /summary/hello_name/migrations/*.py
+
+#Ignore files from summary
+/accounts/.idea/
+/accounts/db.sqlite3/
+/accounts/hello_name/migrations/*.py
 db.sqlite3

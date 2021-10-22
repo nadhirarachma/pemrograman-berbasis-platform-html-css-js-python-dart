@@ -69,6 +69,7 @@
         */
     }
 
+
     .rc-info {
         margin-left: 0px;
         text-align: left;
@@ -115,13 +116,48 @@
         background-color: #f9c56a;
         margin-bottom: 50px;
     }
-
+    .recipie-content .btn-default:hover{
+        transform: scale(1.1);
+        transition: .4s;
+        opacity: 1;
+        overflow: hidden;
+    }
+    
     .recipie-content hr {
         margin: 70px 0px;
         border-color: #dedede;
         width: 98%;
     }
+    .favorite-recipie-container{
+    padding: 40px 0 95px;
+    }
+    .slider-img {
+    overflow: hidden;
+    width: 100%;
 
+    }
+
+    .slider-img img {
+        transform: scale(1);
+        transition: .4s;
+        opacity: 1;
+    }
+    .slides{
+        position: relative;
+        padding: 60px 0;
+    }   
+    .flexslider.special-slider .slides > li:hover .slider-img img {
+        transform: scale(1.1);
+        transition: .4s;
+        opacity: 0.9;
+    }
+    h3 {
+        font-weight: 800;
+        text-align: left;
+        font-size: 20px;
+        color: #4B4741;
+        margin: 0 0 23px;
+    }
     </style>
 </head>
 <body>
@@ -156,7 +192,7 @@
                                     <p> nanti rating disini </p>
                                 </div>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
-                                <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
+                                <a href="./recipe_detail_bruschetta.html" class ="btn btn-default"> View Details</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -219,7 +255,27 @@
                     </div>
                 </div>
             </section>
-
+            <section class="favorite-recipie-container">
+                <div class="container">
+                    <hr>
+                    <h3> Favorite Recipe </h3>
+                    <div class="row">
+                        <div class="favorite-recipie">
+                            <div class= "col-md-4">
+                                <div class= "flexslider special-slider">
+                                   <ul class="slides">
+                                       <li>
+                                           <div class="slider-img">
+                                            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/honey-walnut-shrimp-vertical-1548093886.png?crop=1xw:1xh;center,top&resize=980:*" alt="" />
+                                           </div>
+                                       </li>
+                                   </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
     </div>

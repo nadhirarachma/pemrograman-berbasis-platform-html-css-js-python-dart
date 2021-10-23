@@ -20,14 +20,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <!--Font Family-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400&display=swap" rel="stylesheet">
-
+        <!--Font Family Monsserat-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+        
         <style>
+            /* <!--Font Family RaleWay--> */
             @import url(https://fonts.googleapis.com/css?family=Raleway:900,800,700,600,400,300,200,100);
-            @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:700,600,400);
             h1,
             h2,
             h3,
@@ -45,6 +44,17 @@
                 color: #4b4741;
                 text-align: center;
                 font-weight: 800;
+                margin:0;
+                padding:0;
+            }
+
+            p {
+                font-family: "Montserrat", san-serif;
+                color: #828281;
+                font-size: 22px;
+            }
+            a {
+                text-decoration: none;
             }
             .body {
                 width: 100%;
@@ -57,9 +67,14 @@
                 background: #fff;
             }
             .page_header {
-                background: url(../static/img/header/1.jpg) no-repeat center top;
-                background-size: cover;
                 padding: 200px 0 150px;
+                color:white;
+                position: relative;
+                background-position:center;
+                background-size: cover;
+                background:black;
+                text-align: left;
+                
             }
 
             .page_header h1 {
@@ -75,7 +90,7 @@
                 font-size: 24px;
                 font-family: 'Raleway';
                 color: #fff;
-                opacity: 0.7;
+                opacity: 0.8;
             }
             .recipie-content {
                 padding: 85px 0;
@@ -122,7 +137,7 @@
                 line-height: 32px;
                 color: #4b4741;
                 padding-right: 29px;
-                font-family:"Josefin Sans", sans-serif;
+                font-family: "Montserrat", san-serif;
                 text-align: left;
             }
             .rc-ratings {
@@ -238,6 +253,8 @@
                 </div>
                 <!-- Page Header -->
                 <section class="page_header">
+                    <div class="overlay-image" style="background-image:url(../static/img/header/1.jpg)">
+                    </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">

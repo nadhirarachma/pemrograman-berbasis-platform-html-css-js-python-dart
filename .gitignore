@@ -8,6 +8,9 @@
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 
+# vscode
+.vscode
+
 # Sensitive or high-churn files:
 .idea/**/dataSources/
 .idea/**/dataSources.ids
@@ -162,8 +165,14 @@ ENV/
 /summary/db.sqlite3/
 /summary/hello_name/migrations/*.py
 
-#Ignore files from summary
+#Ignore files from accounts
 /accounts/.idea/
 /accounts/db.sqlite3/
 /accounts/hello_name/migrations/*.py
+db.sqlite3
+
+#Ignore files from recipe
+/recipe/.idea/
+/recipe/db.sqlite3/
+/recipe/hello_name/migrations/*.py
 db.sqlite3

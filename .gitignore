@@ -152,6 +152,11 @@ ENV/
 
 # End of https://www.gitignore.io/api/python,intellij+iml
 
+# staticfiles
+staticfiles
+staticfiles/
+.staticfiles/
+
 #Ignore files for home
 /home/.idea/
 /home/db.sqlite3/

@@ -178,3 +178,9 @@ db.sqlite3
 /recipe/db.sqlite3/
 /recipe/hello_name/migrations/*.py
 db.sqlite3
+
+#Ignore files from healthy_advice
+/healthy_advice/.idea/
+/healthy_advice/db.sqlite3/
+/healthy_advice/hello_name/migrations/*.py
+db.sqlite3

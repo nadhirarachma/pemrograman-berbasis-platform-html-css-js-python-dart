@@ -26,12 +26,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400&display=swap" rel="stylesheet">
 
         <style>
-                h3 {
-            font-weight: 800;
-            text-align: left;
-            font-size: 20px;
-            color: #4B4741;
-            margin: 0 0 23px;
+            @import url(https://fonts.googleapis.com/css?family=Raleway:900,800,700,600,400,300,200,100);
+            @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:700,600,400);
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .h1,
+            .h2,
+            .h3,
+            .h4,
+            .h5,
+            .h6 {
+                font-family: "Raleway", sans-serif;
+                text-transform: uppercase;
+                color: #4b4741;
+                text-align: center;
+                font-weight: 800;
             }
             .body {
                 width: 100%;
@@ -44,7 +57,7 @@
                 background: #fff;
             }
             .page_header {
-                background: url(../img/header/1.jpg) no-repeat center top;
+                background: url(../static/img/header/1.jpg) no-repeat center top;
                 background-size: cover;
                 padding: 200px 0 150px;
             }
@@ -69,7 +82,7 @@
             }
 
             .recipie-content img {
-                width: 96%;
+                width: 100%;
                 float: none;
                 margin-bottom: 20px;
 
@@ -110,7 +123,7 @@
                 color: #4b4741;
                 padding-right: 29px;
                 font-family:"Josefin Sans", sans-serif;
-
+                text-align: left;
             }
             .rc-ratings {
                 margin: 12px 0px 10px;
@@ -150,22 +163,47 @@
             .carousel-fade{
                 opacity: 1 !important;
             }
-            .carousel-item{
+            .carousel-item {
                 padding: 200px 0 150px;
                 color:white;
                 position: relative;
                 background-position:center;
                 background-size: cover;
                 background:black;
+                text-align: left;
 
             }
 
+            .carousel-favorite .btn-default{
+                color: white;
+                border: 1px solid #007BFF;
+                border-radius: 1px;
+                background-color: #007BFF;
+            }
+            .carousel-favorite h3{
+                font-weight: 800;
+                text-align: left;
+                font-size: 20px;
+                color: #4B4741;
+                margin: 0 0 23px;
+            }
+
+            .carousel-favorite p{
+                color: #fff;
+                text-align: left;
+            }
+            .carousel-favorite h1{
+                font-size: 40px;
+                line-height: 20px;
+                font-weight: 800;
+                color: #fff;
+                text-align: left;
+            }
             .container-carousel{
                 position:absolute;
                 bottom:0;
                 left:0;
                 right:0;
-                padding-bottom:50px;
                 margin-left:150px;
             }
             .overlay-image{
@@ -215,7 +253,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="../img/recipie/recipe1.jpg" alt="" />
+                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
                                 <div class="rc-info">
                                     <h2><b>Bruschetta Grilled Chicken </b></h2>
                                     <div class="rc-ratings">
@@ -226,7 +264,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../img/recipie/recipe2.png" alt="" />
+                                <img src="../static/img/recipie/recipe2.png" alt="" />
                                 <div class="rc-info">
                                     <h2><b>Honey Walnut Shrimp</b></h2>
                                     <div class="rc-ratings">
@@ -237,7 +275,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../img/recipie/recipe3.jpg" alt="" />
+                                <img src="../static/img/recipie/recipe3.jpg" alt="" />
                                 <div class="rc-info">
                                     <h2><b>Caprese Zoodles </b></h2>
                                     <div class="rc-ratings">
@@ -250,7 +288,7 @@
 
                             <hr>
                             <div class="col-md-4">
-                                <img src="../img/recipie/recipe1.jpg" alt="" />
+                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
                                 <div class="rc-info">
                                     <h2><b>Bruschetta Grilled Chicken</b></h2>
                                     <div class="rc-ratings">
@@ -265,7 +303,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../img/recipie/recipe1.jpg" alt="" />
+                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
                                 <div class="rc-info">
                                     <h2><b>Honey Walnut Shrimp</b></h2>
                                     <div class="rc-ratings">
@@ -280,7 +318,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../img/recipie/recipe1.jpg" alt="" />
+                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
                                 <div class="rc-info">
                                     <h2><b>Honey Walnut Shrimp</b></h2>
                                     <div class="rc-ratings">
@@ -310,7 +348,7 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="overlay-image" style="background-image:url(../img/slider/slider1.jpg)"></div>
+                                <div class="overlay-image" style="background-image:url(../static/img/slider/slider1.jpg)"></div>
                                 <div class="container-carousel">
                                     <h1>Example</h1>
                                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
@@ -318,11 +356,11 @@
                                 </div>
                             </div>
                             <div class="carousel-item" >
-                                <div class="overlay-image" style="background-image:url(../img/slider/slider2.jpg)"></div>
+                                <div class="overlay-image" style="background-image:url(../static/img/slider/slider2.jpg)"></div>
                                 <div class="container-carousel">
                                     <h1>Example</h1>
                                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href="./recipe_detail_bruschetta.html" class="btn btn-lg btn-primary"> View details</a>
+                                    <a href="./recipe_detail_bruschetta.html" class="btn btn-lg btn-default"> View details</a>
                                 </div>
                             </div>
                             <div class="carousel-item">

@@ -22,6 +22,6 @@ import recipe.urls as recipe
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include(authentication)),
-    re_path(r'^$', index, name='index'),
     path('recipe/', include(recipe)),
+    re_path(r'^$', index, name='index'),
 ]

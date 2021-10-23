@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 import accounts.urls as authentication
 from home.views import index
+import recipe.urls as recipe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include(authentication)),
-    re_path(r'^$', index, name='index')
+    re_path(r'^$', index, name='index'),
+    path('recipe/', include(recipe)),
 ]

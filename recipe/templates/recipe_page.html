@@ -3,6 +3,8 @@
 
     <head>
         <title>Nadi Recipe</title>
+        {% load static %}
+        <link rel = "stylesheet" type= "text/css" href="{% static 'style.css' %}">
 
         <!-- icons -->
         <script src="https://kit.fontawesome.com/0ab3514e4e.js" crossorigin="anonymous"></script>
@@ -24,12 +26,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400&display=swap" rel="stylesheet">
         
         <style>
-            h3 {
-                font-weight: 800;
-                text-align: left;
-                font-size: 20px;
-                color: #4B4741;
-                margin: 0 0 23px;
+                h3 {
+            font-weight: 800;
+            text-align: left;
+            font-size: 20px;
+            color: #4B4741;
+            margin: 0 0 23px;
             }
             .body {
                 width: 100%;
@@ -65,7 +67,7 @@
             .recipie-content {
                 padding: 85px 0;
             }
-            
+
             .recipie-content img {
                 width: 96%;
                 float: none;
@@ -93,7 +95,7 @@
                 margin-left: 296px;
                 */
             }
-            
+
 
             .rc-info h2 {
                 margin: 0;
@@ -113,7 +115,7 @@
             .rc-ratings {
                 margin: 12px 0px 10px;
             }
-            
+
             .recipie-content .btn-default {
                 color: #534120;
                 padding: 17px;
@@ -132,13 +134,13 @@
                 opacity: 1;
                 overflow: hidden;
             }
-            
+
             .recipie-content hr {
                 margin: 70px 0px;
                 border-color: #dedede;
                 width: 98%;
             }
-            
+
             .carousel-fade{
                 display: block;
                 opacity: 0;
@@ -184,9 +186,10 @@
                 color:red;
                 
             }
-
+        
         </style>
     </head>
+
     <body>
 
         <div class ="body">

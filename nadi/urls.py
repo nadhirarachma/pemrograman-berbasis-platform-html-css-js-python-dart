@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 import accounts.urls as authentication
+import healthy_advice.urls as healthy_advice
 from home.views import index
 import recipe.urls as recipe
 
@@ -23,5 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include(authentication)),
     path('recipe/', include(recipe)),
-    re_path(r'^$', index, name='index'),
+    path('healthy_advice/', include(healthy_advice)),
+    
+    re_path(r'^$', index, name='index')
 ]

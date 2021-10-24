@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'summary',
     'accounts',
     'recipe',
+    'healthy_advice',
 ]
 
 MIDDLEWARE = [

@@ -161,7 +161,8 @@
                 </div>
               </div>
               <div class="bintangbintang">
-                <form class='rate-form' action="" method="POST">
+                <!-- add id image -->
+                <form class='rate-form' action="" method="POST" id="apaya">
                   {% csrf_token %}
                   <button type= "submit" class="fa fa-star my-btn" id="first"></button>
                   <button type= "submit" class="fa fa-star my-btn" id="second"></button>
@@ -170,6 +171,8 @@
                   <button type= "submit" class="fa fa-star my-btn" id="fifth"></button>
                 </form>
               </div>
+              <br>
+              <div id="confirm-box"></div>
         </section>
 
         

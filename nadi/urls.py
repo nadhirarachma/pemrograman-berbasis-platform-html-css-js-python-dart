@@ -25,6 +25,5 @@ urlpatterns = [
     path('authentication/', include(authentication)),
     path('recipe/', include(recipe)),
     path('healthy_advice/', include(healthy_advice)),
-    
     re_path(r'^$', index, name='index')
 ]

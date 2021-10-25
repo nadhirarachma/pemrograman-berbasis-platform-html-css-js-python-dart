@@ -1,10 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>{{ hai }}</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <!-- Home page-->
+            <section class="home">
+                <div class="tittle-block">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="{% static 'img/nav-logo2.png' %}" alt="logo">
+                        </a>
+                    </div>
+                    <h1>e - Nadi </h1>
+                    <h2>your healthy support system</h2>
+                </div>
+                <div class="scroll-down">
+                    <a href="#about">
+                        <img src="{% static 'img/arrow-down.png' %}" alt="down-arrow">
+                    </a>
+                </div>
+            </section>
+
+            <!-- UPDATEEE -->
+            <section class="special">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header wow fadeInDown">
+                                <h1 class="white">Update !!!<small>The little things you may missed</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp">
+                        <div class="col-md-offset-1 col-md-10">
+                            <div class="flexslider special-slider">
+                                <ul class="slides">
+                                    <li>
+                                        <div class="slider-img">
+                                            <img src="{% static 'img/thumb4.png' %}" alt="" />
+                                        </div>
+                                        <div class="slider-content">
+                                            <div class="page-header">
+                                                <h1>home<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
+                                            </div>
+                                            <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                                            <a class="btn btn-secondary" href="./index.html" role="button">read more</a>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="slider-img">
+                                            <img src="{% static 'img/thumb4.png' %}" alt="" />
+                                        </div>
+                                        <div class="slider-content">
+                                            <div class="page-header">
+                                                <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
+                                            </div>
+                                            <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                                            <a class="btn btn-secondary" href="./index.html" role="button">read more</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="slider-img">
+                                            <img src="{% static 'img/thumb4.png' %}" alt="" />
+                                        </div>
+                                        <div class="slider-content">
+                                            <div class="page-header">
+                                                <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
+                                            </div>
+                                            <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                                            <a class="btn btn-secondary" href="./index.html" role="button">read more</a>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="direction-nav hidden-sm">
+                                    <div class="next">
+                                        <a><img src="{% static 'img/right-arrow.png' %}" alt="" /></a>
+                                    </div>
+                                    <div class="prev">
+                                        <a><img src="{% static 'img/left-arrow.png' %}" alt="" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About page-->
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header wow fadeInDown">
+                                <h1>Workout<small>stay healthy by tracking your workout activity.</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp">
+                        <div class="col-md-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12 hidden-sm about-photo">
+                                        <div class="image-thumb">
+                                            <img src="img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 about-photo hidden-xs">
+                                        <img src="img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
+                                    </div>
+                                    <div class="col-sm-6 about-photo hidden-xs">
+                                        <img src="img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                tudin sapien id luctus tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus, dapibus nec interdum eget, ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare mi. Etiam interdum ligula purus.
+                            </p>
+                            <br>
+                            <p>
+                                Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
+                            </p>
+                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header wow fadeInDown">
+                                <h1>Sleep<small>having enough sleep ?</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp">
+                        <div class="col-md-8">
+                            <p>
+
+                            </p>
+                            <br>
+                            <p>
+                                Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
+                            </p>
+                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12 hidden-sm about-photo">
+                                        <div class="image-thumb">
+                                            <img src="img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 about-photo hidden-xs">
+                                        <img src="img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
+                                    </div>
+                                    <div class="col-sm-6 about-photo hidden-xs">
+                                        <img src="img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header wow fadeInDown">
+                                <h1>the menu<small>trouble finding right diet ? why not try ours ??</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp">
+                        <div class="col-md-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12 hidden-sm about-photo">
+                                        <div class="image-thumb">
+                                            <img src="img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 about-photo hidden-xs">
+                                        <img src="img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
+                                    </div>
+                                    <div class="col-sm-6 about-photo hidden-xs">
+                                        <img src="img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                Cras ut viverra eros. Phasellus sollicitudin sapien id luctus tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus, dapibus nec interdum eget, ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare mi. Etiam interdum ligula purus.
+                            </p>
+                            <br>
+                            <p>
+                                Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
+                            </p>
+                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}
+

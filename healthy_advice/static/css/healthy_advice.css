@@ -13,3 +13,15 @@
 .checked {
     color: orange;
 }
+
+.my-btn {
+    background-color: inherit !important;
+    border: 0 !important; 
+}
+.bintangbintang {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}

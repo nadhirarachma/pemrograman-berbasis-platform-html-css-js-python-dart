@@ -18,11 +18,12 @@
      <link href="{% static 'css/healthy_advice.css' %}" rel="stylesheet">
      <!-- star rating -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <!-- javascript -->
-     <script src="{% static 'js/base.js' %}"></script>
-</head>
-<body>
-
-    {% block content %}{% endblock %}
+     <!-- gatau -->
+     <link rel="stylesheet" type="text/css" href="{% static 'starability-minified/starability-all.min.css' %}"/>
+    </head>
+    <body>
+        
+        {% block content %}{% endblock %}
+        <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>

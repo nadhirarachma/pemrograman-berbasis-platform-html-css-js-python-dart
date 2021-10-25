@@ -25,3 +25,12 @@
     align-items: center;
     flex-direction: row;
 }
+.futer {
+    flex-direction: column !important;
+}
+.judulkartu{
+    font-family: "Raleway", sans-serif !important;
+    text-transform: uppercase !important;
+    font-weight: bolder;
+    font-size:large;
+}

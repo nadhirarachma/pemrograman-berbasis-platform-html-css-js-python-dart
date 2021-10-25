@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.css'%}" />
     <link rel="stylesheet" href="{% static 'css/plugin.css'%}" /> 
     <link rel="stylesheet" href="{% static 'css/main.css'%}" />
+    {% block meta %} {% endblock %}
 </head>
 
 <body>
@@ -121,12 +122,12 @@
             <section class="footer" id="footer">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 futer">
                             <h1>About e-Nadi</h1>
                             <p>Pada pandemi Covid-19 yang terus menyerang penduduk dunia tanpa henti, kesehatan tubuh serta pola hidup sehat merupakan hal esensial yang harus dijaga.</p>
                             <a href="./base.html">Read more &rarr;</a>
                         </div>
-                        <div class="col-md-4  col-sm-6">
+                        <div class="col-md-4  col-sm-6 futer">
                             <h1>Recent post</h1>
                             <div class="footer-blog clearfix">
                                 <a href="PATH REDIRECT DISINI">
@@ -143,7 +144,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-4  col-sm-6">
+                        <div class="col-md-4  col-sm-6 futer">
                             <h1>Reach us</h1>
                             <div class="footer-social-icons">
                                 <a href="http://www.facebook.com">

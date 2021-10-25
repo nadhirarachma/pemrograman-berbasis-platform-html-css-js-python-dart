@@ -8,7 +8,7 @@ def healthy_advice(request):
 
 def rate_anu(request):
     if request.is_ajax():
-        el_id =request.POST.get('el_id')
+        el_id =request.POST.get('rate-form')
         val = request.POST.get('val')
         obj = Rating.objects.get(id=el_id)
         print(obj)

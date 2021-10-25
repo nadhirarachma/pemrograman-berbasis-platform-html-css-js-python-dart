@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 <html lang=en>
-
     <head>
         <title>Nadi Recipe</title>
         {% load static %}
@@ -171,7 +172,7 @@
                 width: 98%;
             }
 
-            .carousel-fade{
+            /* .carousel-fade{
                 display: block;
                 opacity: 0;
                 transition: opacity ease-out .7s;
@@ -179,7 +180,7 @@
 
             .carousel-fade{
                 opacity: 1 !important;
-            }
+            } */
             .carousel-item {
                 padding: 200px 0 150px;
                 color:white;
@@ -191,6 +192,9 @@
 
             }
 
+            .carousel-favorite{
+                padding: 85px 0;
+            }
             .carousel-favorite .btn-default{
                 color: white;
                 border: 1px solid #007BFF;
@@ -208,6 +212,7 @@
             .carousel-favorite p{
                 color: #fff;
                 text-align: left;
+                padding: 20px 0px;
             }
             .carousel-favorite h1{
                 font-size: 40px;
@@ -244,18 +249,12 @@
 
         </style>
     </head>
-
     <body>
-
         <div class ="body">
             <div class="main-wrapper">
-                <!-- Navbar -->
-                <div class="navbar">
-                    <h1 style="text-align: center;"> Navbar disini</h1>
-                </div>
                 <!-- Page Header -->
                 <section class="page_header">
-                    <div class="overlay-image" style="background-image:url(../static/img/header/1.jpg)">
+                    <div class="overlay-image" style="background-image:url(../static/img/header/satu.jpg)">
                     </div>
                     <div class="container">
                         <div class="row">
@@ -354,6 +353,7 @@
                         </div>
                     </div>
                 </section>
+                
                 <section class="carousel-favorite">
                 <!-- Carousel slider -->
                 <div class="container">
@@ -371,7 +371,7 @@
                                 <div class="container-carousel">
                                     <h1>Example</h1>
                                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href=# class="btn btn-lg btn-primary"> View details</a>
+                                    <a href=./recipe_detail_bruschetta.html class="btn btn-lg btn-primary"> View details</a>
                                 </div>
                             </div>
                             <div class="carousel-item" >
@@ -400,14 +400,11 @@
                         </a>
                     </div>
                 </div>
-
                 </section>
-
             </div>
         </div>
 
 
-
     </body>
-
 </html>
+{% endblock %}

@@ -83,6 +83,9 @@
     padding: 20px;
     border-radius: 12px;
     margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 .comment-box {
@@ -91,4 +94,8 @@
     align-content: center;
     justify-content: center;
     align-items: baseline;
+}
+.hihokartu:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }

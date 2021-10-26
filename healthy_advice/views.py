@@ -1,46 +1,43 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
 from django.http import response
-from django.http.response import HttpResponseRedirect
+from django.http.response import HttpResponseRedirect,  HttpResponse, JsonResponse
 from healthy_advice.models import CommentHealthy
 from healthy_advice.forms import NoteForm
 from django.http import HttpResponse, JsonResponse
+from django.core import serializers
 # from healthy_advice.models import Rating
 
 # Create your views here.
 def healthy_advice(request):
     notes = CommentHealthy.objects.all()
-    form = NoteForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/healthy_advice")
+    form = NoteForm()
+    if request.is_ajax():
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.commentator_name = request.user
+            # print(obj)
+            obj.save()
+            return HttpResponseRedirect("/healthy_advice")
+        
     response = {'notes' : notes, 'form' : form}
     return render(request, 'healthy_advice.html', response)
 
-def add_note(request):
-    response ={}
-    form = NoteForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/healthy_advice")
-    response ['form']= form
-    return render(request, 'healthy_advice_form.html', response)
+def get_all_comment(request):
+    all_comment = CommentHealthy.objects.all()
+    data = serializers.serialize('json', all_comment)
+    return HttpResponse(data, content_type="application/json")
 
-def note_list(request):
-    # ngeload
-    notes = CommentHealthy.objects.all()
-    response = {'notes': notes}
-    return render(request, 'healthy_advice_list.html', response)
+def delete_comment(request, id):
+    obj = get_object_or_404(CommentHealthy, id = id)
+    
+    if request.method == "POST":
+        # delete object
+        obj.delete()
+        
+    data = serializers.serialize('json', CommentHealthy.objects.all())
+
+    return HttpResponse(data, content_type='application/json')
 
 def manfaat_istirahat(request):
-    return render(request, 'article_1.html')
-
-# def rate_anu(request):
-#     if request.is_ajax():
-#         el_id =request.POST.get('rate-form')
-#         val = request.POST.get('val')
-#         obj = Rating.objects.get(id=el_id)
-#         print(obj)
-#         obj.save()
-#         return JsonResponse({'success' : 'true', 'score': val}, safe=False)
-
-#     return JsonResponse({'success' : 'false'})
+    return render(request, 'manfaat_istirahat.html')

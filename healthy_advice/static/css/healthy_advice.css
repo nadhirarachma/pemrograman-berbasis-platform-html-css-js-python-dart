@@ -33,4 +33,55 @@
     text-transform: uppercase !important;
     font-weight: bolder;
     font-size:large;
+    padding: 12px;
 }
+/* body {
+    background: #C8E6C9
+}
+
+.no-box-shadow {
+    box-shadow: none
+}
+
+.no-box-shadow:focus {
+    box-shadow: none
+}
+
+.day {
+    font-size: 9px
+}
+
+.heart {
+    border: 1px soild green !important;
+    border-color: green !important;
+    border-radius: 22px
+}
+
+.heart-icon {
+    color: green
+}
+
+.comment-text {
+    font-size: 12px
+}
+
+.delete {
+    font-size: 13px;
+    cursor: pointer
+} */
+
+/* .container-form{
+    min-width: -moz-available;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center;
+
+} */
+/* .formContainer{
+    padding: 20px;
+    border-radius: 12px;
+    margin: 24px 0;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+} */

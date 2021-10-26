@@ -1,0 +1,23 @@
+<div class="container-form" >
+	<section class = "formContainer" style="display: flex;justify-content: center;">
+		<form action="" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+			<div class = "subTitleForm">
+				<h4 style="justify-content: center;display: flex;">Leave a constructive comment below</h4> 
+			</div>
+			<!-- biar yang kayak gt gak kevalidasi -->
+			{% csrf_token %} 
+			<div class = "form-group form-wrapper" >
+				<div class="fieldWrapper">
+
+					{{ form.to.errors }}
+					<!-- <label 
+					for="{{ form.comment.id_for_label }}"
+					class="d-flex justify-content-start w-100">Leave a comment:</label> -->
+					<!-- class="d-flex justify-content-end w-100" -->
+					<div>{{form.comment_fieldt}}</div>
+				</div>
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</section>
+</div>

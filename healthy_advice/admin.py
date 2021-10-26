@@ -1,5 +1,5 @@
 from django.contrib import admin
-from healthy_advice.models import Rating
+from healthy_advice.models import Comment
 
 # Register your models here.
-admin.site.register(Rating)
+admin.site.register(Comment)

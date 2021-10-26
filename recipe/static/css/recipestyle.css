@@ -268,7 +268,8 @@ a {
     width: 35px;
     height: 35px;
     font-size: 20px;
-    line-height: 34px;
+    /* buat ngatur angka */
+    line-height: 40px; 
     font-weight: 500;
     border-radius: 50%;
     text-align: center;
@@ -276,6 +277,10 @@ a {
     content: counter(li-counter);
     counter-increment: li-counter;
     background-color: #000000;
+}
+.directions-list li{
+    margin-top:30px;
+
 }
 .single-recipe .heading-bottom-line {
     font-size: 16px;
@@ -313,7 +318,4 @@ a {
     margin-bottom: 30px;
     font-size: 17px;
     line-height: 27px;
-}
-
-.container-detail{
 }

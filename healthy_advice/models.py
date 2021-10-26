@@ -12,5 +12,5 @@ from django.db import models
 #     def __str__(self):
 #         return str(self.pk)
 
-class Comment(models.Model):
+class CommentHealthy(models.Model):
     comment_field = models.TextField()

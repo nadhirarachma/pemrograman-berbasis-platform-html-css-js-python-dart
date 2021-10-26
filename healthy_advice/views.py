@@ -1,15 +1,19 @@
 from django.shortcuts import render
 from django.http import response
 from django.http.response import HttpResponseRedirect
-from healthy_advice.models import Comment
+from healthy_advice.models import CommentHealthy
 from healthy_advice.forms import NoteForm
 from django.http import HttpResponse, JsonResponse
 # from healthy_advice.models import Rating
 
 # Create your views here.
 def healthy_advice(request):
-    notes = Comment.objects.all()
-    response = {'notes' : notes}
+    notes = CommentHealthy.objects.all()
+    form = NoteForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/healthy_advice")
+    response = {'notes' : notes, 'form' : form}
     return render(request, 'healthy_advice.html', response)
 
 def add_note(request):
@@ -18,12 +22,12 @@ def add_note(request):
     if form.is_valid():
         form.save()
         return HttpResponseRedirect("/healthy_advice")
-    response['form']= form
+    response ['form']= form
     return render(request, 'healthy_advice_form.html', response)
 
 def note_list(request):
     # ngeload
-    notes = Comment.objects.all()
+    notes = CommentHealthy.objects.all()
     response = {'notes': notes}
     return render(request, 'healthy_advice_list.html', response)
 

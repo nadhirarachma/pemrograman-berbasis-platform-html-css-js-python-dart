@@ -70,18 +70,25 @@
     cursor: pointer
 } */
 
-/* .container-form{
+.container-form{
     min-width: -moz-available;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-} */
-/* .formContainer{
+}
+.formContainer{
     padding: 20px;
     border-radius: 12px;
     margin: 24px 0;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-} */
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+}
+.comment-box {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
+}

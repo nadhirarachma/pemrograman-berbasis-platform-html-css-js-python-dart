@@ -163,6 +163,7 @@ a {
     border: 1px solid #007BFF;
     border-radius: 1px;
     background-color: #007BFF;
+    padding-bottom:20px;
 }
 .carousel-favorite h3{
     font-weight: 800;
@@ -175,7 +176,7 @@ a {
 .carousel-favorite p{
     color: #fff;
     text-align: left;
-    padding: 20px 0px;
+    padding: 40px 0px;
 }
 .carousel-favorite h1{
     font-size: 40px;
@@ -209,4 +210,111 @@ a {
 .fas{
     color:red;
 
+}
+.single-recipe-image {
+    padding: 12px;
+    border: 1px solid #F1F1F1;
+    margin: 0 0 25px;
+    width: 100%;
+    float: none;
+}
+.ingredients {
+    padding: 27px 29px;
+    margin-bottom: 40px;
+    border-top: 1px solid #F9C56A;
+    background-color: #f9f9f9;
+}
+.ingredients .title {
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients li {
+    margin-bottom: 17px;
+    font-family: josefin Sans;
+    font-size: 17px;
+}
+
+.ingredients .fa {
+    font-size: 24px;
+}
+.directions-list {
+    list-style-type: none;
+    margin: 0 0 40px;
+    padding: 0;
+    color: #424242;
+    counter-reset: li-counter;
+}
+
+.directions-list > li {
+    position: relative;
+    margin-bottom: 28px;
+    padding-left: 70px;
+    font-family: josefin Sans;
+    font-size: 16px;
+}
+
+.directions-list > li:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 34px;
+    font-weight: 500;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+    background-color: #000000;
+}
+.single-recipe .heading-bottom-line {
+    font-size: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 0px;
+}
+
+.single-recipe {
+    padding-bottom: 40px;
+    margin-top:80px;
+    background-color: #fff;
+}
+
+.single-recipe h1,
+.single-recipe h2,
+.single-recipe h3,
+.single-recipe h4,
+.single-recipe h5,
+.single-recipe h6,
+.single-recipe .h1,
+.single-recipe .h2,
+.single-recipe .h3,
+.single-recipe .h4,
+.single-recipe .h5,
+.single-recipe .h6 {
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.single-recipe h3 {
+    margin-top: 0px;
+}
+
+.single-recipe p {
+    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 27px;
+}
+
+.container-detail{
+    margin-top:710px;
 }

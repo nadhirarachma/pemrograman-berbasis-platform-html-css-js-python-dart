@@ -23,7 +23,7 @@
 
             
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+            <nav class="navbar navbar-expand-lg fixed-top bg-dark" id="navbar">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggler dropdown" data-toggle="dropdown" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -45,8 +45,6 @@
                                     <li><a href="PATH REDIRECT DISINI">Home 1</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Home 2</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Home 3</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Home 4</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Home 5</a></li>
                                    
                                 </ul>
                             </li>
@@ -55,9 +53,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="PATH REDIRECT DISINI">Workout 1</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Workout 2</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Workout 3</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Workout 4</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Workout 5</a></li>                                 
+                                    <li><a href="PATH REDIRECT DISINI">Workout 3</a></li>                              
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -65,10 +61,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="PATH REDIRECT DISINI">Sleep 1</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Sleep 2</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Sleep 3</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Sleep 4</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Sleep 5</a></li>
-                                    
+                                    <li><a href="PATH REDIRECT DISINI">Sleep 3</a></li>                                  
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -77,8 +70,6 @@
                                     <li><a href="PATH REDIRECT DISINI">Recipe 1</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Recipe 2</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Recipe 3</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Recipe 4</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Recipe 5</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -86,9 +77,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="PATH REDIRECT DISINI">Activity 1</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Activity 2</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Activity 3</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Activity 4</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Activity 5</a></li>                  
+                                    <li><a href="PATH REDIRECT DISINI">Activity 3</a></li>                 
                                 </ul>
                             </li>
                            
@@ -98,10 +87,17 @@
                                     <li><a href="PATH REDIRECT DISINI">Advice 1</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Advice 2</a></li>
                                     <li><a href="PATH REDIRECT DISINI">Advice 3</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Advice 4</a></li>
-                                    <li><a href="PATH REDIRECT DISINI">Advice 5</a></li>
                                 </ul>
-                            </li>                        
+                            </li>   
+                            
+                            <li class="dropdown">
+                                <a href="../../accounts/templates/accounts/register.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                </ul>
+                            </li>   
+                            
                         </ul>
                     </div>
                     <!--/.navbar-collapse -->

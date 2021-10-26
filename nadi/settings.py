@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'recipe',
     'healthy_advice',
+    'sleep',
 ]
 
 MIDDLEWARE = [

@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import CreateUserForm
 
+from home.views import index as welcome
+
 def registerPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -55,6 +57,6 @@ def logoutUser(request):
 
 def home(request):
 	if request.user.is_authenticated:
-		return render(request, 'index.html')
+		return redirect(welcome)
 	else:
 		return redirect('login')

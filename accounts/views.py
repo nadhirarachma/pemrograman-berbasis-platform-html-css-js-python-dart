@@ -55,11 +55,6 @@ def logoutUser(request):
 
 def home(request):
 	if request.user.is_authenticated:
-		nama_depan = request.user.first_name
-		nama_belakang = request.user.last_name
-		fullname = nama_depan + " " + nama_belakang
-
-		context = {'nama_user': fullname}
-		return render(request, 'accounts/home.html', context)
+		return render(request, 'index.html')
 	else:
 		return redirect('login')

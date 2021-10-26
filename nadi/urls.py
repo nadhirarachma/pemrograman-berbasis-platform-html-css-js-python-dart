@@ -1,5 +1,4 @@
 """nadi URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -17,13 +16,15 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 import accounts.urls as authentication
 import healthy_advice.urls as healthy_advice
-from home.views import index
 import recipe.urls as recipe
+import summary.urls as summary
+from home.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include(authentication)),
     path('recipe/', include(recipe)),
     path('healthy_advice/', include(healthy_advice)),
+    path('summary/', include(summary)),
     re_path(r'^$', index, name='index')
 ]

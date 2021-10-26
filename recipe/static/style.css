@@ -1,9 +1,33 @@
-h3 {
+/* <!--Font Family RaleWay--> */
+@import url(https://fonts.googleapis.com/css?family=Raleway:900,800,700,600,400,300,200,100);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    color: #4b4741;
+    text-align: center;
     font-weight: 800;
-    text-align: left;
-    font-size: 20px;
-    color: #4B4741;
-    margin: 0 0 23px;
+    margin:0;
+    padding:0;
+}
+
+p {
+    font-family: "Montserrat", san-serif;
+    color: #828281;
+    font-size: 22px;
+}
+a {
+    text-decoration: none;
 }
 .body {
     width: 100%;
@@ -16,16 +40,23 @@ h3 {
     background: #fff;
 }
 .page_header {
-    background-size: cover;
     padding: 200px 0 150px;
+    color:white;
+    position: relative;
+    background-position:center;
+    background-size: cover;
+    background:black;
+    text-align: left;
+    
 }
 
 .page_header h1 {
-    margin: 0;
+    margin: auto;
     font-size: 70px;
     line-height: 70px;
-    font-weight: 900;
+    font-weight: 800;
     color: #fff;
+    text-align: center;
 }
 
 .page_header p {
@@ -33,22 +64,23 @@ h3 {
     font-size: 24px;
     font-family: 'Raleway';
     color: #fff;
-    opacity: 0.7;
+    opacity: 0.8;
+    text-align: center;
 }
 .recipie-content {
     padding: 85px 0;
 }
 
 .recipie-content img {
-    width: 96%;
+    width: 100%;
     float: none;
     margin-bottom: 20px;
-    
-    
-    /* 
+
+
+    /*
     margin-bottom: 20px;
     float: left;
-    width: 254px;        
+    width: 254px;
     */
 }
 
@@ -56,8 +88,8 @@ h3 {
 .rc-info {
     margin-left: 0px;
     text-align: left;
-    
-    /* 
+
+    /*
     margin-left: 296px;
     text-align: left;
     width: 40.5%;
@@ -80,8 +112,8 @@ h3 {
     line-height: 32px;
     color: #4b4741;
     padding-right: 29px;
-    font-family:"Josefin Sans", sans-serif;
-
+    font-family: "Montserrat", san-serif;
+    text-align: left;
 }
 .rc-ratings {
     margin: 12px 0px 10px;
@@ -97,7 +129,7 @@ h3 {
     font-weight: 700;
     margin-top: 12px;
     background-color: #f9c56a;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .recipie-content .btn-default:hover{
     transform: scale(1.1);
@@ -112,32 +144,53 @@ h3 {
     width: 98%;
 }
 
-.carousel-fade{
-    display: block;
-    opacity: 0;
-    transition: opacity ease-out .7s;
-}
-
-.carousel-fade{
-    opacity: 1 !important;
-}
-.carousel-item{
-    padding: 200px 0 150px;
+.carousel-item {
+    padding: 350px 0 150px;
     color:white;
     position: relative;
     background-position:center;
     background-size: cover;
     background:black;
-    
+    text-align: left;
+
 }
 
+.carousel-favorite{
+    padding: 70px 0;
+}
+.carousel-favorite .btn-default{
+    color: white;
+    border: 1px solid #007BFF;
+    border-radius: 1px;
+    background-color: #007BFF;
+}
+.carousel-favorite h3{
+    font-weight: 800;
+    text-align: left;
+    font-size: 20px;
+    color: #4B4741;
+    margin: 0 0 23px;
+}
+
+.carousel-favorite p{
+    color: #fff;
+    text-align: left;
+    padding: 20px 0px;
+}
+.carousel-favorite h1{
+    font-size: 40px;
+    line-height: 20px;
+    font-weight: 800;
+    color: #fff;
+    text-align: left;
+}
 .container-carousel{
     position:absolute;
     bottom:0;
     left:0;
     right:0;
-    padding-bottom:50px;
     margin-left:150px;
+    margin-bottom:80px
 }
 .overlay-image{
     position: absolute;
@@ -155,5 +208,5 @@ h3 {
 }
 .fas{
     color:red;
-    
+
 }

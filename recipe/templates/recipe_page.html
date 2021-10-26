@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <html lang=en>
     <head>
         <title>Nadi Recipe</title>
-        {% load static %}
         <link rel = "stylesheet" type= "text/css" href="{% static 'style.css' %}">
 
         <!-- icons -->
@@ -13,13 +13,6 @@
         <!-- Responsive Tag -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Bootstrap CSS & Script-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <!--Font Family Monsserat-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
@@ -157,7 +150,7 @@
                 font-weight: 700;
                 margin-top: 12px;
                 background-color: #f9c56a;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
             .recipie-content .btn-default:hover{
                 transform: scale(1.1);
@@ -172,17 +165,8 @@
                 width: 98%;
             }
 
-            /* .carousel-fade{
-                display: block;
-                opacity: 0;
-                transition: opacity ease-out .7s;
-            }
-
-            .carousel-fade{
-                opacity: 1 !important;
-            } */
             .carousel-item {
-                padding: 200px 0 150px;
+                padding: 350px 0 150px;
                 color:white;
                 position: relative;
                 background-position:center;
@@ -193,7 +177,7 @@
             }
 
             .carousel-favorite{
-                padding: 85px 0;
+                padding: 70px 0;
             }
             .carousel-favorite .btn-default{
                 color: white;
@@ -227,6 +211,7 @@
                 left:0;
                 right:0;
                 margin-left:150px;
+                margin-bottom:80px
             }
             .overlay-image{
                 position: absolute;
@@ -259,7 +244,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <h1 class="text-uppercase"> Recipies</h1>
+                                <h1 class="text-uppercase"> Recipes</h1>
                                 <p> ㅤHealtyh Food Bring Healthy Life</p>
                             </div>
                         </div>
@@ -278,7 +263,7 @@
                                         <span class="fas fa-heart fa-lg"> 86</span>
                                     </div>
                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
-                                    <a href="./recipe_detail_bruschetta.html" class ="btn btn-default"> View Details</a>
+                                    <a href="http://localhost:8000/recipe/bruschetta/ class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -289,7 +274,7 @@
                                         <span class="fas fa-heart fa-lg"> 106</span>
                                     </div>
                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
-                                    <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
+                                    <a href="recipe_detail_bruschetta.html"" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -355,11 +340,18 @@
                 </section>
                 
                 <section class="carousel-favorite">
+                <!-- Bootstrap CSS & Script-->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
                 <!-- Carousel slider -->
                 <div class="container">
                     <hr>
-                    <h3>Featured Recipe</h3>
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval ="8000">
+                    <h3>Favorite Recipe</h3>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>

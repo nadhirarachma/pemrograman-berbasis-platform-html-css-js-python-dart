@@ -7,7 +7,7 @@ def index(request):
         full_name = request.user.get_full_name()
 
         context = {'nama_user':full_name}
-        return render(request, 'welcome.html', context)
+        return render(request, 'index(authenticated).html', context)
     else:
         return render(request, 'index.html')
 	

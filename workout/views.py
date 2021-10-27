@@ -21,7 +21,7 @@ def new_workout(request):
 
     if form.is_valid():
         form.save()
-        return redirect('w_index')
+        return redirect('w_page')
 
     context['form'] = form
     return render(request, "workout_new.html", context)
@@ -35,7 +35,7 @@ def update_workout(request):
     if form.is_valid():
         exercise.time += form.cleaned_data['time']
         exercise.save()
-        return redirect('w_index')
+        return redirect('w_page')
 
     context['form'] = form
     return render(request, "workout_update.html", context)

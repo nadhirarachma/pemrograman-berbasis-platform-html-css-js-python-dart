@@ -17,3 +17,6 @@ def recipe_detail_salad(request):
 
 def recipe_detail_greek_chicken(request):
     return render(request, 'recipe_detail_greek_chicken.html')  
+
+def recipe_detail_salmon(request):
+    return render (request, 'recipe_detail_salmon.html')

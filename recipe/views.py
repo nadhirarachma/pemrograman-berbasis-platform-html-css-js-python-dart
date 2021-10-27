@@ -7,3 +7,10 @@ def recipe_page(request):
 
 def recipe_detail_bruschetta(request):
     return render(request, 'recipe_detail_bruschetta.html')
+
+
+def recipe_detail_shrimp(request):
+    return render(request, 'recipe_detail_shrimp.html')
+
+def recipe_detail_bruschetta(request):
+    return render(request, 'recipe_detail_bruschetta.html')  

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Edit Profile</title>
+        <title>Complete Profile</title>
         <link rel="stylesheet" href="{% static 'css/summary.css' %}" />
     </head>
     
@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="page-header wow fadeInDown">
-                                        <h1>Hello, {{username}}!<small>Edit Your Profile</small></h1>
+                                        <h1>Hello, {{username}}!<small>Complete Your Profile</small></h1>
                                     </div>
                                 </div>
                             </div>
@@ -44,11 +44,9 @@
                                                                     <div class="col-sm-3">
                                                                         <h6 class="mb-0" style="font-size: 15px;">User name</h6>
                                                                     </div>
-                                                                    <div class="col-sm-9 text-secondary">
-                                                                        {{ user_form.username }}
-                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary"> {{username}} </div>
                                                                 </div>
-                                                            
+                                                                <hr>
                                                                 <div class="row mb-3">
                                                                     <div class="col-sm-3">
                                                                         <h6 class="mb-0"  style="font-size: 14px;">Gender (M/F)</h6>
@@ -95,32 +93,20 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
 
-                                                        <div class="row mb-3">
+                                                        <div class="row">
                                                             <div class="col-sm-3">
-                                                                <h6 class="mb-0" style="font-size: 15px;">First Name</h6>
+                                                            <h6 class="mb-0">Full Name</h6>
                                                             </div>
-                                                            <div class="col-sm-9 text-secondary">
-                                                                {{ user_form.first_name }}
-                                                            </div>
+                                                            <div class="col-sm-9 text-secondary"> {{full_name}} </div>
                                                         </div>
-
-                                                        <div class="row mb-3">
+                                                        <hr>
+                                                        <div class="row">
                                                             <div class="col-sm-3">
-                                                                <h6 class="mb-0" style="font-size: 15px;">Last Name</h6>
+                                                            <h6 class="mb-0">Email</h6>
                                                             </div>
-                                                            <div class="col-sm-9 text-secondary">
-                                                                {{ user_form.last_name }}
-                                                            </div>
+                                                            <div class="col-sm-9 text-secondary"> {{email}} </div>
                                                         </div>
-
-                                                        <div class="row mb-3">
-                                                            <div class="col-sm-3">
-                                                                <h6 class="mb-0" style="font-size: 15px;">Email</h6>
-                                                            </div>
-                                                            <div class="col-sm-9 text-secondary">
-                                                                {{ user_form.email }}
-                                                            </div>
-                                                        </div>
+                                                        <hr>
 
                                                         <div class="row mb-3">
                                                             <div class="col-sm-3">

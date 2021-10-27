@@ -1,6 +1,6 @@
 from django.forms.models import ModelForm
 from django import forms
-from .models import Exercise, Time
+from .models import Exercise
 
 class ExerciseForm(ModelForm):
     class Meta:

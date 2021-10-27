@@ -189,3 +189,9 @@ db.sqlite3
 /healthy_advice/db.sqlite3/
 /healthy_advice/hello_name/migrations/*.py
 db.sqlite3
+
+#Ignore files from sleep
+/sleep/.idea/
+/sleep/db.sqlite3/
+/sleep/hello_name/migrations/*.py
+db.sqlite3

@@ -14,6 +14,9 @@ from .forms import CreateUserForm
 
 from home.views import index as welcome
 
+# workout
+from workout.models import Exercise
+
 def registerPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -22,9 +25,12 @@ def registerPage(request):
 		if request.method == 'POST':
 			form = CreateUserForm(request.POST)
 			if form.is_valid():
-				form.save()
-				user = form.cleaned_data.get('username')
-				messages.success(request, 'Account was created for ' + user)
+				user = form.save()
+				username = form.cleaned_data.get('username')
+				messages.success(request, 'Account was created for ' + username)
+				Exercise.objects.create(
+					user=user,
+				)
 
 				return redirect('login')
 			

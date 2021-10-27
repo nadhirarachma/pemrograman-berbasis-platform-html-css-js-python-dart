@@ -171,24 +171,25 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Comment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    {{form.comment_field}}
+                    <form method="POST" id="form-update">
+                      <textarea name="" id="editText" cols="30" rows="10"></textarea>
+                      <button type="submit" class="btn btn-primary" id="submitbutton" data-bs-dismiss="modal">Post</button>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
                   </div>
                 </div>
               </div>
             </div>
             </div>
-        </section>
-
-        
+        </section>  
     </div>
+    
 
     
       <script>
@@ -208,24 +209,46 @@
           );
   }
   const insertComment = (result) => {
-    return $("#kartu-comment").append(`
-    <div class="p-3 bg-white mt-2 rounded">
-        <div class="d-flex justify-content-between" style = "gap: 12px;">
-            <div class="d-flex flex-row user">
-                <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.commentator_name}</span><span class="day">1 day ago</span></div>
-            </div>
-            <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right">
-              <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" value=${result.pk}>
-              Edit
-            </button>
+    let is_user = false
+    if (result.fields.commentator_name == "{{request.user}}"){
+      is_user = true
+    }
+
+    if (is_user){
+      return $("#kartu-comment").append(`
+      <div class="p-3 bg-white mt-2 rounded">
+          <div class="d-flex justify-content-between" style = "gap: 12px;">
+              <div class="d-flex flex-row user">
+                  <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.commentator_name}</span><span class="day">1 day ago</span></div>
               </div>
-        </div>
-        <div class="comment-text text-justify mt-2">
-            <p>${result.fields.comment_field}</p>
-        </div>
-    </div>`)
+              <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right" style = "gap: 50px">
+                <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id = "editbutton" value=${result.pk}>
+                Edit
+              </button>
+                </div>
+          </div>
+          <div class="comment-text text-justify mt-2">
+              <p>${result.fields.comment_field}</p>
+          </div>
+      </div>`)
+      
+    }
+    else{
+      return $("#kartu-comment").append(`
+      <div class="p-3 bg-white mt-2 rounded">
+          <div class="d-flex justify-content-between" style = "gap: 12px;">
+              <div class="d-flex flex-row user">
+                  <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.commentator_name}</span><span class="day">1 day ago</span></div>
+              </div>
+          </div>
+          <div class="comment-text text-justify mt-2">
+              <p>${result.fields.comment_field}</p>
+          </div>
+      </div>`)
+    }
   }
+  
   getMessageData(); 
 
   $(document).ready(function () {
@@ -275,7 +298,52 @@ $('#submitbutton').click(function(e){
   // $("#kartu-comment").empty();
   // console.log("halo dunia")
   // getMessageData()
-})
+});
+let editID = "";
+$(document).ready(function () {
+  $("#kartu-comment").on('click', '#editbutton', function() {
+      editID = $(this).attr("value");
+      console.log("haloooo")
+  });
+});
+
+// dijalankan ketika kita men-submit form
+$("#form-update").submit(function(e) {
+   // preventing from page reload and default actions
+  e.preventDefault();
+  console.log("HMDDDHDKSD")
+  // mendapatkan value dari masing-masing comment
+  comment_value = $("#editText").val()
+
+  $.ajax({
+    type: 'POST',
+    url: `/healthy_advice/edit/${editID}`,
+    data: {
+      // add request body with input value and csrf token
+      'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+      'comment_field': comment_value
+    },
+    success: function (response) {
+      // kita kosongin inputnya lagi abis berhasil nembak
+      $("#editText").val("") 
+      // $('#submitbutton').attr("data-bs-dismiss", "modal")
+
+      $("#kartu-comment").empty();
+      $.ajax({
+          url: "/healthy_advice/get_all_comment", 
+          success: function(results){
+              results.map((result)=>{
+                insertComment(result);
+              }
+            )
+          }
+        }
+      );
+    },
+  })
+});
+
+
 
 
 

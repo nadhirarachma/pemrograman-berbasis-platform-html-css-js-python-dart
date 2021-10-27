@@ -1,5 +1,6 @@
 <div class="container-form" >
 	<section class = "formContainer" style="display: flex;justify-content: center;">
+		{% if user.is_authenticated %}
 		<form action="" method="POST" style="display: flex; flex-direction: column; gap: 16px;" class = "align-items-center">
 			<div class = "subTitleForm">
 				<h4 style="justify-content: center;display: flex;">Leave a constructive comment below</h4> 
@@ -18,13 +19,20 @@
 				</div>
 			</div>
 			<div>
-				<input type="submit" value="Submit" id="submitbutton">
+				<input type="submit" value="Post" id="submitbutton">
 			</div>
 		</form>
-		<div class="container mt-5 mb-5">
-                <div class="d-flex justify-content-center row">
-                    <div class="col-md-8" id = "kartu-comment">
-                    </div>
-                </div>
 	</section>
+</div>
+<!-- <a href="#myDonasi">
+	<input type="submit" value="Post" id="submitbutton">
+</a> -->
+{% else %}
+<p class="p20px">Please login to add a comment</p>
+{% endif %}
+<div class="container mt-5 mb-5">
+		<div class="d-flex justify-content-center row">
+			<div class="col-md-8" id = "kartu-comment">
+			</div>
+		</div>
 </div>

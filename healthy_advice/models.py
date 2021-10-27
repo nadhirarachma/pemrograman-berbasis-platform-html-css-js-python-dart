@@ -18,6 +18,7 @@ from django.contrib.auth.models import User
 
 
 class CommentHealthy(models.Model):
-    commentator_name = models.ForeignKey(User, on_delete=models.CASCADE, default="", null=True)
+    commentator_name = models.CharField(max_length=100, null=True)
+    # commentator_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='commentator_name')
     comment_field = models.TextField()
 

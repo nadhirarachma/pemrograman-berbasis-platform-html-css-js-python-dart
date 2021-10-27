@@ -71,13 +71,8 @@
 } */
 
 .container-form{
-    min-width: -moz-available;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
 }
 .formContainer{
     padding: 20px;

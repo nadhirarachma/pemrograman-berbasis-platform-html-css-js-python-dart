@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Workout: New Day</title>
 </head>
 <body>
-
+    <form method="post">
+      {% csrf_token %}
+      {{form.today}}
+      {{form.time}}
+      <input type="submit">
+    </form>
 </body>
 </html>

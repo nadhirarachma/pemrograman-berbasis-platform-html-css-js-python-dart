@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Workout Page</title>
 </head>
 <body>
-
+    <h1>What would you like to do?</h1>
+    <a href="{% url 'w_new' %}">Start a New Day</a>
+    <p>Start a new workout time tracker for the day.</p>
+    <a href="{% url 'w_update' %}">Update Today</a>
+    <p>Update the day's workout time tracker. How long have you done your workout regime?</p>
 </body>
 </html>

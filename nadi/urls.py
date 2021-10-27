@@ -20,6 +20,7 @@ import recipe.urls as recipe
 import summary.urls as summary
 from home.views import index
 import home.urls as home
+import workout.urls as home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,6 @@ urlpatterns = [
     path('healthy_advice/', include(healthy_advice)),
     path('summary/', include(summary)),
     path('home/', include(home)),
+    path('workout/', include(workout)),
     re_path(r'^$', index, name='index')
 ]

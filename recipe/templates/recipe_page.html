@@ -7,8 +7,6 @@
         <title>Nadi Recipe</title>
         <link rel = "stylesheet" type= "text/css" href="{% static 'css/recipestyle.css' %}">
 
-        <!-- icons -->
-        <script src="https://kit.fontawesome.com/0ab3514e4e.js" crossorigin="anonymous"></script>
 
         <!-- Responsive Tag -->
         <meta charset="utf-8">
@@ -17,13 +15,6 @@
         <!--Font Family Monsserat-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
-        <style>
-            .single-recipe-image {
-    padding: 12px;
-    border: 1px solid #F1F1F1;
-    margin: 0 0 25px;
-}
-        </style>
     </head>
     <body>
         <div class ="body">
@@ -47,44 +38,60 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
+                                <img src= {% static '/img/recipie/recipe1.jpg' %} alt="" />
                                 <div class="rc-info">
                                     <h2><b>Bruschetta Grilled Chicken </b></h2>
                                     <div class="rc-ratings">
-                                        <span class="fas fa-heart fa-lg"> 86</span>
+                                        <span class="fas fa-heart "> 86</span>
                                     </div>
-                                    <p>Bruschetta Grilled Chicken adalah hidangan pembuka berasal dari Italia di mana Anda membumbui</p>
+                                    <p>Bruschetta Grilled Chicken adalah hidangan pembuka berasal dari Italia, yang lezat dan cocok pada musim panas.</p>
                                     <a href="/recipe/bruschetta" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../static/img/recipie/recipe2.png" alt="" />
+                                <img src={% static '/img/recipie/recipe2.png' %} alt="" />
                                 <div class="rc-info">
                                     <h2><b>Honey Walnut Shrimp</b></h2>
                                     <div class="rc-ratings">
-                                        <span class="fas fa-heart fa-lg"> 106</span>
+                                        <span class="fas fa-heart "> 106</span>
                                     </div>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
+                                    <p>Hidangan ini adalah hidangan populer berasal dari Hong Kong yang sering disajikan pada banyak restorant.</p>
                                     <a href="/recipe/honey-walnut-shrimp" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../static/img/recipie/recipe3.jpg" alt="" />
+                                <img src={% static '/img/recipie/recipe3.jpg' %} alt="" />
                                 <div class="rc-info">
-                                    <h2><b>Caprese Zoodles </b></h2>
+                                    <h2><b>Salad Caprese Zoodles </b></h2>
                                     <div class="rc-ratings">
                                         <span class="fas fa-heart fa-lg"> 86</span>
                                     </div>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
-                                    <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
+                                    <p> Salad Caprese Zoodle adalah salad Italia sederhana.Salad ini Biasanya diatur di atas piring dalam praktik restoran.</p>
+                                    <a href="/recipe/salad-caprese-zoodles/" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
 
                             <hr>
                             <div class="col-md-4">
-                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
+                                <img src={% static '/img/recipie/recipe4.jpg' %} alt="" />
                                 <div class="rc-info">
-                                    <h2><b>Bruschetta Grilled Chicken</b></h2>
+                                    <h2><b>Garlicky Greek Chicken</b></h2>
+                                    <div class="rc-ratings">
+                                        
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star "></span>
+                                        <span class="fa fa-star "></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p>Terinspirasi oleh masakan populer di Yunani, resep paha ayam yang mudah ini akan menjadi favorit baru untuk kamu. </p>
+                                    <a href="/recipe/garlicky-greek-chicken/" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src={% static '/img/recipie/recipe5.jpg' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b>Salmon Panggang</b></h2>
                                     <div class="rc-ratings">
                                         <span class="fa fa-star"></span>
                                         <span class="fa fa-star"></span>
@@ -92,27 +99,12 @@
                                         <span class="fa fa-star "></span>
                                         <span class="fa fa-star"></span>
                                     </div>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
+                                    <p>Salmon panggang yang sehat ini adalah cara terbaik untuk memberi makan orang banyak. Sederhana dan lezat.</p>
                                     <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
-                                <div class="rc-info">
-                                    <h2><b>Honey Walnut Shrimp</b></h2>
-                                    <div class="rc-ratings">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star "></span>
-                                        <span class="fa fa-star "></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
-                                    <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="../static/img/recipie/recipe1.jpg" alt="" />
+                                <img src={% static '/img/recipie/recipe3.jpg' %} alt="" />
                                 <div class="rc-info">
                                     <h2><b>Honey Walnut Shrimp</b></h2>
                                     <div class="rc-ratings">
@@ -154,7 +146,7 @@
                                 <div class="container-carousel">
                                     <h1>Example</h1>
                                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href=./recipe_detail_bruschetta.html class="btn btn-lg btn-primary"> View details</a>
+                                    <a href="/recipe/bruschetta" class="btn btn-lg btn-primary"> View details</a>
                                 </div>
                             </div>
                             <div class="carousel-item" >
@@ -162,7 +154,7 @@
                                 <div class="container-carousel">
                                     <h1>Example</h1>
                                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href="./recipe_detail_bruschetta.html" class="btn btn-lg btn-primary"> View details</a>
+                                    <a href="/recipe/honey-walnut-shrimp"  class="btn btn-lg btn-primary"> View details</a>
                                 </div>
                             </div>
                             <div class="carousel-item">

@@ -193,7 +193,7 @@ a {
     margin-left:150px;
     margin-bottom:80px
 }
-.overlay-image{
+.overlay-image, .overlay-image img{
     position: absolute;
     bottom:0;
     left:0;
@@ -279,7 +279,7 @@ a {
     background-color: #000000;
 }
 .directions-list li{
-    margin-top:30px;
+    margin-bottom:30px;
 
 }
 .single-recipe .heading-bottom-line {

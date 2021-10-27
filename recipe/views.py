@@ -12,5 +12,8 @@ def recipe_detail_bruschetta(request):
 def recipe_detail_shrimp(request):
     return render(request, 'recipe_detail_shrimp.html')
 
-def recipe_detail_bruschetta(request):
-    return render(request, 'recipe_detail_bruschetta.html')  
+def recipe_detail_salad(request):
+    return render(request, 'recipe_detail_salad_caprese.html')  
+
+def recipe_detail_greek_chicken(request):
+    return render(request, 'recipe_detail_greek_chicken.html')  

@@ -20,7 +20,7 @@ import recipe.urls as recipe
 import summary.urls as summary
 from home.views import index
 import home.urls as home
-import workout.urls as home
+import workout.urls as workout
 
 urlpatterns = [
     path('admin/', admin.site.urls),

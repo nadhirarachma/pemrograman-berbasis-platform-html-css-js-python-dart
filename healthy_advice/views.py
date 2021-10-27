@@ -10,7 +10,12 @@ from django.core import serializers
 # Create your views here.
 def healthy_advice(request):
     notes = CommentHealthy.objects.all()
+    flag = False
     form = NoteForm()
+    for note in notes:
+        if (str(note.commentator_name) == str(request.user)):
+            flag=True
+            break
     if request.is_ajax():
         form = NoteForm(request.POST)
         if form.is_valid():
@@ -20,7 +25,7 @@ def healthy_advice(request):
             obj.save()
             return HttpResponseRedirect("/healthy_advice")
         
-    response = {'notes' : notes, 'form' : form}
+    response = {'notes' : notes, 'form' : form, 'flag': flag}
     return render(request, 'healthy_advice.html', response)
 
 def get_all_comment(request):
@@ -38,6 +43,16 @@ def delete_comment(request, id):
     data = serializers.serialize('json', CommentHealthy.objects.all())
 
     return HttpResponse(data, content_type='application/json')
+
+def edit_comment(request, id):
+    obj = get_object_or_404(CommentHealthy, id = id)
+    if request.is_ajax():
+        new_comment = request.POST.get('comment_field')
+        obj.comment_field = new_comment
+        obj.save()
+    data = serializers.serialize('json', [obj, ])    
+    return HttpResponse(data, content_type = 'application/json')
+
 
 def manfaat_istirahat(request):
     return render(request, 'manfaat_istirahat.html')

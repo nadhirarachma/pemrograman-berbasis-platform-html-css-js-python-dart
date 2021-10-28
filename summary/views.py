@@ -8,7 +8,12 @@ from .models import Profile
 @login_required(login_url= '/authentication/login/')
 
 def summary(request):
-    profile = request.user.profile
+
+    try:
+        profile = request.user.profile
+    except Profile.DoesNotExist:
+        profile = Profile(user=request.user)
+
     full_name = request.user.first_name + " " + request.user.last_name
     email = request.user.email
     username = request.user.username

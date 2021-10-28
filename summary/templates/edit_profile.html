@@ -146,6 +146,11 @@
                                                                 <button type="submit" class="btn btn-dark btn-m">Save Changes</button>
                                                             </div>
                                                         </div>
+
+                                                        <div class="text-right">
+                                                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="to_summary()">To Activity Summary</button>
+                                                        </div>
+
                                                     </form>
                                                     
                                                     </div>
@@ -166,6 +171,12 @@
         </div>
 
         <script>
+            function to_summary() {
+                window.location = '//e-nadi.herokuapp.com/summary/activity/'
+            } 
+        </script>
+
+        <script>
             const form = document.getElementById('forms');
             form.addEventListener("submit", submitHandler);
 
@@ -184,11 +195,11 @@
                 if (msg.message === 'success') {
                     alert('Profile Successfully Updated!');
                     form.reset()
-                    window.location = '//e-nadi.herokuapp.com/summary/activity'
+                    window.location = '//e-nadi.herokuapp.com/summary/activity/'
                 }
             }
         </script>
-        
+
     </body>
 </html>
 {% endblock %}

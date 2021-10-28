@@ -13,5 +13,5 @@ class TimeForm(forms.Form):
 
 
 class NewDate(forms.Form):
-    today = forms.DateField(initial=datetime.date.today)
-    time = forms.IntegerField(widget=forms.NumberInput)
+    today = forms.DateField(widget=forms.SelectDateWidget(), initial=datetime.date.today)
+    time = forms.IntegerField(widget=forms.NumberInput, initial=0)

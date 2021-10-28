@@ -9,6 +9,10 @@
                             <img src="{% static 'img/nav-logo2.png' %}" alt="logo">
                         </a>
                     </div>
+                    {% if user.is_authenticated %}
+                        <h1> Welcome {{nama_user}} </h1>
+                    {% endif %}
+
                     <h1>e - Nadi </h1>
                     <h2>your healthy support system</h2>
                 </div>

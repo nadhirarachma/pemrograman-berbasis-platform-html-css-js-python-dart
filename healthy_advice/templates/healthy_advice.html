@@ -89,81 +89,6 @@
                         </div>
                       </div>
                     {% endfor %}
-                      <!-- <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Manfaat Donor Plasma Konvalesen pada Pasien Covid-19</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35209/nursing-elderly-care-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Untuk mencegah dampak yang lebih buruk, banyak orang yang mulai mencoba untuk mendapatkan donor...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">4 Jenis Olahraga Ringan di Rumah selama Pandemi</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35073/nursing-elderly-care-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Olahraga sangat baik untuk menjaga kesehatan tubuh, terutama untuk menghindari serangan dari virus corona...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Cara Jaga Kesehatan Mental saat Pandemi COVID-19</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/37727/nurse-woman-advice-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Sejak virus corona menjadi pandemi dunia, perasaan, dan pikiran buruk terkait tentang masa depan orang-orang...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Tips Berbelanja Makanan Selama Pandemi COVID-19</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35248/nurse-health-care-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Cara Cek Saturasi Oksigen Normal saat Pandemi Corona</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/36421/doctor-advise-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Penyakit paru-paru seperti COVID-19 bisa menyebabkan kadar oksigen dalam darah menurun. Kondisi tersebut...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div> -->
                 </div>
               </div>
               {% include 'healthy_advice_form.html' %}
@@ -181,11 +106,8 @@
                   <div class="modal-body">
                     <form method="POST" id="form-update" style="display: flex; gap: 72px; align-items: center;">
                       <textarea name="" id="editText" cols="30" rows="10"></textarea>
-                      <button type="submit" class="btn btn-primary" id="submitbutton" data-bs-dismiss="modal" style="max-height:60px; min-height: 60px;">Post</button>
+                      <button type="submit" class="btn btn-primary" id="submitbutton" data-bs-dismiss="modal" style="max-height:60px; min-height: 60px; padding: 16px;">Post</button>
                     </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -220,7 +142,7 @@
 
     if (is_user){
       return $("#kartu-comment").append(`
-      <div class="p-3 bg-white mt-2 rounded">
+      <div class="commentsection-card p-3 bg-white mt-2 rounded">
           <div class="d-flex justify-content-between" style = "gap: 12px;">
               <div class="d-flex flex-row user">
                   <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.commentator_name}</span><span class="day">1 day ago</span></div>
@@ -240,7 +162,7 @@
     }
     else{
       return $("#kartu-comment").append(`
-      <div class="p-3 bg-white mt-2 rounded">
+      <div class="commentsection-card p-3 bg-white mt-2 rounded">
           <div class="d-flex justify-content-between" style = "gap: 12px;">
               <div class="d-flex flex-row user">
                   <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.commentator_name}</span><span class="day">1 day ago</span></div>

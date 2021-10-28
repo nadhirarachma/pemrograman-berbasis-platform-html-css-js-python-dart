@@ -33,12 +33,16 @@
       background: rgba(242, 248, 243, 0.3);
       font-size: 1.7rem;
     }
+    .w-card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    }
     .w-card td {
       color: white;
     }
 
     .w-btn {
       background: rgba(18, 42, 87, 0.5);
+      transition: 0.3s;
       border-radius: 10px;
       text-align: center;
       font-size: 1.2rem;
@@ -46,6 +50,9 @@
       font-family: "Raleway", sans-serif;
       letter-spacing: 1px;
       padding: 10px 15px;
+    }
+    .w-btn:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
     .w-btn a {
       color: white;
@@ -70,11 +77,13 @@
           <tr>
             <td><b>Date</b></td>
             <td><b>:</b></td>
+            <td style="color:rgba(0,0,0,0)"><b>.</b></td>
             <td><b>{{exercise.today}}</b></td>
           </tr>
           <tr>
             <td><b>Time</b></td>
             <td><b>:</b></td>
+            <td style="color:rgba(0,0,0,0)"><b>.</b></td>
             <td><b>{{exercise.time}}</b></td>
           </tr>
           </table>

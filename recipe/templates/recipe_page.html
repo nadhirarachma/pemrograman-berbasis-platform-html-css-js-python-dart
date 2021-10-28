@@ -82,18 +82,18 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src={% static '/img/recipie/recipe3.jpg' %} alt="" />
+                                <img src={% static '/img/recipie/recipe6.jpg' %} alt="" />
                                 <div class="rc-info">
-                                    <h2><b>Honey Walnut Shrimp</b></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla.</p>
-                                    <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
+                                    <h2><b>Chicken Soup</b></h2>
+                                    <p>Resep sup ayam ini sangat mudah dibuat dan sehat. Gunakan sayuran apa pun yang Anda miliki untuk membuat sup ayam ini.</p>
+                                    <a href="/recipe/chicken-soup/" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <div class="container">
-                <h3> Leave a Comment Here</h3>
+                <h3> Comments</h3>
                 <hr>
                 {% include 'recipe_comment.html' %}  
                 </div>
@@ -126,27 +126,28 @@
            <div class="p-3 bg-white mt-2 rounded">
                <div class="d-flex justify-content-between" style = "gap: 12px;">
                    <div class="d-flex flex-row user">
-                       <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.username}</span><span class="day">1 day ago</span></div>
+                       <div class="d-flex flex-column ml-2"><span class="comment-username">${result.fields.username}</span><span class="status">E-Nadi Member</span></div>
                    </div>
                    <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right" style = "gap: 50px">
                      <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
                      </div>
                </div>
-               <div class="comment-text text-justify mt-2">
+               <div class="comment-content">
                    <p>${result.fields.content}</p>
                </div>
            </div>`)
            
          }
          else{
+        //Kalau bukan user yang buat post button di ilangin
            return $("#kartu-comment").append(`
            <div class="p-3 bg-white mt-2 rounded">
                <div class="d-flex justify-content-between" style = "gap: 12px;">
                    <div class="d-flex flex-row user">
-                       <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.username}</span><span class="day">1 day ago</span></div>
+                       <div class="d-flex flex-column ml-2" ><span class="comment-username">${result.fields.username}</span><span class="status"> E-Nadi Member</span></div>
                    </div>
                </div>
-               <div class="comment-text text-justify mt-2">
+               <div class="comment-content">
                    <p>${result.fields.content}</p>
                </div>
            </div>`)
@@ -212,36 +213,9 @@
        e.preventDefault();
        // mendapatkan value dari masing-masing comment
        comment_value = $("#editText").val()
-     
-       $.ajax({
-         type: 'POST',
-         url: `/recipe/edit/${editID}`,
-         data: {
-           // add request body with input value and csrf token
-           'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
-           'content': comment_value
-         },
-         success: function (response) {
-           // kita kosongin inputnya lagi abis berhasil nembak
-           $("#editText").val("") 
-           // $('#submitbutton').attr("data-bs-dismiss", "modal")
-     
-           $("#kartu-comment").empty();
-           $.ajax({
-               url: "/recipe/get_all_comment", 
-               success: function(results){
-                   results.map((result)=>{
-                    insertComment(result);
-                   }
-                 )
-               }
-             }
-           );
-         },
-       })
+    
      });
-     
-     
+    
      
            </script>
 

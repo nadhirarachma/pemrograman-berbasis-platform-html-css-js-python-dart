@@ -24,6 +24,10 @@ def recipe_detail_greek_chicken(request):
 def recipe_detail_salmon(request):
     return render (request, 'recipe_detail_salmon.html')
 
+def recipe_detail_chicken_soup(request):
+    return render (request, 'recipe_detail_chicken_soup.html')
+
+
 
 def recipe_page(request):
     notes = Comment.objects.all()

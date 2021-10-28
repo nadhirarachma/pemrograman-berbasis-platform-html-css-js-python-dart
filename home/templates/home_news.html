@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <article>
+                                <div class="post-img">
+                                    <div class="blog-slider">
+                                        <div>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <img src="{{new.image}}" />
+                                            
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                                <h4>{{new.title}}</h4>
+                                <hr>
+                                <p>{{new.intro}}</p>
+                                <p>{{new.news}}</p>
+                               
+                                <hr>
+                                
+                            </article>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+{% endblock %}

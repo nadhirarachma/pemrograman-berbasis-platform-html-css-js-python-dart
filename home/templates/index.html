@@ -33,47 +33,23 @@
                         <div class="col-md-offset-1 col-md-10">
                             <div class="flexslider special-slider">
                                 <ul class="slides">
+                                    {%for new in news_list %}
                                     <li>
                                         <div class="slider-img">
                                             <img src="{% static 'img/thumb4.png' %}" alt="" />
                                         </div>
                                         <div class="slider-content">
                                             <div class="page-header">
-                                                <h1>home<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
+                                                <h1>{{new.title}}<small>{{new.thumbnail}}</small></h1>
                                             </div>
-                                            <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                            <p>{{new.intro}}</p>
 
-                                            <a class="btn btn-secondary" href="./index.html" role="button">read more</a>
+                                            <a class="btn btn-secondary" href="{% url 'readmore' slug=new.slug %}" role="button">read more</a>
 
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="slider-img">
-                                            <img src="{% static 'img/thumb4.png' %}" alt="" />
-                                        </div>
-                                        <div class="slider-content">
-                                            <div class="page-header">
-                                                <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
-                                            </div>
-                                            <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                                            <a class="btn btn-secondary" href="./index.html" role="button">read more</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="slider-img">
-                                            <img src="{% static 'img/thumb4.png' %}" alt="" />
-                                        </div>
-                                        <div class="slider-content">
-                                            <div class="page-header">
-                                                <h1>Pancake with Caramel<small>If you are a fan of caramel cake, then you'll love our Pancake with caramel icecream. It's not thick, but very tasty.</small></h1>
-                                            </div>
-                                            <p>Ultrices In massa est, dignissim in libero ac, fringilla ornare mi.Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. accumsan, habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                                            <a class="btn btn-secondary" href="./index.html" role="button">read more</a>
-
-                                        </div>
-                                    </li>
+                                    {%endfor%}
+                                    
                                 </ul>
                                 <div class="direction-nav hidden-sm">
                                     <div class="next">
@@ -102,30 +78,17 @@
                     <div class="row wow fadeInUp">
                         <div class="col-md-4">
                             <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-xs-12 hidden-sm about-photo">
-                                        <div class="image-thumb">
-                                            <img src="img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6 about-photo hidden-xs">
-                                        <img src="img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
-                                    </div>
-                                    <div class="col-sm-6 about-photo hidden-xs">
-                                        <img src="img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
-                                    </div>
-                                </div>
+                                
+                                <img src="{% static 'img/oranglari.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
                             </div>
                         </div>
                         <div class="col-md-8">
                             <p>
-                                tudin sapien id luctus tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus, dapibus nec interdum eget, ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare mi. Etiam interdum ligula purus.
+                                We realize that this pandemic situation completely changes our lifestyle. Together, the whole community elements neck and neck stop the spread of covid-19. Some people say that the economy won’t recover unless we can stop the transmission of the virus. Good immunity is a major factor to prevent us from getting infected. 
                             </p>
                             <br>
                             <p>
-                                Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
+                                Introducing our workout tracker. We provide you a feature that helps you stay within your target. 
                             </p>
                             <a class="btn btn-default" href="./index.html" role="button">More</a>
 
@@ -146,32 +109,19 @@
                     <div class="row wow fadeInUp">
                         <div class="col-md-8">
                             <p>
-
+                                Sleep is an essential function, it can recharge your body and mind, so that you can wake up refreshed and stay awake. Healthy sleep also helps the body stay healthy and stay away from disease. Without enough sleep, the brain cannot function properly. This can impair your ability to concentrate, think clearly, and process memory.
                             </p>
                             <br>
                             <p>
-                                Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
+                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pancemic situation.
                             </p>
                             <a class="btn btn-default" href="./index.html" role="button">More</a>
 
                         </div>
                         <div class="col-md-4">
                             <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-xs-12 hidden-sm about-photo">
-                                        <div class="image-thumb">
-                                            <img src="img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6 about-photo hidden-xs">
-                                        <img src="img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
-                                    </div>
-                                    <div class="col-sm-6 about-photo hidden-xs">
-                                        <img src="img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
-                                    </div>
-                                </div>
+                                
+                                <img src="{% static 'img/koalabobo.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
                             </div>
                         </div>
 
@@ -191,36 +141,85 @@
                     <div class="row wow fadeInUp">
                         <div class="col-md-4">
                             <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-xs-12 hidden-sm about-photo">
-                                        <div class="image-thumb">
-                                            <img src="img/thumb1.png" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6 about-photo hidden-xs">
-                                        <img src="img/thumb2.png" data-mfp-src="img/fullImages/pic2.jpg" class="img-responsive" alt="logo">
-                                    </div>
-                                    <div class="col-sm-6 about-photo hidden-xs">
-                                        <img src="img/thumb3.png" data-mfp-src="img/fullImages/pic3.jpg" class="img-responsive" alt="logo">
-                                    </div>
-                                </div>
+                                
+                                <img src="{% static 'img/healthydiet.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
                             </div>
                         </div>
                         <div class="col-md-8">
                             <p>
-                                Cras ut viverra eros. Phasellus sollicitudin sapien id luctus tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus, dapibus nec interdum eget, ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare mi. Etiam interdum ligula purus.
+                                A healthy diet may help prevent certain long-term (chronic) diseases, such as heart disease, stroke, and diabetes. It may also help reduce your risk of certain cancers and help you maintain a healthy weight.
                             </p>
                             <br>
                             <p>
-                                Ultrices eget justo. Nam purus lacus, efficitur eget laoreet sed, finibus nec neque. Cras eget enim in diam dapibus sagittis. In massa est, dignissim in libero ac, fringilla ornare.
+                                We realize there are some people that hard to get an idea of a healthy meal. They just scroll down social media to find a recipe. In this feature, you can see a bunch of references for your menu. No need to worry, these menus are healthy diets.
+                            </p>
+                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+
+
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header wow fadeInDown">
+                                <h1>Healthy Advice<small>Increase your knowledge and motivation</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp">
+                        <div class="col-md-8">
+                            <p>
+                                Sleep is an essential function, it can recharge your body and mind, so that you can wake up refreshed and stay awake. Healthy sleep also helps the body stay healthy and stay away from disease. Without enough sleep, the brain cannot function properly. This can impair your ability to concentrate, think clearly, and process memory.
+                            </p>
+                            <br>
+                            <p>
+                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pancemic situation.
                             </p>
                             <a class="btn btn-default" href="./index.html" role="button">More</a>
 
                         </div>
+                        <div class="col-md-4">
+                            <div class="container-fluid">
+                                
+                                <img src="{% static 'img/koalabobo.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header wow fadeInDown">
+                                <h1><small>help us improve the website</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp">
+                        
+                        
+                       
+                        
+                        <a class="btn btn-default" href="{% url 'feedback' %}" role="button">Feedback</a>
+                    </div>
+                </div>
+            </section>
+
+            
 {% endblock %}
 

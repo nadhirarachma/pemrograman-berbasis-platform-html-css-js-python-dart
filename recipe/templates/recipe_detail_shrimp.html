@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+
+    <head>
+        <title>Recipe Chicken Bruschetta</title>
+        <link rel = "stylesheet" type= "text/css" href="{% static 'css/recipestyle.css' %}">
+
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/0ab3514e4e.js" crossorigin="anonymous"></script>
+
+        <!-- Responsive Tag -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS & Script-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <!--Font Family Monsserat-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="body">
+            <div class="main-wrapper">
+                <!-- Page Header -->
+                <section class="page_header">
+                    <div class="overlay-image" style="background-image:url(/static/img/header/satu.jpg)">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1 class="text-uppercase"> Recipes</h1>
+                                <p> ㅤHealtyh Food Bring Healthy Life</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="single-recipe">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single-recipe-image">
+                                    <img class= "img-responsive" src= {% static '/img/recipie/recipe2.png' %} alt="image-recipe-detail" style= "width:100% ;"/>
+                                </div>
+                                <div class="clearfix"></div>
+                                <h3>How To Make It</h3>
+                                <br>
+                                
+                                <ol class="directions-list">
+                                    <li> Dalam panci kecil di atas api sedang, gabungkan air dan gula dan didihkan. Tambahkan kenari dan biarkan mendidih selama 2 menit. Dengan menggunakan sendok berlubang, keluarkan kenari dan biarkan dingin di atas loyang kecil.</li>
+                                    <li>Keringkan udang dengan handuk kertas dan bumbui dengan garam dan merica. Tempatkan telur dalam mangkuk dangkal dan tepung jagung di mangkuk dangkal lainnya. Celupkan udang ke dalam telur, lalu dalam lapisan tepung maizena dengan baik.</li>
+                                    <li>Dalam wajan besar di atas api sedang, panaskan 1" minyak. Tambahkan udang dalam batches dan goreng sampai berwarna keemasan, 3 hingga 4 menit. Angkat dengan sendok berlubang dan letakkan di atas piring berlapis handuk kertas.</li>
+                                    <li style="padding-top: 15px;">Dalam mangkuk sedang, aduk bersama mayones, madu, dan krim kental. Aduk udang dalam saus. Sajikan di atas nasi dengan manisan kenari dan hiasi dengan daun bawang.</li>
+                                </ol>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="container-detail">
+
+                                </div>
+                                <h3>Honey Walnut Shrimp</h3>
+                                <p>Honey Walnut Shrimp merupakan makanan berasal dari Hong Kong dan merupakan makanan pokok di restoran Kanton.
+                                    Hidangan ini adalah hidangan populer yang sering disajikan pada banyak restorant, Anda juga dapat dengan mudah membuatnya dengan mengikuti step-step di bawah ini.
+                                    <br>sumber: <a href="https://www.delish.com/cooking/recipe-ideas/a25861120/honey-walnut-shrimp-recipe/"  >(Delish) </a>
+                                </p>
+                                <div class="ingredients">
+                                    <h4 class="title">Ingredients</h4>
+                                    <ul>
+                                        <li>1 c. air</li>
+                                        <li>1c. gula pasir</li>
+                                        <li>1 c. walnuts</li>
+                                        <li>1 pon udang, kupas dan buang kulitnya, lalu siapkan kosher salt</li>
+                                        <li>Lada hitam Fresh yang baru digiling</li>
+                                        <li>2 butir telur besar, yang sudah di kocok</li>
+                                        <li> 1 gelas. tepung maizena dan minyak sayur untuk menggoreng</li>
+                                        <li> 1/4 c. mayones</li>
+                                        <li> 2 sdm. madu</li>
+                                        <li> 2 sdm. heavy cream</li>
+                                        <li> Nasi putih matang, untuk disajikan Iris tipis daun bawang, untuk hiasan</li>
+ 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </bod>
+</html>
+{% endblock %}

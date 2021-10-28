@@ -8,15 +8,7 @@ from django.contrib.auth.forms import UserModel
 
 def index(request):
     news_list = News.objects.all()
-    if request.user.is_authenticated:
-        full_name = request.user.get_full_name()
-
-        context = {'nama_user':full_name, 'news_list' : news_list}
-        return render(request, 'index(authenticated).html', context)
-    else:
-        response = {'news_list' : news_list}
-        return render(request, 'index.html', response )
-
+    return render(request, 'index.html')
     
 
 def feedback(request):     

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Exercise
-from .forms import ExerciseForm, TimeForm
+from .forms import ExerciseForm, TimeForm, NewDate
 from django.contrib.auth.decorators import login_required
 import datetime
 
@@ -16,11 +16,13 @@ def workout_page(request):
 def new_workout(request):
     context = {}
     exercise = Exercise.objects.get(user=request.user)
-    form = ExerciseForm(request.POST or None, instance=exercise)
+    form = NewDate(request.POST or None)
 
 
     if form.is_valid():
-        form.save()
+        exercise.today = form.cleaned_data['today']
+        exercise.time = form.cleaned_data['time']
+        exercise.save()
         return redirect('w_page')
 
     context['form'] = form

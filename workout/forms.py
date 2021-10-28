@@ -1,6 +1,7 @@
 from django.forms.models import ModelForm
 from django import forms
 from .models import Exercise
+import datetime
 
 class ExerciseForm(ModelForm):
     class Meta:
@@ -8,4 +9,9 @@ class ExerciseForm(ModelForm):
         fields = '__all__'
 
 class TimeForm(forms.Form):
+    time = forms.IntegerField(widget=forms.NumberInput)
+
+
+class NewDate(forms.Form):
+    today = forms.DateField(initial=datetime.date.today)
     time = forms.IntegerField(widget=forms.NumberInput)

@@ -18,6 +18,14 @@ def workout_page(request):
     return render(request, 'workout_page.html', response)
 
 @login_required(login_url='/authentication/login/')
+def reset_workout(request):
+    e = Exercise.objects.get(user=request.user)
+    e.time = 0
+    e.save()
+    response = {'exercise': e}
+    return render(request, 'workout_page.html', response)
+
+@login_required(login_url='/authentication/login/')
 def new_workout(request):
     context = {}
     exercise = Exercise.objects.get(user=request.user)

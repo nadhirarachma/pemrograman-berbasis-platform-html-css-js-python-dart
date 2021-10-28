@@ -21,6 +21,7 @@ import summary.urls as summary
 from home.views import index
 import home.urls as home
 import workout.urls as workout
+import sleep.urls as sleep
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,6 @@ urlpatterns = [
     path('summary/', include(summary)),
     path('home/', include(home)),
     path('workout/', include(workout)),
+    path('sleep/', include(sleep)),
     re_path(r'^$', index, name='index')
 ]

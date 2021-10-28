@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sleep Tracker</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <h1>What would you like to do?</h1>
+    <h2>{{sleep.user}}</h2>
+    <h2>{{sleep.today}}</h2>
+    <h2>{{sleep.time}}</h2>
+    <a href="{% url 'new_s' %}">Start a New Day to Track Your Sleep</a>
+    <p>Start a new sleep time tracker for the day.</p>
+    <a href="{% url 'update_s' %}">Update Today's Sleep Time</a>
+    <p>Update today's sleep time tracker. How long did you sleep?</p>
+</body>
+
+</html>
+
+{% endblock %}
+

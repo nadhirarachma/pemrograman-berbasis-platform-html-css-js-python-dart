@@ -17,6 +17,8 @@ from home.views import index as welcome
 # workout
 from workout.models import Exercise
 
+from sleep.models import Sleep
+
 def registerPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -29,6 +31,9 @@ def registerPage(request):
 				username = form.cleaned_data.get('username')
 				messages.success(request, 'Account was created for ' + username)
 				Exercise.objects.create(
+					user=user,
+				)
+				Sleep.objects.create(
 					user=user,
 				)
 

@@ -7,18 +7,66 @@
 <head>
     {% block meta %} <meta charset="UTF-8"> {% endblock %}
     {% block title %} <title>Workout Page</title> {% endblock %}
+    <style>
+    .q-workout {
+      padding-top: 10%;
+      padding-bottom: 3%;
+    }
+    .q-workout h1 {
+      color: rgba(217, 184, 154, 0.9);
+    }
+    .d-w-card{
+      padding-left: 30%;
+      padding-right: 30%;
+    }
+    .w-card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 5%;
+      padding-right: 5%;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      margin: 0rem 0rem 1rem;
+      background: rgba(242, 248, 243, 0.5);
+      font-size: 2rem;
+    }
+    .w-card td {
+      color: rgba(18, 23, 46, 1);
+    }
+    </style>
 
 </head>
 <body>
   <section class="features">
-    <h1>What would you like to do?</h1>
-    <h2>{{exercise.user}}</h2>
-    <h2>{{exercise.today}}</h2>
-    <h2>{{exercise.time}}</h2>
-    <a href="{% url 'w_reset' %}">Reset Tracker</a>
-    <p>Reset today's tracker to zero.</p>
-    <a href="{% url 'w_update' %}">Update Today</a>
-    <p>Update the day's workout time tracker. How long have you done your workout regime?</p>
+    <div class="">
+      <div class="q-workout">
+        <h1>What would you like to do?</h1>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="w-card">
+          <table>
+          <tr>
+            <td><b>Date</b></td>
+            <td><b>:</b></td>
+            <td><b>{{exercise.today}}</b></td>
+          </tr>
+          <tr>
+            <td><b>Time</b></td>
+            <td><b>:</b></td>
+            <td><b>{{exercise.time}}</b></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+
+      <a href="{% url 'w_reset' %}">Reset Tracker</a>
+      <p>Reset today's tracker to zero.</p>
+      <a href="{% url 'w_update' %}">Update Today</a>
+      <p>Update the day's workout time tracker. How long have you done your workout regime?</p>
+    </div>
   </section>
 </body>
 </html>

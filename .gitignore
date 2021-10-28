@@ -160,28 +160,28 @@ staticfiles/
 #Ignore files for home
 /home/.idea/
 /home/db.sqlite3/
-/home/migrations/*.py
+# /home/migrations/*.py
 
 #Ignore files from workout
 /workout/.idea/
 /workout/db.sqlite3/
-/workout/migrations/*.py
+# /workout/migrations/*.py
 
 #Ignore files from summary
 /summary/.idea/
 /summary/db.sqlite3/
-/summary/migrations/*.py
+# /summary/migrations/*.py
 
 #Ignore files from accounts
 /accounts/.idea/
 /accounts/db.sqlite3/
-/accounts/migrations/*.py
+# /accounts/migrations/*.py
 db.sqlite3
 
 #Ignore files from recipe
 /recipe/.idea/
 /recipe/db.sqlite3/
-/recipe/migrations/*.py
+# /recipe/migrations/*.py
 db.sqlite3
 
 #Ignore files from healthy_advice
@@ -194,5 +194,5 @@ db.sqlite3
 #Ignore files from sleep
 /sleep/.idea/
 /sleep/db.sqlite3/
-/sleep/migrations/*.py
+# /sleep/migrations/*.py
 db.sqlite3

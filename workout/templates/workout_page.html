@@ -6,6 +6,9 @@
 </head>
 <body>
     <h1>What would you like to do?</h1>
+    <h2>{{exercise.user}}</h2>
+    <h2>{{exercise.today}}</h2>
+    <h2>{{exercise.time}}</h2>
     <a href="{% url 'w_new' %}">Start a New Day</a>
     <p>Start a new workout time tracker for the day.</p>
     <a href="{% url 'w_update' %}">Update Today</a>

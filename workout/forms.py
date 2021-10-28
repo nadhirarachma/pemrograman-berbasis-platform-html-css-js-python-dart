@@ -9,9 +9,9 @@ class ExerciseForm(ModelForm):
         fields = '__all__'
 
 class TimeForm(forms.Form):
-    time = forms.IntegerField(widget=forms.NumberInput)
+    time = forms.IntegerField(widget=forms.NumberInput, initial=0)
 
 
 class NewDate(forms.Form):
-    today = forms.DateField(initial=datetime.date.today)
-    time = forms.IntegerField(widget=forms.NumberInput)
+    today = forms.DateField(widget=forms.SelectDateWidget(), initial=datetime.date.today)
+    time = forms.IntegerField(widget=forms.NumberInput, initial=0)

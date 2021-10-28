@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
 from django.http import response
 from django.http.response import HttpResponseRedirect,  HttpResponse, JsonResponse
-from healthy_advice.models import CommentHealthy
+from healthy_advice.models import CommentHealthy, HealthyArticle
 from healthy_advice.forms import NoteForm
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
@@ -10,12 +10,8 @@ from django.core import serializers
 # Create your views here.
 def healthy_advice(request):
     notes = CommentHealthy.objects.all()
-    flag = False
+    articles = HealthyArticle.objects.all()
     form = NoteForm()
-    for note in notes:
-        if (str(note.commentator_name) == str(request.user)):
-            flag=True
-            break
     if request.is_ajax():
         form = NoteForm(request.POST)
         if form.is_valid():
@@ -25,7 +21,7 @@ def healthy_advice(request):
             obj.save()
             return HttpResponseRedirect("/healthy_advice")
         
-    response = {'notes' : notes, 'form' : form, 'flag': flag}
+    response = {'notes' : notes, 'form' : form, 'articles':articles}
     return render(request, 'healthy_advice.html', response)
 
 def get_all_comment(request):
@@ -56,3 +52,10 @@ def edit_comment(request, id):
 
 def manfaat_istirahat(request):
     return render(request, 'manfaat_istirahat.html')
+
+def detail_article(request, id):
+    article = HealthyArticle.objects.all().get(id=id)
+    response = {
+        'details' : article
+    }
+    return render(request, 'article_detail.html', response)

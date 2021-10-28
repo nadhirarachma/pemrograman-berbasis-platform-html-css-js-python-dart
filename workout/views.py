@@ -10,6 +10,10 @@ from django.http import HttpResponse
 @login_required(login_url='/authentication/login/')
 def workout_page(request):
     e = Exercise.objects.get(user=request.user)
+    if (datetime.date.today() != e.today):
+        e.today = datetime.date.today()
+        e.time = 0
+        e.save()
     response = {'exercise': e}
     return render(request, 'workout_page.html', response)
 

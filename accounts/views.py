@@ -59,10 +59,7 @@ def loginPage(request):
 
 def logoutUser(request):
 	logout(request)
-	return redirect('login')
+	return redirect(welcome)
 
 def home(request):
-	if request.user.is_authenticated:
-		return redirect(welcome)
-	else:
-		return redirect('login')
+	return redirect(welcome)

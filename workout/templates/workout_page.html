@@ -1,17 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Workout Page</title>
+    {% block meta %} <meta charset="UTF-8"> {% endblock %}
+    {% block title %} <title>Workout Page</title> {% endblock %}
+
 </head>
 <body>
     <h1>What would you like to do?</h1>
     <h2>{{exercise.user}}</h2>
     <h2>{{exercise.today}}</h2>
     <h2>{{exercise.time}}</h2>
-    <a href="{% url 'w_new' %}">Start a New Day</a>
-    <p>Start a new workout time tracker for the day.</p>
+    <a href="{% url 'w_reset' %}">Reset Tracker</a>
+    <p>Reset today's tracker to zero.</p>
     <a href="{% url 'w_update' %}">Update Today</a>
     <p>Update the day's workout time tracker. How long have you done your workout regime?</p>
 </body>
 </html>
+
+{% endblock %}

@@ -77,8 +77,8 @@
                                 <img src={% static '/img/recipie/recipe5.jpg' %} alt="" />
                                 <div class="rc-info">
                                     <h2><b> Baked Salmon</b></h2>
-                                    <p>Salmon panggang adalah menu makana terbaik untuk memberi makan orang banyak. Sederhana dan lezat.</p>
-                                    <a href="./recipe_detail.html" class ="btn btn-default"> View Details</a>
+                                    <p>Salmon panggang adalah hidangan makanan terbaik untuk memberi makan orang banyak. Sederhana dan lezat.</p>
+                                    <a href="/recipe/baked-salmon" class ="btn btn-default"> View Details</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -92,64 +92,158 @@
                         </div>
                     </div>
                 </section>
-                
-                <section class="carousel-favorite">
-                <!-- Bootstrap CSS & Script-->
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-                <!-- Carousel slider -->
                 <div class="container">
-                    <hr>
-                    <h3>Favorite Recipe</h3>
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="overlay-image" style="background-image:url(../static/img/slider/slider1.jpg)"></div>
-                                <div class="container-carousel">
-                                    <h1>Example</h1>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href="/recipe/bruschetta" class="btn btn-lg btn-primary"> View details</a>
-                                </div>
-                            </div>
-                            <div class="carousel-item" >
-                                <div class="overlay-image" style="background-image:url(../static/img/slider/slider2.jpg)"></div>
-                                <div class="container-carousel">
-                                    <h1>Example</h1>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href="/recipe/honey-walnut-shrimp"  class="btn btn-lg btn-primary"> View details</a>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="container-carousel">
-                                    <h1>Example</h1>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, harum.</p>
-                                    <a href="./recipe_detail_bruschetta.html" class="btn btn-lg btn-primary"> View details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+                <h3> Leave a Comment Here</h3>
+                <hr>
+                {% include 'recipe_comment.html' %}  
                 </div>
-                </section>
             </div>
-        </div>
+        </div>         
+        <script>
+            const getMessageData = () => {
+         return $(document).ready(function(){
+                   $.ajax({
+                       url: "/recipe/get_all_comment", 
+                       success: function(results){
+                           results.map((result)=>{
+                             insertComment(result);
+                           }
+                         )
+                       }
+                     }
+                   );
+                 }
+               );
+       }
+       const insertComment = (result) => {
+         let is_user = false
+         if (result.fields.username == "{{request.user}}"){
+           is_user = true
+         }
+     
+         if (is_user){
+           return $("#kartu-comment").append(`
+           <div class="p-3 bg-white mt-2 rounded">
+               <div class="d-flex justify-content-between" style = "gap: 12px;">
+                   <div class="d-flex flex-row user">
+                       <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.username}</span><span class="day">1 day ago</span></div>
+                   </div>
+                   <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right" style = "gap: 50px">
+                     <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
+                     </div>
+               </div>
+               <div class="comment-text text-justify mt-2">
+                   <p>${result.fields.content}</p>
+               </div>
+           </div>`)
+           
+         }
+         else{
+           return $("#kartu-comment").append(`
+           <div class="p-3 bg-white mt-2 rounded">
+               <div class="d-flex justify-content-between" style = "gap: 12px;">
+                   <div class="d-flex flex-row user">
+                       <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.username}</span><span class="day">1 day ago</span></div>
+                   </div>
+               </div>
+               <div class="comment-text text-justify mt-2">
+                   <p>${result.fields.content}</p>
+               </div>
+           </div>`)
+         }
+       }
+       
+       getMessageData(); 
+     
+       $(document).ready(function () {
+         $("#kartu-comment").on('click', '#delete', function() {
+         let pk = $(this).attr("value");
+         $.ajax({
+           type: 'POST',
+           url: `/recipe/delete/${pk}`,
+           data: {
+                 // csrf token for security
+                 'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+           },
+           success: function (result) {
+             // sebelum kita refresh tabel, kita kosongin dulu tablenya
+             $("#kartu-comment").empty();
+             // saat sudah bersih, kita dapetin ulang datanya
+             getMessageData()
+           },
+         });
+       });
+     });
+     
+     document.getElementById('submitbutton').addEventListener('click', function(e){
+       e.preventDefault()
+     })
+     $('#submitbutton').click(function(e){
+       let commentValue = $('#id_content').val()
+       $.ajax({
+           type: 'POST',
+           url: `/recipe/`,
+           data: {
+                 'content' : commentValue,
+                 'username' : '{{request.user}}',
+                 'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+           },
+           success: function (result) {
+             // sebelum kita refresh tabel, kita kosongin dulu tablenya
+             $("#kartu-comment").empty();
+             // saat sudah bersih, kita dapetin ulang datanya
+             getMessageData()
+             $('#id_content').val("")
+           },
+         });
+     });
+     let editID = "";
+    $(document).ready(function () {
+    $("#kartu-comment").on('click', '#editbutton', function() {
+        editID = $(this).attr("value");
 
+    });
+    });
+
+     
+     // dijalankan ketika kita men-submit form
+     $("#form-update").submit(function(e) {
+        // preventing from page reload and default actions
+       e.preventDefault();
+       // mendapatkan value dari masing-masing comment
+       comment_value = $("#editText").val()
+     
+       $.ajax({
+         type: 'POST',
+         url: `/recipe/edit/${editID}`,
+         data: {
+           // add request body with input value and csrf token
+           'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+           'content': comment_value
+         },
+         success: function (response) {
+           // kita kosongin inputnya lagi abis berhasil nembak
+           $("#editText").val("") 
+           // $('#submitbutton').attr("data-bs-dismiss", "modal")
+     
+           $("#kartu-comment").empty();
+           $.ajax({
+               url: "/recipe/get_all_comment", 
+               success: function(results){
+                   results.map((result)=>{
+                    insertComment(result);
+                   }
+                 )
+               }
+             }
+           );
+         },
+       })
+     });
+     
+     
+     
+           </script>
 
     </body>
 </html>

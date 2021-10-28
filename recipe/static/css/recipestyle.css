@@ -176,7 +176,6 @@ a {
 .carousel-favorite p{
     color: #fff;
     text-align: left;
-    padding: 40px 0px;
 }
 .carousel-favorite h1{
     font-size: 40px;
@@ -191,7 +190,8 @@ a {
     left:0;
     right:0;
     margin-left:150px;
-    margin-bottom:80px
+    margin-bottom:80px;
+    
 }
 .overlay-image, .overlay-image img{
     position: absolute;

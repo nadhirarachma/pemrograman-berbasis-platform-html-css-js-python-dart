@@ -13,6 +13,7 @@ def workout_page(request):
     response = {'exercise': e}
     return render(request, 'workout_page.html', response)
 
+@login_required(login_url='/authentication/login/')
 def new_workout(request):
     context = {}
     exercise = Exercise.objects.get(user=request.user)
@@ -28,7 +29,7 @@ def new_workout(request):
     context['form'] = form
     return render(request, "workout_new.html", context)
 
-
+@login_required(login_url='/authentication/login/')
 def update_workout(request):
     context = {}
     exercise = Exercise.objects.get(user=request.user)

@@ -91,6 +91,10 @@
                         </div>
                     </div>
                 </section>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{comment_form.as_p}}
+                </form>
                 <section>
                 </section>
 

@@ -37,7 +37,6 @@ def recipe_page(request):
         if form.is_valid():
             obj = form.save(commit=False)
             obj.username = request.user 
-            # print(obj)
             obj.save()
             return HttpResponseRedirect("/recipe")
         

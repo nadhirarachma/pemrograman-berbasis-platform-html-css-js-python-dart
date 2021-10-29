@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http.response import JsonResponse
+from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
 from .models import Profile
-# from workout.models import Workout
-# from sleep.models import Sleep
+from workout.models import Exercise
+from sleep.models import Sleep
+import datetime
+
 @login_required(login_url= '/authentication/login/')
 
 def summary(request):
@@ -18,11 +21,11 @@ def summary(request):
     email = request.user.email
     username = request.user.username
     navbar_name = request.user.get_full_name()
-    # workout = Workout.objects.all()
-    # sleep = Sleep.objects.all()
 
-    # response = {'profile': profile, 'workout' : workout, 'sleep' : sleep}
-    response = {'profile': profile, 'full_name': full_name, 'email':email, 'username':username, 'nama_user':navbar_name}
+    workout = Exercise.objects.get(user=request.user)
+    sleep = Sleep.objects.get(user=request.user)
+  
+    response = {'profile': profile, 'full_name': full_name, 'email':email, 'workout' : workout, 'sleep' : sleep, 'username':username, 'nama_user':navbar_name}
     return render(request, 'summary.html', response)
 
 def edit_profile(request):

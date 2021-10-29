@@ -4,11 +4,9 @@
 
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Activity Summary</title>
-        <link rel="stylesheet" href="{% static 'css/summary.css' %}" />
-    </head>
+   
+    {% block title %} Activity Summary {% endblock %}
+    {% block meta %}  <link rel="stylesheet" href="{% static 'css/summary.css' %}" /> {% endblock %}
 
     <body>
         <div class="container">
@@ -87,44 +85,62 @@
                 </section>
                 
                 <section class="summary">
-                    <div class="row gutters-sm">
-                        <div class="col-sm-5 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Activity Summary</h5>
-
-                                    {% for input in workout %}
-                                    <h6 class="card-title">{{input.date}}</h6>
-                                    <div class="list-group">
-
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                            <h7 class="mb-1"><i class='fas fa-running fa-lg'></i> Workout</h7>
-                                            <small>{{input.type}}</small>
+                    <div class="card mb-3">
+                        <div class="card h-100" style="padding: 20px;">
+                            <h5 class="card-title" style="font-size:40px;padding:20px;">Activity Summary</h5>
+                            <div class="row gutters-sm">
+                                <div class="col-md-6">
+                                    <div class="card mb-3">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Workout</h5>
+            
+                                                <h6 class="card-title">{{workout.today}}</h6>
+                                                <div class="list-group">
+            
+                                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                        <h7 class="mb-1"><i class='fas fa-running fa-lg'></i> How long have you been working out?</h7>
+                                                        </div>
+                                                        <div class="progress">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="120">{{workout.time}}</div>
+                                                        </div>
+                                                    </a>
+            
+                                                </div>
                                             </div>
-                                            <div class="progress">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="120">{{input.duration}}</div>
-                                            </div>
-                                        </a>
-                                        {% endfor %}
-
-                                        {% for var in sleep %}
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h7 class="mb-1"><i class='fa fa-bed fa-lg'></i> Sleep</h7>
-                                                <small>{{var.type}}</small>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="8">{{var.duration}}</div>
-                                            </div>
-                                        </a>
-                                        {% endfor %}
-
+                                        </div>
                                     </div>
                                 </div>
+        
+                                <div class="col-md-6">
+                                    <div class="card mb-3">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Sleep</h5>
+            
+                                                <h6 class="card-title">{{sleep.today}}</h6>
+                                                <div class="list-group">
+            
+                                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h7 class="mb-1"><i class='fa fa-bed fa-lg'></i>  How long have you been sleeping?</h7>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="8">{{sleep.time}}</div>
+                                                        </div>
+                                                    </a>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
                             </div>
                         </div>
-                    </div>
+                        </div>
+
                 </section>
             </div>
         </div>

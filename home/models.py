@@ -6,7 +6,7 @@ class News(models.Model):
     thumbnail = models.CharField(max_length=50)
     slug = models.SlugField()
     intro = models.TextField()
-    image= models.CharField(max_length=500)
+    # image= models.CharField(max_length=500)
     news = models.TextField()
 
 class FeedBack(models.Model):

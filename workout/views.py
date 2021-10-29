@@ -22,8 +22,7 @@ def reset_workout(request):
     e = Exercise.objects.get(user=request.user)
     e.time = 0
     e.save()
-    response = {'exercise': e}
-    return render(request, 'workout_page.html', response)
+    return redirect('w_page')
 
 @login_required(login_url='/authentication/login/')
 def update_workout(request):

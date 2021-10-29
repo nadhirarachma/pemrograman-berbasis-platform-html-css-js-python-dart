@@ -93,7 +93,7 @@
                     </div>
                 </section>
                 <div class="container">
-                <h3> Comments</h3>
+                <h3> Comments & Feedback</h3>
                 <hr>
                 {% include 'recipe_comment.html' %}  
                 </div>
@@ -207,9 +207,9 @@
     });
 
      
-     // dijalankan ketika kita men-submit form
+     // digunakan untuk dijalankan ketika kita men-submit form
      $("#form-update").submit(function(e) {
-        // preventing from page reload and default actions
+        // berfungsi untuk preventing from page reload and default actions
        e.preventDefault();
        // mendapatkan value dari masing-masing comment
        comment_value = $("#editText").val()

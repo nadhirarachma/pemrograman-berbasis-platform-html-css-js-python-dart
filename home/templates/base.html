@@ -45,7 +45,7 @@
                                 
                             </li>
                             <li class="dropdown">
-                                <a href="{% url 'mainpage_s' %}" role="button" aria-haspopup="true" aria-expanded="false">Sleep Tracker<span class="caret"></span></a>
+                                <a href="{% url 'w_page' %}" role="button" aria-haspopup="true" aria-expanded="false">Sleep Tracker<span class="caret"></span></a>
                                 
                             </li>
                             <li class="dropdown">
@@ -53,7 +53,7 @@
                                 
                             </li>
                             <li class="dropdown">
-                                <a href="{% url 'edit_profile' %}" role="button" aria-haspopup="true" aria-expanded="false">Activity Summary<span class="caret"></span></a>
+                                <a href="{% url 'summary' %}" role="button" aria-haspopup="true" aria-expanded="false">Activity Summary<span class="caret"></span></a>
                                 
                             </li>
                            
@@ -165,6 +165,8 @@
     </div> 
 
     <!-- Javascript -->
+    {% block homejs %}
+    {% endblock %}
    
     <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
  
@@ -207,5 +209,8 @@
     <script src="{% static 'js/vendor/mc/main.js' %}"></script>
 
 </body>
+
+{% block luarbody %}
+{% endblock %}
 
 </html>

@@ -30,10 +30,15 @@ def update_workout(request):
     exercise = Exercise.objects.get(user=request.user)
     form = TimeForm(request.POST or None)
 
+    if (datetime.date.today() != exercise.today):
+        exercise.today = datetime.date.today()
+        exercise.time = 0
+        exercise.save()
+
     if form.is_valid():
         exercise.time += form.cleaned_data['time']
-        if exercise.time > 24:
-            exercise.time = 24
+        if exercise.time > 1440:
+            exercise.time = 1440
         elif exercise.time < 0:
             exercise.time = 0
         exercise.save()

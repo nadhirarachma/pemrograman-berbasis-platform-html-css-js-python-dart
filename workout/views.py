@@ -32,6 +32,10 @@ def update_workout(request):
 
     if form.is_valid():
         exercise.time += form.cleaned_data['time']
+        if exercise.time > 24:
+            exercise.time = 24
+        elif exercise.time < 0:
+            exercise.time = 0
         exercise.save()
         return redirect('w_page')
 

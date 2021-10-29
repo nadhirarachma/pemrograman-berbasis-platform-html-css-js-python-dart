@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %} Home Page {% endblock%}
 {% load static %}
 {% block content %}
             <!-- Home page-->
@@ -9,7 +10,6 @@
                             <img src="{% static 'img/nav-logo2.png' %}" alt="logo">
                         </a>
                     </div>
-                    {% block title %} <title>Home Page</title>{% endblock%}
                     {% if user.is_authenticated %}
                         <h1> Welcome {{user.get_full_name}} </h1>
                     {% endif %}

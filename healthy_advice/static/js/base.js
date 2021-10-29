@@ -20,7 +20,7 @@ const insertTableData = (result) => {
   <div class="p-3 bg-white mt-2 rounded">
       <div class="d-flex justify-content-between">
           <div class="d-flex flex-row user"><img class="rounded-circle img-fluid img-responsive" src="https://i.imgur.com/Yxje2El.jpg" width="40">
-              <div class="d-flex flex-column ml-2"><span class="font-weight-bold">@Nick</span><span class="day">1 day ago</span></div>
+              <div class="d-flex flex-column ml-2"><span class="font-weight-bold">@Nick</span><span class="day"></span></div>
           </div>
           <div class="d-flex align-items-center px-3 heart border"><i class="fa fa-heart heart-icon"></i><span class="ml-2">35</span></div>
       </div>

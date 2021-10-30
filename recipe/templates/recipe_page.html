@@ -123,8 +123,8 @@
      
          if (is_user){
            return $("#kartu-comment").append(`
-           <div class="p-3 bg-white mt-2 rounded">
-               <div class="d-flex justify-content-between" style = "gap: 12px;">
+           <div class="commentrecipe-container p-3 bg-white mt-2 rounded">
+               <div class="d-flex justify-content-between">
                    <div class="d-flex flex-row user">
                        <div class="d-flex flex-column ml-2"><span class="comment-username">${result.fields.username}</span><span class="status">${result.fields.post_date}</span></div>
                    </div>
@@ -141,7 +141,8 @@
          else{
         //Kalau bukan user yang buat post button di ilangin
            return $("#kartu-comment").append(`
-           <div class="p-3 bg-white mt-2 rounded">
+           
+           <div class="commentrecipe-container p-3 bg-white mt-2 rounded">
                <div class="d-flex justify-content-between" style = "gap: 12px;">
                    <div class="d-flex flex-row user">
                        <div class="d-flex flex-column ml-2" ><span class="comment-username">${result.fields.username}</span><span class="status"> ${result.fields.post_date} </span></div>

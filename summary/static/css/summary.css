@@ -1,4 +1,4 @@
-.body, .profile, .summary{
+.body, .profile {
     background: url(../img/bg4.png) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

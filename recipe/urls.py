@@ -2,7 +2,7 @@ from django.urls import path
 from .views import recipe_detail_bruschetta , recipe_detail_salmon ,recipe_detail_shrimp, recipe_detail_greek_chicken, recipe_detail_salad,recipe_detail_chicken_soup
 from .views import recipe_page, delete_comment, edit_comment, get_all_comment
 urlpatterns = [
-    path('', recipe_page, name ='recipe-page'),
+    path('', recipe_page, name ='recipe'),
     path('bruschetta/', recipe_detail_bruschetta, name='recipe-detail-bruschetta'),
     path('honey-walnut-shrimp/', recipe_detail_shrimp, name='recipe-detail-shrimp'),
     path('salad-caprese-zoodles/', recipe_detail_salad, name='recipe-detail-salad'),

@@ -16,17 +16,10 @@
                                     <h3>FeedBack</h3>
                                     <ul class="commentlist">
                                         {%for feedback in feedback_list %}
-                                        <li>
-                                            <div class="comment">
-                                                <span class="comment-image">
-                                        
-                                        </span>
-                                                <span class="comment-info d-text-c">
-                                        <span>&nbsp;  &nbsp; <a class="comment-reply-link d-text-c" href="./index.html"></a></span> {{feedback.name}}
-                                                </span>
-                                                <p>{{feedback.the_comment}}</p>
-                                            </div>
-
+                                        <li class="comment">
+                                            
+                                            <h4>{{feedback.name}}</h4>
+                                            <p>{{feedback.the_comment}}</p>
                                         </li>
 
                                         {% endfor %}
@@ -34,25 +27,7 @@
                                     </ul>
                                     
 
-                                    <div id="respond" class="comment-respond">
-                                        <h3>Leave a Comment</h3>
-                                        <form method="post" id="commentform" class="comment-form">
-                                            {% csrf_token %}
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    {{form.name}}
                                     
-                                                </div>
-                                                <div class="col-md-6">
-                                                    {{form.the_comment}}
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <input type= "submit" value="Submit" class="btn btn-default btn-block" >
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-
                                 </div>
                             </article>
                         </div>

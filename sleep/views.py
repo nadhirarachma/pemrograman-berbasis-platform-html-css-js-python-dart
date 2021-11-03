@@ -14,9 +14,18 @@ from django.http import HttpResponse
 
 @login_required(login_url='/authentication/login/')
 def mainpage_sleep(request):
-    e = Sleep.objects.get(user=request.user)
-    response = {'sleep': e}
-    return render(request, 'mainpage_sleep.html', response)
+    try:
+        e = Sleep.objects.get(user=request.user)
+        response = {'sleep': e}
+        return render(request, 'mainpage_sleep.html', response)
+    except:
+        objNew = Sleep.objects.create()
+        objNew.time = 0
+        objNew.user = request.user
+        objNew.today = datetime.datetime.now()
+        objNew.save()
+        response = {'sleep': objNew}
+        return render(request, 'mainpage_sleep.html', response)
 
 
 @login_required(login_url='/authentication/login/')
@@ -37,14 +46,19 @@ def new_sleep(request):
 
 @login_required(login_url='/authentication/login/')
 def update_sleep(request):
-    context = {}
     sleep = Sleep.objects.get(user=request.user)
-    form = TimeForm(request.POST or None)
 
-    if form.is_valid():
-        sleep.time += form.cleaned_data['time']
-        sleep.save()
-        return redirect('mainpage_s')
+    sleep.time = request.POST["time"]
+    sleep.save()
 
-    context['form'] = form
-    return render(request, "update_sleep.html", context)
+    return HttpResponse(200)
+
+
+@login_required(login_url='/authentication/login/')
+def reset_sleep(request):
+    sleep = Sleep.objects.get(user=request.user)
+
+    sleep.time = 0
+    sleep.save()
+
+    return HttpResponse(200)

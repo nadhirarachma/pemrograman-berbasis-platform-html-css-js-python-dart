@@ -2,12 +2,13 @@ from django.db import models
 from django.db.models.fields import TextField
 
 class News(models.Model):
-    title = models.CharField(max_length=30)
-    thumbnail = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    thumbnail = models.CharField(max_length=100)
     slug = models.SlugField()
     intro = models.TextField()
-    # image= models.CharField(max_length=500)
+    image= models.CharField(max_length=500)
     news = models.TextField()
+    sumber = models.TextField()
 
 class FeedBack(models.Model):
     name = models.CharField(max_length=30)

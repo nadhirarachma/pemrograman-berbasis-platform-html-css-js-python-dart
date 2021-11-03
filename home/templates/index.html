@@ -257,7 +257,10 @@
                         <button type="button" class="btn btn-default btn-lg btn-block" id="addfeedback">Feedback</button>
                         {% if user.is_superuser %} 
                         <br>
-                        <a class="btn btn-default" href="{% url 'feedback' %}" role="button">More</a>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-default btn-lg btn-block" href="{% url 'feedback' %}">See All Feedback</button>
+                        
                         
                         {% endif %}
 

@@ -2,8 +2,8 @@ from django.db import models
 from django.db.models.fields import TextField
 
 class News(models.Model):
-    title = models.CharField(max_length=50)
-    thumbnail = models.CharField(max_length=100)
+    title = models.CharField(max_length=30)
+    thumbnail = models.CharField(max_length=50)
     slug = models.SlugField()
     intro = models.TextField()
     image= models.CharField(max_length=500)

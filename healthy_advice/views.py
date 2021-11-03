@@ -50,8 +50,6 @@ def edit_comment(request, id):
     return HttpResponse(data, content_type = 'application/json')
 
 
-def manfaat_istirahat(request):
-    return render(request, 'manfaat_istirahat.html')
 
 def detail_article(request, id):
     article = HealthyArticle.objects.all().get(id=id)

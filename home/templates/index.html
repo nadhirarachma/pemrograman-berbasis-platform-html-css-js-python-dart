@@ -219,12 +219,10 @@
                     <div class="row wow fadeInUp">
                         <div class="col-md-8">
                             <p>
-                                Sleep is an essential function, it can recharge your body and mind, so that you can wake up refreshed and stay awake. Healthy sleep also helps the body stay healthy and stay away from disease. Without enough sleep, the brain cannot function properly. This can impair your ability to concentrate, think clearly, and process memory.
+                                It’s easy to get confused when it comes to health and nutrition. There are many opinions about things that need to be done for a healthy lifestyle, which can make it difficult to figure out what you should actually be doing to optimize your health. Here are health tips that are based on scientific evidence.
                             </p>
                             <br>
-                            <p>
-                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pancemic situation.
-                            </p>
+                            
                             <a class="btn btn-default" href="{% url 'healthy-advice' %}"  role="button">More</a>
 
                         </div>
@@ -257,6 +255,12 @@
                     <div class="row wow fadeInUp">
                       
                         <button type="button" class="btn btn-default btn-lg btn-block" id="addfeedback">Feedback</button>
+                        {% if user.is_superuser %} 
+                        <br>
+                        <a class="btn btn-default" href="{% url 'feedback' %}" role="button">More</a>
+                        
+                        {% endif %}
+
                         
                        
                         

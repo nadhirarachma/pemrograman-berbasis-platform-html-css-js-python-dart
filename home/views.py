@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from .models import FeedBack, News
 from .forms import FeedBackForm
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, response
 from django.contrib.auth.forms import UserModel
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required(login_url="/admin/login/")
 def feedback(request):     
-    feedback_list = FeedBack.objects.all()   
- 
-    return render(request, 'feedback.html', {'feedback_list': feedback_list})
+    feedback_list = FeedBack.objects.all() 
+    news_list = News.objects.all()  
+    response = {'news_list': news_list, 'feedback_list': feedback_list}
+    return render(request, 'feedback.html', response )
 
 
 def index(request):

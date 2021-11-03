@@ -3,12 +3,7 @@ from django.conf.urls import url
 
 from .views import index, news_page, feedback
 
-#
-# localhost/home/profile/editprofile
-#
-#
-#
-#
+
 
 urlpatterns = [
     path('', index, name='index'), 

@@ -157,7 +157,7 @@
                             </p>
                             <br>
                             <p>
-                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pancemic situation.
+                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pandemic situation.
                             </p>
                             <a class="btn btn-default" href="{% url 'mainpage_s' %}" role="button">More</a>
 
@@ -229,7 +229,7 @@
                         <div class="col-md-4">
                             <div class="container-fluid">
                                 
-                                <img src="{% static 'img/koalabobo.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+                                <img src="{% static 'img/yogakeren.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
                             </div>
                         </div>
 
@@ -254,12 +254,11 @@
                     </div>
                     <div class="row wow fadeInUp">
                       
-                        <button type="button" class="btn btn-default btn-lg btn-block" id="addfeedback">Feedback</button>
+                        <button type="button" class="btn btn-default btn-lg btn-block" id="addfeedback" style="margin : 12px 0px;">Feedback</button>
+                        
                         {% if user.is_superuser %} 
-                        <br>
-                        <br>
-                        <br>
-                        <button type="button" class="btn btn-default btn-lg btn-block" href="{% url 'feedback' %}">See All Feedback</button>
+                        
+                        <a type="button" class="btn btn-default btn-lg btn-block" href="{% url 'feedback' %}" style="margin : 12px 0px;">See All Feedback</a>
                         
                         
                         {% endif %}

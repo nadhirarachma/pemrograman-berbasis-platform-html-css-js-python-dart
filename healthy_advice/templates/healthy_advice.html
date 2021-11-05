@@ -194,7 +194,7 @@
             'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
       },
       success: function (result) {
-        // sebelum kita refresh tabel, kita kosongin dulu tablenya
+        // sebelum kita refresh tabel, kita kosongin dulu
         $("#kartu-comment").empty();
         // saat sudah bersih, kita dapetin ulang datanya
         getMessageData()
@@ -213,23 +213,17 @@ $('#submitbutton').click(function(e){
       url: `/healthy_advice/`,
       data: {
             'comment_field' : commentValue,
-            // csrf token for security
-            // 'commentator_name' : "",
-            // 'commentator_name_id' : "",
             'commentator_name' : '{{request.user}}',
             'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
       },
       success: function (result) {
-        // sebelum kita refresh tabel, kita kosongin dulu tablenya
+        // sebelum kita refresh tabel, kita kosongin dulu
         $("#kartu-comment").empty();
         // saat sudah bersih, kita dapetin ulang datanya
         getMessageData()
         $('#id_comment_field').val("")
       },
     });
-  // $("#kartu-comment").empty();
-  // console.log("halo dunia")
-  // getMessageData()
 });
 let editID = "";
 $(document).ready(function () {
@@ -255,10 +249,8 @@ $("#form-update").submit(function(e) {
       'comment_field': comment_value
     },
     success: function (response) {
-      // kita kosongin inputnya lagi abis berhasil nembak
+      //kosongin inputnya lagi
       $("#editText").val("") 
-      // $('#submitbutton').attr("data-bs-dismiss", "modal")
-
       $("#kartu-comment").empty();
       $.ajax({
           url: "/healthy_advice/get_all_comment", 
@@ -281,4 +273,3 @@ $("#form-update").submit(function(e) {
       </script>
 {% endblock %}
 
-<!-- id_comment_field -->

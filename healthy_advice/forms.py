@@ -5,7 +5,6 @@ from healthy_advice.models import CommentHealthy
 class NoteForm(forms.ModelForm):
     class Meta:
         model = CommentHealthy
-        # fields = '__all__'
         fields = ['comment_field', 'commentator_name']
         exclude = ('commentator_name',)
     

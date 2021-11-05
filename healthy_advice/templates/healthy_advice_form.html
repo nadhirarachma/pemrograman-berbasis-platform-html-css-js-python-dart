@@ -5,16 +5,11 @@
 			<div class = "subTitleForm">
 				<h4 style="justify-content: center;display: flex;">Leave a constructive comment below</h4> 
 			</div>
-			<!-- biar yang kayak gt gak kevalidasi -->
 			{% csrf_token %} 
 			<div class = "form-group form-wrapper comment-box" >
 				<div class="fieldWrapper">
 
 					{{ form.to.errors }}
-					<!-- <label 
-					for="{{ form.comment.id_for_label }}"
-					class="d-flex justify-content-start w-100">Leave a comment:</label> -->
-					<!-- class="d-flex justify-content-end w-100" -->
 					<div class="d-flex justify-content-end w-100" style="box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;">{{form.comment_field}}</div>
 				</div>
 			</div>
@@ -25,9 +20,6 @@
 		</form>
 	</section>
 </div>
-<!-- <a href="#myDonasi">
-	<input type="submit" value="Post" id="submitbutton">
-</a> -->
 {% else %}
 <p class="please-login p20px">Please login to add a comment</p>
 {% endif %}

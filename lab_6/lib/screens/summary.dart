@@ -35,7 +35,7 @@ class ProfileApp extends StatelessWidget {
                 ),
               ),
               width: double.infinity,
-              height: 1050,
+              height: 1100,
               child: Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -369,6 +369,9 @@ class ProfileApp extends StatelessWidget {
                           ],
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 25.0,
                     ),
                   ],
                 ),

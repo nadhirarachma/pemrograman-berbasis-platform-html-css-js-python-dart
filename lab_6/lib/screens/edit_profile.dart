@@ -380,7 +380,7 @@ class EditApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 25.0,
+                      height: 35.0,
                     ),
                   ],
                 ),

@@ -7,6 +7,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+import json
+from os import error
+from django.http import response
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework import status
+
 
 # Create your views here.
 from .models import *
@@ -68,3 +75,18 @@ def logoutUser(request):
 
 def home(request):
 	return redirect(welcome)
+
+@csrf_exempt
+def login_flutter(request):
+	data = json.loads(request.body)
+	username = data["username"]
+	password = data["password"]
+	print(f"{username} \n{password}")
+
+	user = authenticate(username=username, password=password)
+	if user is not None:
+		# print("Hore")
+		return JsonResponse(data, status=status.HTTP_201_CREATED)
+	else:
+		# print("Sad")
+		return JsonResponse(error, status=status.HTTP_400_BAD_REQUEST)

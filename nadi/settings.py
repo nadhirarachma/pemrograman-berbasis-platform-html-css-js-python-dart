@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'e-nadi.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +56,20 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ORIGIN_ALLOW_ALL = True    
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:19236",
+#     "http://localhost:8000",
+# ]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
 ]
 
 ROOT_URLCONF = 'nadi.urls'

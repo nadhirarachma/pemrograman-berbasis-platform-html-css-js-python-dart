@@ -13,13 +13,20 @@ def healthy_advice(request):
     notes = CommentHealthy.objects.all()
     articles = HealthyArticle.objects.all()
     form = NoteForm()
+    for note in notes:
+        print(str(note.commentator_name) == str(request.user))
+        if (str(note.commentator_name) == str(request.user)):
+            flag=True
+            break
     if request.is_ajax():
         form = NoteForm(request.POST)
         if form.is_valid():
+            print(request.user)
             obj = form.save(commit=False)
             obj.commentator_name = request.user
             # print(obj)
             obj.save()
+            print(obj.commentator_name)
             return HttpResponseRedirect("/healthy_advice")
         
     response = {'notes' : notes, 'form' : form, 'articles':articles}

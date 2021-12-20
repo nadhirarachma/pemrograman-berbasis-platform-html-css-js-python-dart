@@ -6,5 +6,5 @@ urlpatterns = [
     path('delete/<int:id>', delete_comment, name='delete-comment'),
     path('edit/<int:id>', edit_comment, name='edit-comment'),
     path('details/<int:id>', detail_article, name='detail-article'),
-    path('get_all_article', get_all_comment, name='get-all-article'),
+    path('get_all_article', get_all_article, name='get-all-article'),
 ]

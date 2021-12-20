@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*x^7rnm(l*_rqwuw@x1)n3oe6-t%$uld!-a$n0xu88xoc2eyro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'e-nadi.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'e-nadi.herokuapp.com', '10.0.2.2', '.localhost', '[::1]']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'recipe',
     'healthy_advice',
     'sleep',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,7 @@ CORS_ALLOW_METHODS = [
     'GET',
     'POST',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'nadi.urls'
 

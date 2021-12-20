@@ -5,6 +5,7 @@ from healthy_advice.models import CommentHealthy, HealthyArticle
 from healthy_advice.forms import NoteForm
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 # from healthy_advice.models import Rating
 
 # Create your views here.
@@ -24,11 +25,13 @@ def healthy_advice(request):
     response = {'notes' : notes, 'form' : form, 'articles':articles}
     return render(request, 'healthy_advice.html', response)
 
+@csrf_exempt
 def get_all_comment(request):
     all_comment = CommentHealthy.objects.all()
     data = serializers.serialize('json', all_comment)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
 def delete_comment(request, id):
     obj = get_object_or_404(CommentHealthy, id = id)
     
@@ -39,7 +42,8 @@ def delete_comment(request, id):
     data = serializers.serialize('json', CommentHealthy.objects.all())
 
     return HttpResponse(data, content_type='application/json')
-
+    
+@csrf_exempt
 def edit_comment(request, id):
     obj = get_object_or_404(CommentHealthy, id = id)
     if request.is_ajax():
@@ -57,3 +61,9 @@ def detail_article(request, id):
         'details' : article
     }
     return render(request, 'article_detail.html', response)
+
+@csrf_exempt
+def get_all_article(request):
+    all_article = HealthyArticle.objects.all()
+    data = serializers.serialize('json', all_article)
+    return HttpResponse(data, content_type="application/json")

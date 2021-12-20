@@ -120,8 +120,10 @@
     
       <script>
        const getMessageData = () => {
+    //  biar mastiin manggil ajaxnya kalo document di browsernya udah ada
     return $(document).ready(function(){
               $.ajax({
+                // dapetin semua comment
                   url: "/healthy_advice/get_all_comment", 
                   success: function(results){
                       results.map((result)=>{

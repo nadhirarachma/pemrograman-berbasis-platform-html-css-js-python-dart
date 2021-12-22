@@ -4,6 +4,9 @@ from .forms import FeedBackForm
 from django.http import HttpResponse, HttpResponseRedirect, response
 from django.contrib.auth.forms import UserModel
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, JsonResponse
+from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url="/admin/login/")
@@ -45,5 +48,14 @@ def news_page(request, slug):
     response = {'new':  new}
     return render(request, 'home_news.html', response)
 
+@csrf_exempt
+def get_all_article(request):
+    all_article = FeedBack.objects.all()
+    data = serializers.serialize('json', all_article)
+    return HttpResponse(data, content_type="application/json")
 
-
+@csrf_exempt
+def get_all_comment(request):
+    all_comment = News.objects.all()
+    data = serializers.serialize('json', all_comment)
+    return HttpResponse(data, content_type="application/json")

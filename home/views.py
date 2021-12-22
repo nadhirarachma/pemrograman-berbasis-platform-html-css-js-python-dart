@@ -49,13 +49,13 @@ def news_page(request, slug):
     return render(request, 'home_news.html', response)
 
 @csrf_exempt
-def get_all_article(request):
-    all_article = FeedBack.objects.all()
-    data = serializers.serialize('json', all_article)
+def get_all_news(request):
+    all_news = FeedBack.objects.all()
+    data = serializers.serialize('json', all_news)
     return HttpResponse(data, content_type="application/json")
 
 @csrf_exempt
-def get_all_comment(request):
-    all_comment = News.objects.all()
-    data = serializers.serialize('json', all_comment)
+def get_all_feedback(request):
+    all_feedback = News.objects.all()
+    data = serializers.serialize('json', all_feedback)
     return HttpResponse(data, content_type="application/json")

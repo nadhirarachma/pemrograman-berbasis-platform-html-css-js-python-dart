@@ -79,9 +79,9 @@ def home(request):
 @csrf_exempt
 def login_flutter(request):
 	data = json.loads(request.body)
-	username = data["username"]
-	password = data["password"]
-	print(f"{username} \n{password}")
+
+	username = request["username"]
+	password = request["password"]
 
 	user = authenticate(username=username, password=password)
 	if user is not None:

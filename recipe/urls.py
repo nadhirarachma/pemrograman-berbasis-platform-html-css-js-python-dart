@@ -10,7 +10,6 @@ urlpatterns = [
     path('baked-salmon/', recipe_detail_salmon, name='recipe-detail-salmon'),
     path('chicken-soup/', recipe_detail_chicken_soup, name='recipe-detail-chicken-soup'),
     path('delete/<int:id>', delete_comment, name='delete-comment'),
-    path('edit/<int:id>', edit_comment, name='edit-comment'),
     path('get_all_comment', get_all_comment, name='get-all-comment'),
 
 ]

@@ -48,6 +48,15 @@ def get_all_comment(request):
     data = serializers.serialize('json', all_comment)
     return HttpResponse(data, content_type="application/json")
 
+@csrf_exempt
+def postMethod(request):
+    komen = Comment(
+        username = request.POST.get('username', None),
+        content = request.POST.get('content', None),
+        post_date = request.post.get('post_date', None),
+    )
+    komen.save()
+
 def delete_comment(request, id):
     obj = get_object_or_404(Comment, id = id)
     

@@ -59,11 +59,3 @@ def delete_comment(request, id):
 
     return HttpResponse(data, content_type='application/json')
 
-def edit_comment(request, id):
-    obj = get_object_or_404(Comment, id = id)
-    if request.is_ajax():
-        new_comment = request.POST.get('content')
-        obj.content = new_comment
-        obj.save()
-    data = serializers.serialize('json', [obj, ])    
-    return HttpResponse(data, content_type = 'application/json')

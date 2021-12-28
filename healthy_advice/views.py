@@ -6,6 +6,8 @@ from healthy_advice.forms import NoteForm
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
+import json
+
 # from healthy_advice.models import Rating
 
 # Create your views here.
@@ -14,7 +16,7 @@ def healthy_advice(request):
     articles = HealthyArticle.objects.all()
     form = NoteForm()
     for note in notes:
-        print(str(note.commentator_name) == str(request.user))
+        # print(str(note.commentator_name) == str(request.user))
         if (str(note.commentator_name) == str(request.user)):
             flag=True
             break
@@ -26,7 +28,7 @@ def healthy_advice(request):
             obj.commentator_name = request.user
             # print(obj)
             obj.save()
-            print(obj.commentator_name)
+            # print(obj.commentator_name)
             return HttpResponseRedirect("/healthy_advice")
         
     response = {'notes' : notes, 'form' : form, 'articles':articles}
@@ -74,3 +76,24 @@ def get_all_article(request):
     all_article = HealthyArticle.objects.all()
     data = serializers.serialize('json', all_article)
     return HttpResponse(data, content_type="application/json")
+
+@csrf_exempt
+def post_comment_api(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Add Failed"}, status=400)
+
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+
+        # commentator_name = data["commentator_name"]
+        comment_field = data["comment_field"]
+
+        comment_healthy = CommentHealthy(commentator_name=request.user, comment_field=comment_field)
+
+        comment_healthy.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    
+    else:
+        return JsonResponse({"status": "error"}, status=401)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Exercise
-from .forms import ExerciseForm, TimeForm
+from .forms import TimeForm
 from django.contrib.auth.decorators import login_required
 import datetime
 
@@ -10,30 +10,37 @@ from django.http import HttpResponse
 @login_required(login_url='/authentication/login/')
 def workout_page(request):
     e = Exercise.objects.get(user=request.user)
+    if (datetime.date.today() != e.today):
+        e.today = datetime.date.today()
+        e.time = 0
+        e.save()
     response = {'exercise': e}
     return render(request, 'workout_page.html', response)
 
-def new_workout(request):
-    context = {}
-    exercise = Exercise.objects.get(user=request.user)
-    form = ExerciseForm(request.POST or None, instance=exercise)
+@login_required(login_url='/authentication/login/')
+def reset_workout(request):
+    e = Exercise.objects.get(user=request.user)
+    e.time = 0
+    e.save()
+    return redirect('w_page')
 
-
-    if form.is_valid():
-        form.save()
-        return redirect('w_page')
-
-    context['form'] = form
-    return render(request, "workout_new.html", context)
-
-
+@login_required(login_url='/authentication/login/')
 def update_workout(request):
     context = {}
     exercise = Exercise.objects.get(user=request.user)
     form = TimeForm(request.POST or None)
 
+    if (datetime.date.today() != exercise.today):
+        exercise.today = datetime.date.today()
+        exercise.time = 0
+        exercise.save()
+
     if form.is_valid():
         exercise.time += form.cleaned_data['time']
+        if exercise.time > 1440:
+            exercise.time = 1440
+        elif exercise.time < 0:
+            exercise.time = 0
         exercise.save()
         return redirect('w_page')
 

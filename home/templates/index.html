@@ -1,5 +1,47 @@
 {% extends 'base.html' %}
+{% block title %} Home Page {% endblock%}
 {% load static %}
+
+{% block meta %}
+
+
+<style>
+    .background-modal{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0,0,0,0.6);
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+
+    }
+
+    .modal-content{
+        width: 60%;
+        height: 70%;
+        background-color: white;
+        border-radius: 4px;
+        position:relative;
+        text-align: center;
+        padding: 5%;
+
+    }
+    .close-button{
+        position :absolute;
+        top:0;
+        right: 14px;
+        font-size: 42px;
+        transform: rotate(45deg);
+        cursor:pointer;
+    }
+
+</style>
+
+
+{% endblock %}
 {% block content %}
             <!-- Home page-->
             <section class="home">
@@ -9,14 +51,16 @@
                             <img src="{% static 'img/nav-logo2.png' %}" alt="logo">
                         </a>
                     </div>
+                    {% if user.is_authenticated %}
+                        <h1> Welcome {{user.get_full_name}} </h1>
+                    {% endif %}
+
                     <h1>e - Nadi </h1>
                     <h2>your healthy support system</h2>
+                    
+                   
                 </div>
-                <div class="scroll-down">
-                    <a href="#about">
-                        <img src="{% static 'img/arrow-down.png' %}" alt="down-arrow">
-                    </a>
-                </div>
+                
             </section>
 
             <!-- UPDATEEE -->
@@ -36,7 +80,7 @@
                                     {%for new in news_list %}
                                     <li>
                                         <div class="slider-img">
-                                            <img src="{% static 'img/thumb4.png' %}" alt="" />
+                                            <img src="{{new.image}}" alt="" />
                                         </div>
                                         <div class="slider-content">
                                             <div class="page-header">
@@ -90,7 +134,7 @@
                             <p>
                                 Introducing our workout tracker. We provide you a feature that helps you stay within your target. 
                             </p>
-                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+                            <a class="btn btn-default" href="{% url 'w_page' %}" role="button">More</a>
 
                         </div>
                     </div>
@@ -113,9 +157,9 @@
                             </p>
                             <br>
                             <p>
-                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pancemic situation.
+                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pandemic situation.
                             </p>
-                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+                            <a class="btn btn-default" href="{% url 'mainpage_s' %}" role="button">More</a>
 
                         </div>
                         <div class="col-md-4">
@@ -153,7 +197,7 @@
                             <p>
                                 We realize there are some people that hard to get an idea of a healthy meal. They just scroll down social media to find a recipe. In this feature, you can see a bunch of references for your menu. No need to worry, these menus are healthy diets.
                             </p>
-                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+                            <a class="btn btn-default" href="{%url 'recipe' %}"  role="button">More</a>
 
 
                         </div>
@@ -175,19 +219,17 @@
                     <div class="row wow fadeInUp">
                         <div class="col-md-8">
                             <p>
-                                Sleep is an essential function, it can recharge your body and mind, so that you can wake up refreshed and stay awake. Healthy sleep also helps the body stay healthy and stay away from disease. Without enough sleep, the brain cannot function properly. This can impair your ability to concentrate, think clearly, and process memory.
+                                It’s easy to get confused when it comes to health and nutrition. There are many opinions about things that need to be done for a healthy lifestyle, which can make it difficult to figure out what you should actually be doing to optimize your health. Here are health tips that are based on scientific evidence.
                             </p>
                             <br>
-                            <p>
-                                Many adults underestimate the importance of sleep. We know there are so many people that is not sleep properly. With this feature, we help you to track your sleep hour and make sure you have good immunity during this pancemic situation.
-                            </p>
-                            <a class="btn btn-default" href="./index.html" role="button">More</a>
+                            
+                            <a class="btn btn-default" href="{% url 'healthy-advice' %}"  role="button">More</a>
 
                         </div>
                         <div class="col-md-4">
                             <div class="container-fluid">
                                 
-                                <img src="{% static 'img/koalabobo.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
+                                <img src="{% static 'img/yogakeren.jpg' %}" data-mfp-src="img/fullImages/pic1.jpg" class="img-responsive" alt="logo">
                             </div>
                         </div>
 
@@ -200,7 +242,7 @@
             <br>
             <br>
             <br>
-
+            {% if user.is_authenticated %}
             <section class="about" id="about">
                 <div class="container">
                     <div class="row">
@@ -211,15 +253,63 @@
                         </div>
                     </div>
                     <div class="row wow fadeInUp">
+                      
+                        <button type="button" class="btn btn-default btn-lg btn-block" id="addfeedback" style="margin : 12px 0px;">Feedback</button>
                         
+                        {% if user.is_superuser %} 
+                        
+                        <a type="button" class="btn btn-default btn-lg btn-block" href="{% url 'feedback' %}" style="margin : 12px 0px;">See All Feedback</a>
+                        
+                        
+                        {% endif %}
+
                         
                        
                         
-                        <a class="btn btn-default" href="{% url 'feedback' %}" role="button">Feedback</a>
+                       
                     </div>
                 </div>
             </section>
+            {% endif %}
+
 
             
 {% endblock %}
+
+{% block luarbody %}
+<div class="background-modal">
+    <div class="modal-content">
+        <div class="close-button">+</div>
+        <div id="respond" class="comment-respond">
+            <h3>We want you to be part of our improvement.</h3> <p>NOTE: once you click submit you cannot edit your feedback</p>
+             <form method="post" id="commentform" class="comment-form">
+                 {% csrf_token %}
+                 <div class="row">
+                     
+                     <div class="col-md-6">
+                         
+                     </div>
+                     <div class="col-md-12">
+                         {{form.the_feedback}}
+                         <!-- <input type= "submit" value="Submit" class="btn btn-default btn-block" > -->
+                         <button type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                     </div>
+                 </div>
+             </form>
+         </div>
+
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('addfeedback').addEventListener('click', function(){
+        document.querySelector('.background-modal').style.display = 'flex';
+    });
+
+    document.querySelector('.close-button').addEventListener('click', function(){
+        document.querySelector('.background-modal').style.display = 'none';
+    })
+</script>
+{% endblock%}
 

@@ -35,41 +35,6 @@
     font-size:large;
     padding: 12px;
 }
-/* body {
-    background: #C8E6C9
-}
-
-.no-box-shadow {
-    box-shadow: none
-}
-
-.no-box-shadow:focus {
-    box-shadow: none
-}
-
-.day {
-    font-size: 9px
-}
-
-.heart {
-    border: 1px soild green !important;
-    border-color: green !important;
-    border-radius: 22px
-}
-
-.heart-icon {
-    color: green
-}
-
-.comment-text {
-    font-size: 12px
-}
-
-.delete {
-    font-size: 13px;
-    cursor: pointer
-} */
-
 .container-form{
     display: flex;
     justify-content: center;
@@ -81,7 +46,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 .comment-box {
     display: flex;
@@ -93,4 +57,36 @@
 .hihokartu:hover{
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.hihokartu {
+    max-width: 500px !important;
+    min-width: 500px !important;
+    max-height: 500px !important;
+    min-height: 352px !important;
+}
+.gambar {
+    object-fit: cover;
+    width: 150px;
+    margin: 12px;
+}
+#kartu-comment {
+    display: flex;
+    flex-direction: column;
+    column-gap: 12px;
+    gap: 20px;
+    min-width: 700px !important;
+    max-width: 700px !important;
+
+}
+
+.commentsection-card {
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+}
+
+p.please-login{
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
 }

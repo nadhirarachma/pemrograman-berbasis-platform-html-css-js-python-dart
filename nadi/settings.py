@@ -25,12 +25,14 @@ SECRET_KEY = 'django-insecure-*x^7rnm(l*_rqwuw@x1)n3oe6-t%$uld!-a$n0xu88xoc2eyro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'e-nadi.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'e-nadi.herokuapp.com', '10.0.2.2', '.localhost', '[::1]']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +56,22 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True    
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:19236",
+#     "http://localhost:8000",
+# ]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+]
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'nadi.urls'
 
@@ -122,7 +139,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

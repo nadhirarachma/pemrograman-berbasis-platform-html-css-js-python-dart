@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserModel
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+import json
+from os import error
+from django.http import response
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 from .models import *
@@ -16,6 +21,8 @@ from home.views import index as welcome
 
 # workout
 from workout.models import Exercise
+
+from sleep.models import Sleep
 
 def registerPage(request):
 	if request.user.is_authenticated:
@@ -29,6 +36,9 @@ def registerPage(request):
 				username = form.cleaned_data.get('username')
 				messages.success(request, 'Account was created for ' + username)
 				Exercise.objects.create(
+					user=user,
+				)
+				Sleep.objects.create(
 					user=user,
 				)
 
@@ -59,10 +69,53 @@ def loginPage(request):
 
 def logoutUser(request):
 	logout(request)
-	return redirect('login')
+	return redirect(welcome)
 
 def home(request):
-	if request.user.is_authenticated:
-		return redirect(welcome)
-	else:
-		return redirect('login')
+	return redirect(welcome)
+
+@csrf_exempt
+def login_flutter(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page.
+            return JsonResponse({
+              "status": True,
+              "username": request.user.username,
+              "message": "Successfully Logged In!"
+            }, status=200)
+        else:
+            return JsonResponse({
+              "status": False,
+              "message": "Failed to Login, Account Disabled."
+            }, status=401)
+
+    else:
+        return JsonResponse({
+          "status": False,
+          "message": "Failed to Login, check your email/password."
+        }, status=401)
+
+@csrf_exempt
+def registerFlutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        username = data["username"]
+        email = data["email"]
+        password1 = data["password1"]
+
+        newUser = UserModel.objects.create_user(
+        username = username, 
+        email = email,
+        password = password1,
+        )
+
+        newUser.save()
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+
+    <head>
+        <title>Recipe Chicken Bruschetta</title>
+        <link rel = "stylesheet" type= "text/css" href="{% static 'css/recipestyle.css' %}">
+
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/0ab3514e4e.js" crossorigin="anonymous"></script>
+
+        <!-- Responsive Tag -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS & Script-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <!--Font Family Monsserat-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="body">
+            <div class="main-wrapper">
+                <!-- Page Header -->
+                <section class="page_header">
+                    <div class="overlay-image" style="background-image:url(/static/img/header/satu.jpg)">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1 class="text-uppercase"> Recipes</h1>
+                                <p> ㅤHealtyh Food Bring Healthy Life</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="single-recipe">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single-recipe-image">
+                                    <img class= "img-responsive" src={% static '/img/recipie/recipe6.jpg' %} alt="image-recipe-detail" style= "width:100% ;"/>
+                                </div>
+                                <div class="clearfix"></div>
+                                <h3>Steps</h3>
+                                <br>
+                                
+                                <ol class="directions-list">
+                                    <li>Dalam mangkuk besar, campurkan 2 sendok makan minyak zaitun, jus lemon, bawang putih, dan oregano. Kocok hingga tercampur lalu masukkan paha ayam dan aduk hingga rata. Tutup mangkuk dengan bungkus plastik dan biarkan marinated di lemari es setidaknya selama 15 menit hingga 2 jam.</li>
+                                    <li>Saat Anda siap memasak ayam, panaskan oven hingga 425 °. Tahan temperature di atas api sedang-tinggi, panaskan sisa sendok makan minyak zaitun. Bumbui kedua sisi ayam yang sudah diasinkan dengan garam dan merica, lalu tambahkan sisi kulit ayam ke bawah dan tuangkan sisa bumbunya.</li>
+                                    <li>Goreng sampai kulit menjadi keemasan dan renyah, sekitar 10 menit. Balik ayam dan tambahkan asparagus, zucchini, dan lemon ke dalam wajan.</li>
+                                    <li style="padding-top: 15px;"> Pindahkan panci ke oven dan masak sampai ayam matang dan sayuran empuk, sekitar 15 menit.</li>
+                                </ol>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="container-detail"> </div>
+                                <h3>Chicken Soup</h3>
+                                <p> Resep sup ayam ini sangat mudah dibuat dan sehat. Gunakan sayuran apa pun yang Anda miliki untuk membuat sup ini menjadi sup yang paling mudah untuk disatukan.
+                                </p>
+                                <div class="ingredients">
+                                    <h4 class="title">Bahan</h4>
+                                    <ul>
+                                        <li>1 tbsp. minyak zaitun extra-virgin</li>
+                                        <br>
+                                        <li>1 bawang bombay sedang, cincang</li>
+                                        <br>
+                                        <li>2 wortel besar, cincang</li>
+                                        <br>
+                                        <li> 2 batang seledri, cincang</li>
+                                        <br>
+                                        <li>1/2 pon asparagus, lalu pangkas dan dipotong menjadi 1 potongan"</li>
+                                        <br>
+                                        <li> 2 zucchini, potong setengah bulan</li>
+                                        <br>
+                                        <li>2 siung bawang putih, cincang</li>
+                                        <br>
+                                        <li>1 sendok teh. bumbu oregano</li>
+                                        <br>
+                                        <li>garam dan lada hitam fresh </li>
+                                        <br>
+                                        <li>6c. kaldu ayam</li>
+                                        <br>
+                                        <li>1 pon dada ayam tanpa kulit dan tanpa tulang</li>
+                                        <br>
+                                        <li>1/4 c. jus lemon</li>
+                                        <br>
+                                        <li>1c. kacang polong beku</li>
+                                        <br>
+                                        <li>1c. jagung beku</li>
+                                        <br>
+                                        <li>Untuk hiasan gunakan irisan lemon dan Peterseli cincang segar</li>
+                                        <br>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </section >
+                        {% include 'recipe_carousel.html' %}  
+                    <section>
+                </section>
+                
+
+            </div>
+        </div>
+    </bod>
+</html>
+{% endblock %}

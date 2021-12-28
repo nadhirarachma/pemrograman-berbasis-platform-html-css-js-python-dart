@@ -77,11 +77,6 @@ a {
     margin-bottom: 20px;
 
 
-    /*
-    margin-bottom: 20px;
-    float: left;
-    width: 254px;
-    */
 }
 
 
@@ -115,10 +110,6 @@ a {
     font-family: "Montserrat", san-serif;
     text-align: left;
 }
-.rc-ratings {
-    margin: 12px 0px 10px;
-}
-
 .recipie-content .btn-default {
     color: #534120;
     padding: 17px;
@@ -164,6 +155,7 @@ a {
     border-radius: 1px;
     background-color: #007BFF;
     padding-bottom:20px;
+    
 }
 .carousel-favorite h3{
     font-weight: 800;
@@ -176,7 +168,6 @@ a {
 .carousel-favorite p{
     color: #fff;
     text-align: left;
-    padding: 40px 0px;
 }
 .carousel-favorite h1{
     font-size: 40px;
@@ -191,7 +182,8 @@ a {
     left:0;
     right:0;
     margin-left:150px;
-    margin-bottom:80px
+    margin-bottom:80px;
+    
 }
 .overlay-image, .overlay-image img{
     position: absolute;
@@ -204,13 +196,6 @@ a {
     opacity: 0.5;
 }
 
-.fa{
-    color:gold;
-}
-.fas{
-    color:red;
-
-}
 .single-recipe-image {
     padding: 12px;
     border: 1px solid #F1F1F1;
@@ -319,3 +304,131 @@ a {
     font-size: 17px;
     line-height: 27px;
 }
+#submitbutton{
+    color: black;
+    padding-left: 25px;
+    padding-right:26px;
+    padding-top:17px;
+    padding-bottom:17px;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    line-height: 14px;
+    font-weight: 700;
+    background-color: lightgray;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+#submitbutton:hover{
+    transform: scale(1.1);
+    transition: .4s;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.login-comment{
+    text-align: center;
+    position: absolute;
+    padding:20px;
+}
+
+.comment-username{
+    font-weight:bold;
+    font-size:20px
+}
+.comment-content{
+    padding-left:5px;
+    padding-top:10px; 
+    font-size:16px; 
+}
+/* setting max character length for comment card */
+.comment-content p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.commentrecipe-container{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .15);   
+
+}
+
+.commentrecipe-container:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#kartu-comment {
+    display: flex;
+    flex-direction: column;
+    column-gap: 15px;
+    gap: 25px;
+    min-width: 700px !important;
+    max-width: 700px !important;
+}
+textarea{
+    width:100%;
+}
+/* For Tablets */
+@media all and (max-width: 1000px) {
+    .carousel-favorite h1{
+        color: #fff;
+        width:50%;
+        font-size:32px;
+        line-height:36px;
+    }
+}
+ /* For Smartphones */
+ @media all and (max-width: 670px) {
+    textarea{
+        width:100%;
+    }
+    .carousel-favorite{
+        width:100%
+    }
+    .carousel-favorite p{
+        color: #fff;
+        text-align: left;
+        font-size:14px;
+        line-height: 20px;
+        width:100%;
+    }
+    .carousel-favorite h1{
+        color: #fff;
+        width:100%;
+        font-size:24px;
+        line-height:36px;
+    }
+    
+ }
+/* bootstrap resize button  */
+ @media (max-width: 768px) {
+    .btn {
+      font-size:11px;
+      padding:4px 6px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .btn {
+      font-size:12px;
+      padding:6px 12px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .btn {
+      font-size:14px;
+      padding:8px 12px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .btn {
+      padding:10px 16px;
+      font-size:18px;
+    }
+  }

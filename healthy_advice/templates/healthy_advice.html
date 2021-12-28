@@ -69,97 +69,26 @@
                 </div>
             </div>
             <div class = "contents" style=" display: flex;justify-content: center;padding: 12px;">
-                <div class = "card container" style="margin: 20px;display: flex;flex-direction: row;flex-wrap: wrap;align-content: space-between;justify-content: space-around;align-items: center; padding: 20px;">
+                <div class = "card container" style="margin: 20px;display: flex;flex-direction: row;flex-wrap: wrap;align-content: space-between;justify-content: space-around;align-items: center; padding: 20px; gap: 16px; column-gap: 16px;">
+                   {% for article in articles %}
+                   
                     <div class="card mb-3 hihokartu" style="max-width: 360px;">
+            
                         <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Manfaat Istirahat yang Cukup dan Cara Memperolehnya</h5>
+                          <h5 class="card-title judulkartu">{{article.title}}</h5>
                           <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/34730/nurse-health-care-clipart-md.png" class="card-img" alt="...">
+                            <img src="{{article.image_link}}" class="gambar card-img" alt="...">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <p class="card-text isikartu">Tidur sama pentingnya dengan olahraga teratur dan makan makanan yang seimbang. Tidak hanya bisa...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
+                              <p class="card-text isikartu">{{article.deskripsi|slice:"0:80"}}...</p>
+                              <p class="card-text updatekartu"><small class="text-muted">Created at : {{article.created_at}}</small></p>
+                              <a href="details/{{article.pk}}" class="btn btn-lg btn-info"> View details</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Manfaat Donor Plasma Konvalesen pada Pasien Covid-19</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35209/nursing-elderly-care-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Untuk mencegah dampak yang lebih buruk, banyak orang yang mulai mencoba untuk mendapatkan donor...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">4 Jenis Olahraga Ringan di Rumah selama Pandemi</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35073/nursing-elderly-care-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Olahraga sangat baik untuk menjaga kesehatan tubuh, terutama untuk menghindari serangan dari virus corona...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Cara Jaga Kesehatan Mental saat Pandemi COVID-19</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/37727/nurse-woman-advice-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Sejak virus corona menjadi pandemi dunia, perasaan, dan pikiran buruk terkait tentang masa depan orang-orang...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Tips Berbelanja Makanan Selama Pandemi COVID-19</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35248/nurse-health-care-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card mb-3 hihokartu" style="max-width: 360px;">
-                        <div class="row no-gutters">
-                          <h5 class="card-title judulkartu">Cara Cek Saturasi Oksigen Normal saat Pandemi Corona</h5>
-                          <div class="col-md-4">
-                            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/36421/doctor-advise-clipart-md.png" class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <p class="card-text isikartu">Penyakit paru-paru seperti COVID-19 bisa menyebabkan kadar oksigen dalam darah menurun. Kondisi tersebut...</p>
-                              <p class="card-text updatekartu"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href=# class="btn btn-lg btn-info"> View details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    {% endfor %}
                 </div>
               </div>
               {% include 'healthy_advice_form.html' %}
@@ -175,13 +104,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form method="POST" id="form-update">
+                    <form method="POST" id="form-update" style="display: flex; gap: 72px; align-items: center;">
                       <textarea name="" id="editText" cols="30" rows="10"></textarea>
-                      <button type="submit" class="btn btn-primary" id="submitbutton" data-bs-dismiss="modal">Post</button>
+                      <button type="submit" class="btn btn-primary" id="submitbutton" data-bs-dismiss="modal" style="max-height:60px; min-height: 60px; padding: 16px;">Post</button>
                     </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -194,8 +120,10 @@
     
       <script>
        const getMessageData = () => {
+    //  biar mastiin manggil ajaxnya kalo document di browsernya udah ada
     return $(document).ready(function(){
               $.ajax({
+                // dapetin semua comment
                   url: "/healthy_advice/get_all_comment", 
                   success: function(results){
                       results.map((result)=>{
@@ -216,10 +144,13 @@
 
     if (is_user){
       return $("#kartu-comment").append(`
-      <div class="p-3 bg-white mt-2 rounded">
+      <div class="commentsection-card p-3 bg-white mt-2 rounded">
           <div class="d-flex justify-content-between" style = "gap: 12px;">
               <div class="d-flex flex-row user">
-                  <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.commentator_name}</span><span class="day">1 day ago</span></div>
+                  <div class="d-flex flex-column ml-2">
+                    <span class="font-weight-bold">${result.fields.commentator_name}</span>
+                    <span class="day">User</span>
+                  </div>
               </div>
               <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right" style = "gap: 50px">
                 <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
@@ -228,7 +159,7 @@
               </button>
                 </div>
           </div>
-          <div class="comment-text text-justify mt-2">
+          <div class="handle-overflow comment-text text-justify mt-2" style = "overflow-wrap: break-word !important;">
               <p>${result.fields.comment_field}</p>
           </div>
       </div>`)
@@ -236,13 +167,16 @@
     }
     else{
       return $("#kartu-comment").append(`
-      <div class="p-3 bg-white mt-2 rounded">
+      <div class="commentsection-card p-3 bg-white mt-2 rounded">
           <div class="d-flex justify-content-between" style = "gap: 12px;">
               <div class="d-flex flex-row user">
-                  <div class="d-flex flex-column ml-2"><span class="font-weight-bold">${result.fields.commentator_name}</span><span class="day">1 day ago</span></div>
+                  <div class="d-flex flex-column ml-2">
+                    <span class="font-weight-bold">${result.fields.commentator_name}</span>
+                    <span class="day">User</span>
+                  </div>
               </div>
           </div>
-          <div class="comment-text text-justify mt-2">
+          <div class="handle-overflow comment-text text-justify mt-2" style = "overflow-wrap: break-word !important;">
               <p>${result.fields.comment_field}</p>
           </div>
       </div>`)
@@ -262,7 +196,7 @@
             'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
       },
       success: function (result) {
-        // sebelum kita refresh tabel, kita kosongin dulu tablenya
+        // sebelum kita refresh tabel, kita kosongin dulu
         $("#kartu-comment").empty();
         // saat sudah bersih, kita dapetin ulang datanya
         getMessageData()
@@ -281,29 +215,22 @@ $('#submitbutton').click(function(e){
       url: `/healthy_advice/`,
       data: {
             'comment_field' : commentValue,
-            // csrf token for security
-            // 'commentator_name' : "",
-            // 'commentator_name_id' : "",
             'commentator_name' : '{{request.user}}',
             'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
       },
       success: function (result) {
-        // sebelum kita refresh tabel, kita kosongin dulu tablenya
+        // sebelum kita refresh tabel, kita kosongin dulu
         $("#kartu-comment").empty();
         // saat sudah bersih, kita dapetin ulang datanya
         getMessageData()
         $('#id_comment_field').val("")
       },
     });
-  // $("#kartu-comment").empty();
-  // console.log("halo dunia")
-  // getMessageData()
 });
 let editID = "";
 $(document).ready(function () {
   $("#kartu-comment").on('click', '#editbutton', function() {
       editID = $(this).attr("value");
-      console.log("haloooo")
   });
 });
 
@@ -311,7 +238,6 @@ $(document).ready(function () {
 $("#form-update").submit(function(e) {
    // preventing from page reload and default actions
   e.preventDefault();
-  console.log("HMDDDHDKSD")
   // mendapatkan value dari masing-masing comment
   comment_value = $("#editText").val()
 
@@ -324,10 +250,8 @@ $("#form-update").submit(function(e) {
       'comment_field': comment_value
     },
     success: function (response) {
-      // kita kosongin inputnya lagi abis berhasil nembak
+      //kosongin inputnya lagi
       $("#editText").val("") 
-      // $('#submitbutton').attr("data-bs-dismiss", "modal")
-
       $("#kartu-comment").empty();
       $.ajax({
           url: "/healthy_advice/get_all_comment", 
@@ -350,4 +274,3 @@ $("#form-update").submit(function(e) {
       </script>
 {% endblock %}
 
-<!-- id_comment_field -->

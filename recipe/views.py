@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse , HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 # from django.contrib.auth.decorators import login_required
 from recipe.forms import CommentForm
 from recipe.models import Comment

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserModel
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -12,8 +12,6 @@ from os import error
 from django.http import response
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status
-
 
 # Create your views here.
 from .models import *
@@ -78,15 +76,46 @@ def home(request):
 
 @csrf_exempt
 def login_flutter(request):
-	data = json.loads(request.body)
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page.
+            return JsonResponse({
+              "status": True,
+              "username": request.user.username,
+              "message": "Successfully Logged In!"
+            }, status=200)
+        else:
+            return JsonResponse({
+              "status": False,
+              "message": "Failed to Login, Account Disabled."
+            }, status=401)
 
-	username = request["username"]
-	password = request["password"]
+    else:
+        return JsonResponse({
+          "status": False,
+          "message": "Failed to Login, check your email/password."
+        }, status=401)
 
-	user = authenticate(username=username, password=password)
-	if user is not None:
-		# print("Hore")
-		return JsonResponse(data, status=status.HTTP_201_CREATED)
-	else:
-		# print("Sad")
-		return JsonResponse(error, status=status.HTTP_400_BAD_REQUEST)
+@csrf_exempt
+def registerFlutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        username = data["username"]
+        email = data["email"]
+        password1 = data["password1"]
+
+        newUser = UserModel.objects.create_user(
+        username = username, 
+        email = email,
+        password = password1,
+        )
+
+        newUser.save()
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)

@@ -101,7 +101,7 @@ def login_flutter(request):
         }, status=401)
 
 @csrf_exempt
-def register_Flutter(request):
+def register_flutter(request):
     if request.method == 'POST':
         data = json.loads(request.body)
 

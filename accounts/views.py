@@ -101,15 +101,19 @@ def login_flutter(request):
         }, status=401)
 
 @csrf_exempt
-def registerFlutter(request):
+def register_Flutter(request):
     if request.method == 'POST':
         data = json.loads(request.body)
 
+        firstname = data["firstname"]
+        lastname = data["lastname"]
         username = data["username"]
         email = data["email"]
         password1 = data["password1"]
 
         newUser = UserModel.objects.create_user(
+        first_name = firstname,
+        last_name = lastname,
         username = username, 
         email = email,
         password = password1,

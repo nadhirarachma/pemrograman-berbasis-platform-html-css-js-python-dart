@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True    
+
 
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:19236",
@@ -72,6 +72,13 @@ CORS_ALLOW_METHODS = [
     'POST',
 ]
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS=True
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
 
 ROOT_URLCONF = 'nadi.urls'
 

@@ -105,8 +105,8 @@ def register_flutter(request):
     if request.method == 'POST':
         data = json.loads(request.body)
 
-        firstname = data["firstname"]
-        lastname = data["lastname"]
+        firstname = data["first_name"]
+        lastname = data["last_name"]
         username = data["username"]
         email = data["email"]
         password1 = data["password1"]

@@ -4,9 +4,26 @@ from .forms import TimeForm
 from django.contrib.auth.decorators import login_required
 import datetime
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.http.response import HttpResponseRedirect,  HttpResponse, JsonResponse
+from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
+@csrf_exempt
+def get_exercise(request):
+    if request.user.is_authenticated:
+        e = Exercise.objects.get(user=request.user)
+        if (datetime.date.today() != e.today):
+            e.today = datetime.date.today()
+            e.time = 0
+            e.save()
+        response = {'w_counter': e.time, 'w_username': e.user.username}
+        return JsonResponse(response)
+    else:
+        return JsonResponse({'w_username': ''})
+
+
 @login_required(login_url='/authentication/login/')
 def workout_page(request):
     e = Exercise.objects.get(user=request.user)

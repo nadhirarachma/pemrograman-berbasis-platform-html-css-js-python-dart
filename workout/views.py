@@ -24,6 +24,19 @@ def get_exercise(request):
         return JsonResponse({'w_username': ''})
 
 @csrf_exempt
+def freset_exercise(request):
+    if request.user.is_authenticated:
+        e = Exercise.objects.get(user=request.user)
+        e.time = 0
+        if (datetime.date.today() != e.today):
+            e.today = datetime.date.today()
+        e.save()
+        response = {'w_counter': e.time, 'w_username': e.user.username}
+        return JsonResponse(response)
+    else:
+        return JsonResponse({'w_username': ''})
+
+@csrf_exempt
 def post_exercise(request):
     if request.method == 'POST':
         data = json.loads(request.body)

@@ -23,6 +23,27 @@ def get_exercise(request):
     else:
         return JsonResponse({'w_username': ''})
 
+@csrf_exempt
+def post_exercise(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        if request.user.is_authenticated:
+            e = Exercise.objects.get(user=request.user)
+            if (datetime.date.today() != e.today):
+                e.today = datetime.date.today()
+                e.time = data["add"]
+            else:
+                e.time += data["add"]
+                if e.time > 1440:
+                    e.time = 1440
+                elif e.time < 0:
+                    e.time = 0
+
+            e.save()
+            response = {'w_counter': e.time, 'w_username': e.user.username}
+            return JsonResponse(response)
+        else:
+            return JsonResponse({'w_username': ''})
 
 @login_required(login_url='/authentication/login/')
 def workout_page(request):

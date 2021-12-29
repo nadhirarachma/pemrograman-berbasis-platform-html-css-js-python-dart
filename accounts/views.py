@@ -123,3 +123,17 @@ def register_flutter(request):
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"status": "error"}, status=401)
+
+@csrf_exempt
+def logout_flutter(request):
+    try:
+        logout(request)
+        return JsonResponse({
+                    "status": True,
+                    "message": "Successfully Logged out!"
+                }, status=200)
+    except:
+        return JsonResponse({
+          "status": False,
+          "message": "Failed to Logout"
+        }, status=401)

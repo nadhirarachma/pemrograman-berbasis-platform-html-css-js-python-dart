@@ -7,6 +7,7 @@ from recipe.forms import CommentForm
 from recipe.models import Comment
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+import json
 # Create your views here.
 
 def recipe_detail_bruschetta(request):
@@ -51,12 +52,18 @@ def get_all_comment(request):
 
 @csrf_exempt
 def postMethod(request):
-    komen = Comment(
-        username = request.POST.get('username', None),
-        content = request.POST.get('content', None),
-        post_date = request.post.get('post_date', None),
-    )
-    komen.save()
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        komen_recipe = Comment(
+            commentator_name = data["commentator_name"], 
+            comment_field=data["commentator_field"],
+            post_date = data["post_date"],
+        )
+        komen_recipe.save()
+        return JsonResponse({"status": "success"}, status=200)
+    
+    else :
+        return JsonResponse({"status": "error"}, status=401)
 
 def delete_comment(request, id):
     obj = get_object_or_404(Comment, id = id)

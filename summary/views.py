@@ -60,13 +60,19 @@ def edit_profile(request):
 def get_profile(request):
 
     if request.user.is_authenticated:
+        try:
+            profile = request.user.profile
+        except Profile.DoesNotExist:
+            profile = Profile(user=request.user)
+
         user_profile = request.user
-        profile = Profile.objects.get(user=request.user)
         workout = Exercise.objects.get(user=request.user)
         sleep = Sleep.objects.get(user=request.user)
 
         data = serializers.serialize('json', [user_profile, profile, workout, sleep,])
         return HttpResponse(data, content_type="application/json")
+    else:
+        return JsonResponse({"error": "You Need to Login First"}, status=400)
 
 @csrf_exempt
 def post_profile(request):

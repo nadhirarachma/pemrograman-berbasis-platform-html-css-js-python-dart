@@ -76,17 +76,29 @@ def get_profile(request):
 
 @csrf_exempt
 def post_profile(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({"error": "Post Failed"}, status=400)
     
     if request.method == 'POST':
         data = json.loads(request.body)
-        user_updated = User(user=request.user, username=data["username"], first_name=data["first_name"], last_name=data["last_name"], email=data["email"])
-        profile_updated = Profile(user=request.user, age=data["age"], gender=data["gender"], profession=data["profession"], mobile=data["mobile"], address=data["address"])
-        
-        user_updated.save()
-        profile_updated.save()
-        return JsonResponse({"status": "success"}, status=200)
-    
-    else :
-        return JsonResponse({"status": "error"}, status=401)
+        print(data)
+
+        if request.user.is_authenticated:
+            u = User.objects.get(user=request.user)
+            u.username = data["username"]
+            u.first_name=data["first_name"]
+            u.last_name=data["last_name"]
+            u.email=data["email"]
+
+            p = Profile.objects.get(user=request.user)
+            p.age=data["age"]
+            p.gender=data["gender"]
+            p.profession=data["profession"]
+            p.mobile=data["mobile"]
+            p.address=data["address"]
+
+            u.save()
+            p.save()
+
+            return JsonResponse({"status": "success"}, status=200)
+        else:
+            return JsonResponse({"status": "error user"}, status=400)
+   

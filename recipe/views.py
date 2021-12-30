@@ -56,17 +56,15 @@ def postmethod(request):
         return JsonResponse({"error": "Post Failed"}, status=400)
     if request.method == 'POST':
         data = json.loads(request.body)
-        komen_recipe = Comment(
-            username = data["username"], 
-            comment_field=data["content"],
-            post_date = data["post_date"],
-        )
+        content=data["content"]
+        komen_recipe = Comment(username = request.user, content=content, post_date = data["post_date"],)
         komen_recipe.save()
         return JsonResponse({"status": "success"}, status=200)
     
     else :
         return JsonResponse({"status": "error"}, status=401)
 
+@csrf_exempt
 def delete_comment(request, id):
     obj = get_object_or_404(Comment, id = id)
     

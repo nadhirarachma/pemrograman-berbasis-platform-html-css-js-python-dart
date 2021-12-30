@@ -51,7 +51,7 @@ def get_all_comment(request):
     return HttpResponse(data, content_type="application/json")
 
 @csrf_exempt
-def postMethod(request):
+def postmethod(request):
     if not request.user.is_authenticated:
         return JsonResponse({"error": "Post Failed"}, status=400)
     if request.method == 'POST':

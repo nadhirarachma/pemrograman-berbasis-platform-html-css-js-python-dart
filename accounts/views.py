@@ -120,6 +120,11 @@ def register_flutter(request):
         )
 
         newUser.save()
+
+        Exercise.objects.create(
+            user=newUser,
+        )
+
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"status": "error"}, status=401)

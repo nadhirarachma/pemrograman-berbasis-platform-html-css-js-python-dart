@@ -1,12 +1,15 @@
-from django.shortcuts import render, redirect
-from django.http.response import JsonResponse
+from django.shortcuts import render
+from django.http.response import JsonResponse, HttpResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from .forms import UpdateUserForm, UpdateProfileForm
 from .models import Profile
+from django.contrib.auth.models import User
 from workout.models import Exercise
 from sleep.models import Sleep
 import datetime
+import json
 
 @login_required(login_url= '/authentication/login/')
 
@@ -52,3 +55,21 @@ def edit_profile(request):
             })
 
     return render(request, 'edit_profile.html', {'user_form': user_form, 'profile_form': profile_form, 'username':username, 'nama_user':navbar_name})
+
+@csrf_exempt
+def get_profile(request):
+
+    if request.user.is_authenticated:
+        user_profile = request.user
+        profile = Profile.objects.get(user=request.user)
+        workout = Exercise.objects.get(user=request.user)
+        sleep = Sleep.objects.get(user=request.user)
+
+        data = serializers.serialize('json', [user_profile, profile, workout, sleep,])
+        return HttpResponse(data, content_type="application/json")
+
+@csrf_exempt
+def post_profile(request):
+    data = json.loads(request.body)
+    User.objects.filter(user=request.user).update(username=data["username"], first_name=data["first_name"], last_name=data["last_name"], email=data["email"])
+    Profile.objects.filter(user=request.user).update(age=data["age"], gender=data["gender"], profession=data["profession"], mobile=data["mobile"], address=data["address"])

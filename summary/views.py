@@ -63,7 +63,7 @@ def get_profile(request):
         try:
             profile = request.user.profile
         except Profile.DoesNotExist:
-            profile = Profile(user=request.user)
+            profile = Profile(user=request.user, age="", gender="", profession="", mobile="", address="")
 
         user_profile = request.user
         workout = Exercise.objects.get(user=request.user)

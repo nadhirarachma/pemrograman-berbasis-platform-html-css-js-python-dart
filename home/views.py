@@ -9,7 +9,7 @@ from django.http.response import HttpResponseRedirect,  HttpResponse, JsonRespon
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 from .models import FeedBack, News
-
+import json
 # Create your views here.
 @login_required(login_url="/admin/login/")
 def feedback(request):     
@@ -29,6 +29,16 @@ def get_all_feedback(request):
     all_feedback = News.objects.all()
     data = serializers.serialize('json', all_feedback)
     return HttpResponse(data, content_type="application/json")
+
+@csrf_exempt
+def post_feedBack(request):
+    print("MASUK")
+    data = json.loads(request.body)
+    print(data)
+    newFeedback = FeedBack(name= data["name"], the_feedback = data["the_feedback"])
+    newFeedback.save()
+    return JsonResponse({'sukses' : 'mantul'})
+    
 
 def index(request):
     news_list = News.objects.all()

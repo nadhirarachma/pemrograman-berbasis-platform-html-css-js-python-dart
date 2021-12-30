@@ -72,7 +72,9 @@ def get_profile(request):
         data = serializers.serialize('json', [user_profile, profile, workout, sleep,])
         return HttpResponse(data, content_type="application/json")
     else:
-        return JsonResponse({"error": "You Need to Login First"}, status=400)
+        msg = {"error": "Login First"}
+        data = serializers.serialize('json', [msg,])
+        return HttpResponse(data, content_type="application/json")
 
 @csrf_exempt
 def post_profile(request):

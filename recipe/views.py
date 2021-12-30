@@ -52,11 +52,13 @@ def get_all_comment(request):
 
 @csrf_exempt
 def postMethod(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Post Failed"}, status=400)
     if request.method == 'POST':
         data = json.loads(request.body)
         komen_recipe = Comment(
-            commentator_name = data["commentator_name"], 
-            comment_field=data["commentator_field"],
+            username = data["username"], 
+            comment_field=data["content"],
             post_date = data["post_date"],
         )
         komen_recipe.save()
@@ -71,8 +73,8 @@ def delete_comment(request, id):
     if request.method == "POST":
         # delete object
         obj.delete()
-        
-    data = serializers.serialize('json', Comment.objects.all())
+        return JsonResponse({"status": "success"}, status=200)
+  
 
-    return HttpResponse(data, content_type='application/json')
+    return JsonResponse({"error": "Delete Failed"}, status=400)
 

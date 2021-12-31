@@ -9,7 +9,59 @@ import datetime
 
 from django.http import HttpResponse
 
+from django.http import HttpResponse, JsonResponse
+from django.http.response import HttpResponseRedirect,  HttpResponse, JsonResponse
+from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 # Create your views here.
+
+@csrf_exempt
+def get_sleeps(request):
+    if request.user.is_authenticated:
+        e = Sleep.objects.get(user=request.user)
+        response = {'s_counter': e.time, 's_username': e.user.username, 's_today': e.today}
+        return JsonResponse(response)
+    else:
+        return JsonResponse({'s_username': ''})
+
+
+@csrf_exempt
+def reset_sleeps(request):
+    if request.user.is_authenticated:
+        e = Sleep.objects.get(user=request.user)
+        e.time = 0
+        if (datetime.date.today() != e.today):
+            e.today = datetime.date.today()
+        e.save()
+        response = {'s_counter': e.time, 's_username': e.user.username}
+        return JsonResponse(response)
+    else:
+        return JsonResponse({'s_username': ''})
+
+
+@csrf_exempt
+def post_sleeps(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        if request.user.is_authenticated:
+            e = Sleep.objects.get(user=request.user)
+            if (datetime.date.today() != e.today):
+                e.today = datetime.date.today()
+                e.time = data["add"]
+            else:
+                e.time += data["add"]
+                if e.time > 24:
+                    e.time = 24
+                elif e.time < 0:
+                    e.time = 0
+
+            e.save()
+            response = {'s_counter': e.time, 's_username': e.user.username}
+            return JsonResponse(response)
+        else:
+            return JsonResponse({'s_username': ''})
 
 
 @login_required(login_url='/authentication/login/')

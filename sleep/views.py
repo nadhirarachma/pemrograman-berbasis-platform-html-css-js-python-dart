@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from .models import Sleep
 from .forms import SleepForm, TimeForm, NewDate
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
 import datetime
 
 from django.http import HttpResponse
@@ -114,3 +115,8 @@ def reset_sleep(request):
     sleep.save()
 
     return HttpResponse(200)
+
+def get_sleep(request):
+    hrsleep = Sleep.objects.all()
+    data = serializers.serialize('json', hrsleep)
+    return HttpResponse(data, content_type="application/json")

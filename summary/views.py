@@ -82,7 +82,7 @@ def post_profile(request):
         print(data)
 
         if request.user.is_authenticated:
-            u = User.objects.get(user=request.user)
+            u = request.user
             u.username = data["username"]
             u.first_name=data["first_name"]
             u.last_name=data["last_name"]

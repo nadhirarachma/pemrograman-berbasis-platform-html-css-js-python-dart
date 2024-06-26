@@ -1,0 +1,31 @@
+<div class="container-form" >
+	<section class = "formContainer" style="display: flex;justify-content: center;">
+		{% if user.is_authenticated %}
+		<form action="" method="POST" style="display: flex; flex-direction: column; gap: 16px;" class = "align-items-center">
+			<div class = "subTitleForm">
+				<h4 style="justify-content: center;display: flex;">Leave a constructive comment below</h4> 
+			</div>
+			{% csrf_token %} 
+			<div class = "form-group form-wrapper comment-box" >
+				<div class="fieldWrapper">
+
+					{{ form.to.errors }}
+					<div class="d-flex justify-content-end w-100" style="box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;">{{form.comment_field}}</div>
+				</div>
+			</div>
+			<div>
+
+				<input class="btn btn-primary" type="submit" value="Post" id="submitbutton" style="box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;">
+			</div>
+		</form>
+	</section>
+</div>
+{% else %}
+<p class="please-login p20px">Please login to add a comment</p>
+{% endif %}
+<div class="container mt-5 mb-5">
+		<div class="d-flex justify-content-center row">
+			<div class="col-md-8" id = "kartu-comment">
+			</div>
+		</div>
+</div>

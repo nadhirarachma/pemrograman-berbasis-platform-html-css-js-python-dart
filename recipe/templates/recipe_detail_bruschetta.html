@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+
+    <head>
+        <title>Recipe Chicken Bruschetta</title>
+        <link rel = "stylesheet" type= "text/css" href="{% static 'css/recipestyle.css' %}">
+
+        <!-- Responsive Tag -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS & Script-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <!--Font Family Monsserat-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="body">
+            <div class="main-wrapper">
+                <!-- Page Header -->
+                <section class="page_header">
+                    <div class="overlay-image" style="background-image:url(/static/img/header/satu.jpg)">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1 class="text-uppercase"> Recipes</h1>
+                                <p> ㅤHealtyh Food Bring Healthy Life</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="single-recipe">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single-recipe-image">
+                                    <img class= "img-responsive" src= {% static '/img/recipie/recipe1.jpg' %} alt="image-recipe-detail" style= "width:100% ;"/>
+                                </div>
+                                <div class="clearfix"></div>
+                                <h3>Steps</h3>
+                                <br>
+                                
+                                <ol class="directions-list">
+                                    <li>Dalam mangkuk kecil, campurkan minyak, setengah jus lemon, 1 sendok teh garam, 1/4 sendok teh merica, dan bumbu Italia (atau oregano) dan kocok hingga tercampur. Pindahkan ke tas besar yang bisa ditutup kembali bersama dengan ayam; segel dan dinginkan selama 30 menit.</li>
+                                    <li>Panaskan panggangan di atas sedang-tinggi lalu tambahkan ayam, buang sisa bumbunya. Panggang sampai hangus dan matang dengan suhu internal 165 °, sekitar 5 hingga 7 menit per sisi.</li>
+                                    <li>Sementara itu, campurkan tomat, bawang putih, kemangi, dan sisa air jeruk lemon, lalu bumbui dengan garam dan merica. Saat ayam masih di panggangan, tutupi setiap dada dengan 1 irisan mozzarella dan tutup sampai keju meleleh, 2 hingga 3 menit. Top ayam dengan campuran tomat.</li>
+                                    <li style="padding-top: 15px;"> Hiasi dengan Parmesan dan sajikan.</li>
+                                </ol>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="container-detail"> </div>
+                                <h3>Bruschetta Grilled Chicken</h3>
+                                <p>Bruschetta Grilled Chicken adalah hidangan pembuka berasal dari Italia di mana Anda membumbui potongan roti dengan bawang putih, memanggang roti, dan kemudian 
+                                    di atasnya dengan minyak zaitun, tomat cincang segar, kemangi, dan bahan-bahan segar lainnya. Ayam bruschetta panggang ini diasinkan dan dipanggang dengan sempurna dan kemudian di atasnya dengan mozarella dan bruschetta segar.
+                                </p>
+                                <div class="ingredients">
+                                    <h4 class="title">Bahan</h4>
+                                    <ul>
+                                        <li> 4 sendok teh. minyak zaitun extra-virgin
+                                            Jus dari 1 lemon, dibagi garam kosher</li>
+                                        <br>
+                                        <li>Lada hitam yang baru digiling</li>
+                                        <br>
+                                        <li>1 sendok teh. Bumbu Italia atau oregano kering</li>
+                                        <br>
+                                        <li> 4 dada ayam bebas antibiotik tanpa kulit tanpa tulang, ditumbuk hingga ketebalan merata</li>
+                                        <br>
+                                        <li> 2 siung bawang putih, cincang</li>
+                                        <br>
+                                        <li>1 sendok teh. basil yang baru dicincang </li>
+                                        <br>
+                                        <li>4 potong mozarella Parmesan yang baru diparut, untuk disajikan</li>
+                                        <br>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section >
+                    {% include 'recipe_carousel.html' %}  
+                <section>
+            
+            </section>
+
+            </div>
+        </div>
+    </bod>
+</html>
+{% endblock %}

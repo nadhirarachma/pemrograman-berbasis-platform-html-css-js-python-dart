@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <article>
+                                
+                                <div class="comments-area">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    
+                                    <h3>FeedBack</h3>
+                                    <ul class="commentlist">
+                                        {%for feedback in feedback_list %}
+                                        <li class="comment">
+                                            
+                                            <h4>{{feedback.name}}</h4>
+                                            <p>{{feedback.the_feedback}}</p>
+                                        </li>
+
+                                        {% endfor %}
+                                       
+                                    </ul>
+                                    
+
+                                    
+                                </div>
+                            </article>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+{% endblock %}
+
+
+

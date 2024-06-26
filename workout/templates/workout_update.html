@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}Workout Update{% endblock %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block meta %} <meta charset="UTF-8"> {% endblock %}
+  <style>
+  .q-workout {
+    animation: 1.5s ease-out 0s 1 w-opacity-animation;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .q-workout h1 {
+    color: rgba(217, 184, 154, 0.9);
+  }
+  .d-w-card{
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  .w-card {
+    animation: 1.5s ease-out 0s 1 w-opacity-animation;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20%;
+    background: rgba(242, 248, 243, 0.2);
+    font-size: 1.7rem;
+    color: white;
+
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .w-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  }
+  .w-card td {
+    color: white;
+  }
+
+  .w-btn {
+    background: rgba(18, 42, 87, 0.5);
+    transition: 0.3s;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .w-btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .w-btn a {
+    color: white;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-rows: 2;
+    grid-gap: 10px;
+  }
+
+  .w-input-num {
+    width: 8rem;
+    border-radius: 10px;
+    background: rgba(20, 20, 20, 0.5);
+    color: white;
+  }
+  @keyframes w-opacity-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  </style>
+
+</head>
+<body>
+    <section class="features">
+      <div class="">
+        <div class="q-workout">
+          <h1>Add the amount of time you worked out!</h1>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="w-card">
+                <form action="{% url 'w_update' %}" method="post" class="grid-container">
+                  {% csrf_token %}
+                  <div>
+                    <label for="time">Add time</label>
+                    <input id="time" type="number" placeholder="minutes" name="time" class="w-input-num">
+                  </div>
+                  <input type="submit" class="w-btn">
+                </form>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
+
+{% endblock %}

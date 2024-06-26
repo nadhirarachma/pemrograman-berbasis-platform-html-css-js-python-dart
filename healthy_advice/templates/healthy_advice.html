@@ -1,0 +1,276 @@
+{% extends 'base_healthy.html' %} 
+{% block content %}
+ 
+
+    <div class="container-healthyAdvice">
+        <section class = "page-wrapper">
+            <div clas = "section section-hero section-shaped">
+                <div class="shape shape-style-3 shape-default">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active position-relative">
+                                <a href="https://coolwallpapers.me">
+                                    <img class="d-block w-100" src="https://coolwallpapers.me/picsup/3053079-ball_basketball_beach_buildings_city_dark-clouds_daylight_game_holiday_hotel_landscape_leisure_outdoors_palm-trees_people_person_playing_recreation_relaxation_sport_street_summer_sunset_tourism_t.jpg" alt="First slide">
+                                </a>
+                                <div class="abc container shape-container d-flex align-items-center py-lg position-absolute">
+                                    <div class="col px-0">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-lg-6 text-center">
+                                                <div class="text-white display-1">Quick Advice</div>       
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item position-relative">
+                                <a href="https://mocah.org">
+                                    <img class="d-block w-100" src="https://mocah.org/thumbs/5317447-fruit-food-cherry-red-juicy-healthy-summer-sweet-dark-rich-shiny-closeup-detail-macro-android-wallpaper-desktop-background-wallpapers-hd-foodie-wallpaper-free-stock-photos.jpg" alt="Second slide">
+                                </a>
+                                <div class="abc container shape-container d-flex align-items-center py-lg position-absolute">
+                                    <div class="col px-0">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-lg-6 text-center">
+                                                <div class="text-white display-1">Quick Advice</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item position-relative">
+                                <a href="https://www.asiaholidayretreats.com">
+                                    <img class="d-block w-100" src="https://www.asiaholidayretreats.com/wp-content/uploads/2018/06/yogain-bali-1000x668.jpg" alt="Third slide">
+                                </a>
+                                <div class="abc container shape-container d-flex align-items-center py-lg position-absolute">
+                                    <div class="col px-0">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-lg-6 text-center">
+                                                <div class="text-white display-1">Quick Advice</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        </div>
+                </div>
+            </div>
+            <div class = "contents" style=" display: flex;justify-content: center;padding: 12px;">
+                <div class = "card container" style="margin: 20px;display: flex;flex-direction: row;flex-wrap: wrap;align-content: space-between;justify-content: space-around;align-items: center; padding: 20px; gap: 16px; column-gap: 16px;">
+                   {% for article in articles %}
+                   
+                    <div class="card mb-3 hihokartu" style="max-width: 360px;">
+            
+                        <div class="row no-gutters">
+                          <h5 class="card-title judulkartu">{{article.title}}</h5>
+                          <div class="col-md-4">
+                            <img src="{{article.image_link}}" class="gambar card-img" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text isikartu">{{article.deskripsi|slice:"0:80"}}...</p>
+                              <p class="card-text updatekartu"><small class="text-muted">Created at : {{article.created_at}}</small></p>
+                              <a href="details/{{article.pk}}" class="btn btn-lg btn-info"> View details</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                </div>
+              </div>
+              {% include 'healthy_advice_form.html' %}
+             <!-- Button trigger modal -->
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" id="form-update" style="display: flex; gap: 72px; align-items: center;">
+                      <textarea name="" id="editText" cols="30" rows="10"></textarea>
+                      <button type="submit" class="btn btn-primary" id="submitbutton" data-bs-dismiss="modal" style="max-height:60px; min-height: 60px; padding: 16px;">Post</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </section>  
+    </div>
+    
+
+    
+      <script>
+       const getMessageData = () => {
+    //  biar mastiin manggil ajaxnya kalo document di browsernya udah ada
+    return $(document).ready(function(){
+              $.ajax({
+                // dapetin semua comment
+                  url: "/healthy_advice/get_all_comment", 
+                  success: function(results){
+                      results.map((result)=>{
+                        insertComment(result);
+                      }
+                    )
+                  }
+                }
+              );
+            }
+          );
+  }
+  const insertComment = (result) => {
+    let is_user = false
+    if (result.fields.commentator_name == "{{request.user}}"){
+      is_user = true
+    }
+
+    if (is_user){
+      return $("#kartu-comment").append(`
+      <div class="commentsection-card p-3 bg-white mt-2 rounded">
+          <div class="d-flex justify-content-between" style = "gap: 12px;">
+              <div class="d-flex flex-row user">
+                  <div class="d-flex flex-column ml-2">
+                    <span class="font-weight-bold">${result.fields.commentator_name}</span>
+                    <span class="day">User</span>
+                  </div>
+              </div>
+              <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right" style = "gap: 50px">
+                <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id = "editbutton" value=${result.pk}>
+                Edit
+              </button>
+                </div>
+          </div>
+          <div class="handle-overflow comment-text text-justify mt-2" style = "overflow-wrap: break-word !important;">
+              <p>${result.fields.comment_field}</p>
+          </div>
+      </div>`)
+      
+    }
+    else{
+      return $("#kartu-comment").append(`
+      <div class="commentsection-card p-3 bg-white mt-2 rounded">
+          <div class="d-flex justify-content-between" style = "gap: 12px;">
+              <div class="d-flex flex-row user">
+                  <div class="d-flex flex-column ml-2">
+                    <span class="font-weight-bold">${result.fields.commentator_name}</span>
+                    <span class="day">User</span>
+                  </div>
+              </div>
+          </div>
+          <div class="handle-overflow comment-text text-justify mt-2" style = "overflow-wrap: break-word !important;">
+              <p>${result.fields.comment_field}</p>
+          </div>
+      </div>`)
+    }
+  }
+  
+  getMessageData(); 
+
+  $(document).ready(function () {
+    $("#kartu-comment").on('click', '#delete', function() {
+    let pk = $(this).attr("value");
+    $.ajax({
+      type: 'POST',
+      url: `/healthy_advice/delete/${pk}`,
+      data: {
+            // csrf token for security
+            'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+      },
+      success: function (result) {
+        // sebelum kita refresh tabel, kita kosongin dulu
+        $("#kartu-comment").empty();
+        // saat sudah bersih, kita dapetin ulang datanya
+        getMessageData()
+      },
+    });
+  });
+});
+
+document.getElementById('submitbutton').addEventListener('click', function(e){
+  e.preventDefault()
+})
+$('#submitbutton').click(function(e){
+  let commentValue = $('#id_comment_field').val()
+  $.ajax({
+      type: 'POST',
+      url: `/healthy_advice/`,
+      data: {
+            'comment_field' : commentValue,
+            'commentator_name' : '{{request.user}}',
+            'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+      },
+      success: function (result) {
+        // sebelum kita refresh tabel, kita kosongin dulu
+        $("#kartu-comment").empty();
+        // saat sudah bersih, kita dapetin ulang datanya
+        getMessageData()
+        $('#id_comment_field').val("")
+      },
+    });
+});
+let editID = "";
+$(document).ready(function () {
+  $("#kartu-comment").on('click', '#editbutton', function() {
+      editID = $(this).attr("value");
+  });
+});
+
+// dijalankan ketika kita men-submit form
+$("#form-update").submit(function(e) {
+   // preventing from page reload and default actions
+  e.preventDefault();
+  // mendapatkan value dari masing-masing comment
+  comment_value = $("#editText").val()
+
+  $.ajax({
+    type: 'POST',
+    url: `/healthy_advice/edit/${editID}`,
+    data: {
+      // add request body with input value and csrf token
+      'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+      'comment_field': comment_value
+    },
+    success: function (response) {
+      //kosongin inputnya lagi
+      $("#editText").val("") 
+      $("#kartu-comment").empty();
+      $.ajax({
+          url: "/healthy_advice/get_all_comment", 
+          success: function(results){
+              results.map((result)=>{
+                insertComment(result);
+              }
+            )
+          }
+        }
+      );
+    },
+  })
+});
+
+
+
+
+
+      </script>
+{% endblock %}
+

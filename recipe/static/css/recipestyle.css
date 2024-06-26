@@ -1,0 +1,434 @@
+/* <!--Font Family RaleWay--> */
+@import url(https://fonts.googleapis.com/css?family=Raleway:900,800,700,600,400,300,200,100);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    color: #4b4741;
+    text-align: center;
+    font-weight: 800;
+    margin:0;
+    padding:0;
+}
+
+p {
+    font-family: "Montserrat", san-serif;
+    color: #828281;
+    font-size: 22px;
+}
+a {
+    text-decoration: none;
+}
+.body {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+.main-wrapper {
+    position: relative;
+    background: #fff;
+}
+.page_header {
+    padding: 200px 0 150px;
+    color:white;
+    position: relative;
+    background-position:center;
+    background-size: cover;
+    background:black;
+    text-align: left;
+    
+}
+
+.page_header h1 {
+    margin: auto;
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+}
+
+.page_header p {
+    margin: 15px 0;
+    font-size: 24px;
+    font-family: 'Raleway';
+    color: #fff;
+    opacity: 0.8;
+    text-align: center;
+}
+.recipie-content {
+    padding: 85px 0;
+}
+
+.recipie-content img {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+
+
+}
+
+
+.rc-info {
+    margin-left: 0px;
+    text-align: left;
+
+    /*
+    margin-left: 296px;
+    text-align: left;
+    width: 40.5%;
+    height: 100%;
+    display:block;
+    margin-left: 296px;
+    */
+}
+
+
+.rc-info h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #4b4741;
+    text-align: left;
+}
+
+.rc-info p {
+    font-size: 17px;
+    line-height: 32px;
+    color: #4b4741;
+    padding-right: 29px;
+    font-family: "Montserrat", san-serif;
+    text-align: left;
+}
+.recipie-content .btn-default {
+    color: #534120;
+    padding: 17px;
+    border: 1px solid #F2BA57;
+    font-size: 13px;
+    line-height: 14px;
+    border-radius: 1px;
+    font-weight: 700;
+    margin-top: 12px;
+    background-color: #f9c56a;
+    margin-bottom: 20px;
+}
+.recipie-content .btn-default:hover{
+    transform: scale(1.1);
+    transition: .4s;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.recipie-content hr {
+    margin: 70px 0px;
+    border-color: #dedede;
+    width: 98%;
+}
+
+.carousel-item {
+    padding: 350px 0 150px;
+    color:white;
+    position: relative;
+    background-position:center;
+    background-size: cover;
+    background:black;
+    text-align: left;
+
+}
+
+.carousel-favorite{
+    padding: 70px 0;
+}
+.carousel-favorite .btn-default{
+    color: white;
+    border: 1px solid #007BFF;
+    border-radius: 1px;
+    background-color: #007BFF;
+    padding-bottom:20px;
+    
+}
+.carousel-favorite h3{
+    font-weight: 800;
+    text-align: left;
+    font-size: 20px;
+    color: #4B4741;
+    margin: 0 0 23px;
+}
+
+.carousel-favorite p{
+    color: #fff;
+    text-align: left;
+}
+.carousel-favorite h1{
+    font-size: 40px;
+    line-height: 20px;
+    font-weight: 800;
+    color: #fff;
+    text-align: left;
+}
+.container-carousel{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    margin-left:150px;
+    margin-bottom:80px;
+    
+}
+.overlay-image, .overlay-image img{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+.single-recipe-image {
+    padding: 12px;
+    border: 1px solid #F1F1F1;
+    margin: 0 0 25px;
+    width: 100%;
+    float: none;
+}
+.ingredients {
+    padding: 27px 29px;
+    margin-bottom: 40px;
+    border-top: 1px solid #F9C56A;
+    background-color: #f9f9f9;
+}
+.ingredients .title {
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients li {
+    margin-bottom: 17px;
+    font-family: josefin Sans;
+    font-size: 17px;
+}
+
+.ingredients .fa {
+    font-size: 24px;
+}
+.directions-list {
+    list-style-type: none;
+    margin: 0 0 40px;
+    padding: 0;
+    color: #424242;
+    counter-reset: li-counter;
+}
+
+.directions-list > li {
+    position: relative;
+    margin-bottom: 28px;
+    padding-left: 70px;
+    font-family: josefin Sans;
+    font-size: 16px;
+}
+
+.directions-list > li:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    /* buat ngatur angka */
+    line-height: 40px; 
+    font-weight: 500;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+    background-color: #000000;
+}
+.directions-list li{
+    margin-bottom:30px;
+
+}
+.single-recipe .heading-bottom-line {
+    font-size: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 0px;
+}
+
+.single-recipe {
+    padding-bottom: 40px;
+    margin-top:80px;
+    background-color: #fff;
+}
+
+.single-recipe h1,
+.single-recipe h2,
+.single-recipe h3,
+.single-recipe h4,
+.single-recipe h5,
+.single-recipe h6,
+.single-recipe .h1,
+.single-recipe .h2,
+.single-recipe .h3,
+.single-recipe .h4,
+.single-recipe .h5,
+.single-recipe .h6 {
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.single-recipe h3 {
+    margin-top: 0px;
+}
+
+.single-recipe p {
+    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 27px;
+}
+#submitbutton{
+    color: black;
+    padding-left: 25px;
+    padding-right:26px;
+    padding-top:17px;
+    padding-bottom:17px;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    line-height: 14px;
+    font-weight: 700;
+    background-color: lightgray;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+#submitbutton:hover{
+    transform: scale(1.1);
+    transition: .4s;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.login-comment{
+    text-align: center;
+    position: absolute;
+    padding:20px;
+}
+
+.comment-username{
+    font-weight:bold;
+    font-size:20px
+}
+.comment-content{
+    padding-left:5px;
+    padding-top:10px; 
+    font-size:16px; 
+}
+/* setting max character length for comment card */
+.comment-content p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.commentrecipe-container{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .15);   
+
+}
+
+.commentrecipe-container:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#kartu-comment {
+    display: flex;
+    flex-direction: column;
+    column-gap: 15px;
+    gap: 25px;
+    min-width: 700px !important;
+    max-width: 700px !important;
+}
+textarea{
+    width:100%;
+}
+/* For Tablets */
+@media all and (max-width: 1000px) {
+    .carousel-favorite h1{
+        color: #fff;
+        width:50%;
+        font-size:32px;
+        line-height:36px;
+    }
+}
+ /* For Smartphones */
+ @media all and (max-width: 670px) {
+    textarea{
+        width:100%;
+    }
+    .carousel-favorite{
+        width:100%
+    }
+    .carousel-favorite p{
+        color: #fff;
+        text-align: left;
+        font-size:14px;
+        line-height: 20px;
+        width:100%;
+    }
+    .carousel-favorite h1{
+        color: #fff;
+        width:100%;
+        font-size:24px;
+        line-height:36px;
+    }
+    
+ }
+/* bootstrap resize button  */
+ @media (max-width: 768px) {
+    .btn {
+      font-size:11px;
+      padding:4px 6px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .btn {
+      font-size:12px;
+      padding:6px 12px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .btn {
+      font-size:14px;
+      padding:8px 12px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .btn {
+      padding:10px 16px;
+      font-size:18px;
+    }
+  }

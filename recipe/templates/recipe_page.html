@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}Nadi Recipe{% endblock %}
+{% load static %}
+{% block content %}
+<html lang=en>
+    <head>
+        <link rel = "stylesheet" type= "text/css" href="{% static 'css/recipestyle.css' %}">
+        
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/0ab3514e4e.js" crossorigin="anonymous"></script>
+
+        <!-- Responsive Tag -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Font Family Monsserat-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class ="body">
+            <div class="main-wrapper">
+                <!-- Page Header -->
+                <section class="page_header">
+                    <div class="overlay-image" style="background-image:url(../static/img/header/satu.jpg)">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1 class="text-uppercase"> Recipes</h1>
+                                <p> ㅤHealthy Food Bring Healthy Life</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recipe Card -->
+                <section class="recipie-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src= {% static '/img/recipie/recipe1.jpg' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b>Bruschetta Grilled Chicken </b></h2>
+                                    <p>Bruschetta Grilled Chicken adalah hidangan pembuka berasal dari Italia, yang lezat dan cocok pada musim panas.</p>
+                                    <a href="/recipe/bruschetta" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src={% static '/img/recipie/recipe2.png' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b>Honey Walnut Shrimp</b></h2>
+                                    <p>Hidangan ini adalah hidangan populer berasal dari Hong Kong yang sering disajikan pada banyak restorant.</p>
+                                    <a href="/recipe/honey-walnut-shrimp" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src={% static '/img/recipie/recipe3.jpg' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b>Salad Caprese Zoodles </b></h2>
+                                    <p> Salad Caprese Zoodle adalah salad Italia sederhana.Salad ini Biasanya diatur di atas piring dalam praktik restoran.</p>
+                                    <a href="/recipe/salad-caprese-zoodles/" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="col-md-4">
+                                <img src={% static '/img/recipie/recipe4.jpg' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b>Garlicky Greek Chicken</b></h2>
+                                    <p>Terinspirasi oleh masakan populer di Yunani, resep paha ayam yang mudah ini akan menjadi favorit baru untuk kamu. </p>
+                                    <a href="/recipe/garlicky-greek-chicken/" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src={% static '/img/recipie/recipe5.jpg' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b> Baked Salmon</b></h2>
+                                    <p>Salmon panggang adalah hidangan makanan terbaik untuk memberi makan orang banyak. Sederhana dan lezat.</p>
+                                    <a href="/recipe/baked-salmon" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src={% static '/img/recipie/recipe6.jpg' %} alt="" />
+                                <div class="rc-info">
+                                    <h2><b>Chicken Soup</b></h2>
+                                    <p>Resep sup ayam ini sangat mudah dibuat dan sehat. Gunakan sayuran apa pun yang Anda miliki untuk membuat sup ayam ini.</p>
+                                    <a href="/recipe/chicken-soup/" class ="btn btn-default"> View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container">
+                <h3> Comments & Feedback</h3>
+                <hr>
+                {% include 'recipe_comment.html' %}  
+                </div>
+            </div>
+        </div>         
+        <script>
+            const getMessageData = () => {
+         return $(document).ready(function(){
+                   $.ajax({
+                       url: "/recipe/get_all_comment", 
+                       success: function(results){
+                           results.map((result)=>{
+                             insertComment(result);
+                           }
+                         )
+                       }
+                     }
+                   );
+                 }
+               );
+       }
+       const insertComment = (result) => {
+         let is_user = false
+         if (result.fields.username == "{{request.user}}"){
+           is_user = true
+         }
+     
+         if (is_user){
+           return $("#kartu-comment").append(`
+           <div class="commentrecipe-container p-3 bg-white mt-2 rounded">
+               <div class="d-flex justify-content-between">
+                   <div class="d-flex flex-row user">
+                       <div class="d-flex flex-column ml-2"><span class="comment-username">${result.fields.username}</span><span class="status">${result.fields.post_date}</span></div>
+                   </div>
+                   <div class="d-flex justify-content-end align-items-center comment-buttons mt-2 text-right" style = "gap: 50px">
+                     <button class="btn btn-danger btn-sm border-0 px-3" type="button" value = ${result.pk} id="delete">Delete</button>
+                     </div>
+               </div>
+               <div class="comment-content">
+                   <p>${result.fields.content}</p>
+               </div>
+           </div>`)
+           
+         }
+         else{
+        //Kalau bukan user yang buat post button di ilangin
+           return $("#kartu-comment").append(`
+           
+           <div class="commentrecipe-container p-3 bg-white mt-2 rounded">
+               <div class="d-flex justify-content-between" style = "gap: 12px;">
+                   <div class="d-flex flex-row user">
+                       <div class="d-flex flex-column ml-2" ><span class="comment-username">${result.fields.username}</span><span class="status"> ${result.fields.post_date} </span></div>
+                   </div>
+               </div>
+               <div class="comment-content">
+                   <p>${result.fields.content}</p>
+               </div>
+           </div>`)
+         }
+       }
+       
+       getMessageData(); 
+     
+       $(document).ready(function () {
+         $("#kartu-comment").on('click', '#delete', function() {
+         let pk = $(this).attr("value");
+         $.ajax({
+           type: 'POST',
+           url: `/recipe/delete/${pk}`,
+           data: {
+                 // csrf token for security
+                 'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+           },
+           success: function (result) {
+             // sebelum kita refresh tabel, kita kosongin dulu tablenya
+             $("#kartu-comment").empty();
+             // saat sudah bersih, kita dapetin ulang datanya
+             getMessageData()
+           },
+         });
+       });
+     });
+     
+     document.getElementById('submitbutton').addEventListener('click', function(e){
+       e.preventDefault()
+     })
+     $('#submitbutton').click(function(e){
+       let commentValue = $('#id_content').val()
+       $.ajax({
+           type: 'POST',
+           url: `/recipe/`,
+           data: {
+                 'content' : commentValue,
+                 'username' : '{{request.user}}',
+                 'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+           },
+           success: function (result) {
+             // sebelum kita refresh tabel, kita kosongin dulu tablenya
+             $("#kartu-comment").empty();
+             // saat sudah bersih, kita dapetin ulang datanya
+             getMessageData()
+             $('#id_content').val("")
+           },
+         });
+     });
+     let editID = "";
+    $(document).ready(function () {
+    $("#kartu-comment").on('click', '#editbutton', function() {
+        editID = $(this).attr("value");
+
+    });
+    });
+
+     
+     // digunakan untuk dijalankan ketika kita men-submit form
+     $("#form-update").submit(function(e) {
+        // berfungsi untuk preventing from page reload and default actions
+       e.preventDefault();
+       // mendapatkan value dari masing-masing comment
+       comment_value = $("#editText").val()
+    
+     });
+    
+     
+           </script>
+
+    </body>
+</html>
+{% endblock %}
